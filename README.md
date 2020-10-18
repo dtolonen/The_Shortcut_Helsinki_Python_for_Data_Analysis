@@ -6,7 +6,7 @@ Code from The Python for Data Analysis program at [The Shortcut](https://theshor
 
 <img src=“https://github.com/dtolonen/The_Shortcut_Helsinki_Python_for_Data_Analysis/blob/master/theshortcut_catalyst_logos.png>
 
-<img src="https://github.com/dtolonen/The_Shortcut_Helsinki_Python_for_Data_Analysis/blob/master/theshortcut_catalyst_logos.png” width="30%">
+<img src="https://github.com/dtolonen/The_Shortcut_Helsinki_Python_for_Data_Analysis/tree/master/theshortcut_catalyst_logos.png” width="30%">
 
 <img src=“https://github.com/dtolonen/The_Shortcut_Helsinki_Python_for_Data_Analysis/blob/master/theshortcut_python_image.png” width=“30%”>
 
