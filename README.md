@@ -10,7 +10,7 @@ Code from The Python for Data Analysis program at [The Shortcut](https://theshor
 
 #### Please follow the below links for the code from each lesson and their exercises.
 
-
+##### #workinprogress
 
 - [Lesson 1 Python basics](https://github.com/dtolonen/The_Shortcut_Helsinki_Python_for_Data_Analysis/tree/master/Lesson_1_Python_basics)
 - [Lesson 2 Conditional statements, loops](https://github.com/dtolonen/The_Shortcut_Helsinki_Python_for_Data_Analysis/tree/Lesson_2_Conditional_statements_loops)
@@ -24,8 +24,8 @@ Code from The Python for Data Analysis program at [The Shortcut](https://theshor
 - [Lesson 10 Project - Google play store data analysis](https://github.com/dtolonen/The_Shortcut_Helsinki_Python_for_Data_Analysis/tree/Lesson_10_Project_Google_play_store_data_analysis)
 - [Lesson 11 Project - Analysis of Johns Hopkins Covid-19 data](https://github.com/dtolonen/The_Shortcut_Helsinki_Python_for_Data_Analysis/tree/Lesson_11_Project_analysis_of_johns_hopkins_covid_19_data)
 - [Lesson 12 Final data analysis project - Startup investment in the Nordic countries (based on Crunchbase data)](https://github.com/dtolonen/The_Shortcut_Helsinki_Python_for_Data_Analysis/tree/Lesson_12_Final_project_startup_investment_in_nordics_data_analysis)
-- [Lesson 13 Introduction to MySQL)](https://github.com/dtolonen/The_Shortcut_Helsinki_Python_for_Data_Analysis/tree/Lesson_13_introduction_to_mysql)
-- [Lesson 14 Introduction to Machine learning and Deep learning)](https://github.com/dtolonen/The_Shortcut_Helsinki_Python_for_Data_Analysis/tree/Lesson_14_introduction_to_machine_learning_and_deep_learning)
+- [Lesson 13 Introduction to MySQL](https://github.com/dtolonen/The_Shortcut_Helsinki_Python_for_Data_Analysis/tree/Lesson_13_introduction_to_mysql)
+- [Lesson 14 Introduction to Machine learning and Deep learning](https://github.com/dtolonen/The_Shortcut_Helsinki_Python_for_Data_Analysis/tree/Lesson_14_introduction_to_machine_learning_and_deep_learning)
 
 <hr/>
 
