@@ -1,0 +1,388 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2511
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica-Bold;\f1\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww10640\viewh6120\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\b\fs24 \cf0 \ul \ulc0 20.3.20 MySQL last lesson - going through questions \
+
+\f1\b0 \ulnone (thought it was going to be \'91students\'92 questions, but seems like we\'92re going through the questions in the first PDF)\
+\
+
+\f0\b \ul Note!
+\f1\b0 \ulnone  Ali said that the W3 site was probably the best place to learn MySQL, HTML etc. things and that the PDF materials were probably mostly from there. See this link for SQL exercises on the site:\
+
+\f0\b https://www.w3resource.com/sql-exercises/subqueries/index.php \
+
+\f1\b0 \
+Also this more general Google search: 
+\f0\b https://www.google.com/search?client=firefox-b-d&q=mysql+Find+all+the+students+who+live+in+Ranchi%2C+Jaipur+and+Mumbai+but+their+age+is+less+than+21. 
+\f1\b0 \
+\
+\
+\
+\
+\pard\pardeftab720\sl280\partightenfactor0
+
+\f0\b \cf0 \ul \ulc0 Question \ulc0 1.\ulnone  
+\f1\b0 Check   the   table   CLASS   10_B   and   apply   the   same   constraints   on   CLASS_10A\
+\pard\pardeftab720\sl280\partightenfactor0
+\cf0 \
+\ul Notes\ulnone \
+\
+- when you apply primary key as default it will also apply not null.\
+\
+- We skip over gender bec we don\'92t have this column in class_10b. so we\'92ll leave that alone. \
+\
+- Remember one of our constraints, also, was the age restriction, so we have to put that in too.\
+\
+\
+\ul Going through it:\ulnone \
+\
+\
+mysql> select * from class_10b;\
++---------+----------+-----------+-----+------+---------------+\
+| ROLL_NO | NAME     | CITY      | AGE | CGPA | CLASS_TEACHER |\
++---------+----------+-----------+-----+------+---------------+\
+|      50 | ADITI    | NEW DELHI |  20 | 8.50 | MARIA         |\
+|      55 | ANAMIKA  | NEW DELHI |  20 | 7.20 | MARIA         |\
+|     102 | GAURAV   | RANCHI    |  20 | 8.15 | MARIA         |\
+|     123 | RANA     | NEW DELHI |  21 | 7.77 | MARIA         |\
+|     154 | ABHISHEK | BENGALURU |  19 | 7.25 | MARIA         |\
+|     202 | SHIVAM   | BENGALURU |  18 | 8.75 | MARIA         |\
+|     276 | SHUBHAM  | CHENNAI   |  20 | 9.12 | MARIA         |\
+|     292 | AKSHITA  | NEW DELHI |  23 | 8.95 | MARIA         |\
+|     302 | VIKAS    | JAIPUR    |  22 | 6.54 | MARIA         |\
+|     303 | ROMI     | JAIPUR    |  21 | 7.65 | MARIA         |\
+|     305 | ALISHA   | MUMBAI    |  22 | 8.35 | MARIA         |\
+|     365 | ADIL     | RANCHI    |  19 | 9.62 | MARIA         |\
++---------+----------+-----------+-----+------+---------------+\
+12 rows in set (0.02 sec)\
+\
+mysql> describe class_10a;\
++---------------+--------------+------+-----+---------+-------+\
+| Field         | Type         | Null | Key | Default | Extra |\
++---------------+--------------+------+-----+---------+-------+\
+| ROLL_NO       | int          | YES  |     | NULL    |       |\
+| NAME          | varchar(200) | YES  |     | NULL    |       |\
+| CITY          | varchar(200) | YES  |     | NULL    |       |\
+| GENDER        | char(1)      | YES  |     | NULL    |       |\
+| AGE           | int          | YES  |     | NULL    |       |\
+| CGPA          | float(4,2)   | YES  |     | NULL    |       |\
+| CLASS_TEACHER | varchar(150) | YES  |     | NULL    |       |\
++---------------+--------------+------+-----+---------+-------+\
+7 rows in set (0.00 sec)\
+\
+mysql> alter table class_10a modify roll_no int(3) primary key;\
+Query OK, 0 rows affected, 1 warning (0.49 sec)\
+Records: 0  Duplicates: 0  Warnings: 1\
+\
+mysql> alter table class_10a modify name varchar(200) not null;\
+Query OK, 0 rows affected (0.12 sec)\
+Records: 0  Duplicates: 0  Warnings: 0\
+\
+mysql> alter table class_10a modify city varchar(200) not null;\
+Query OK, 0 rows affected (0.13 sec)\
+Records: 0  Duplicates: 0  Warnings: 0\
+\
+mysql> alter table class_10a modify age int(2) not null;\
+Query OK, 0 rows affected, 1 warning (0.12 sec)\
+Records: 0  Duplicates: 0  Warnings: 1\
+\
+mysql> alter table class_10a modify cgpa float(4,2) not null;\
+Query OK, 0 rows affected, 1 warning (0.15 sec)\
+Records: 0  Duplicates: 0  Warnings: 1\
+\
+mysql> alter table class_10a modify age int(2) not null check(age>=18 and age<=23);\
+Query OK, 0 rows affected, 1 warning (0.01 sec)\
+Records: 0  Duplicates: 0  Warnings: 1\
+\
+mysql> alter table class_10a modify class_teacher varchar(150) not null default "joseph";\
+Query OK, 0 rows affected (0.13 sec)\
+Records: 0  Duplicates: 0  Warnings: 0\
+\
+mysql> describe class_10a;\
++---------------+--------------+------+-----+---------+-------+\
+| Field         | Type         | Null | Key | Default | Extra |\
++---------------+--------------+------+-----+---------+-------+\
+| roll_no       | int          | NO   | PRI | NULL    |       |\
+| name          | varchar(200) | NO   |     | NULL    |       |\
+| city          | varchar(200) | NO   |     | NULL    |       |\
+| GENDER        | char(1)      | YES  |     | NULL    |       |\
+| age           | int          | NO   |     | NULL    |       |\
+| cgpa          | float(4,2)   | NO   |     | NULL    |       |\
+| class_teacher | varchar(150) | NO   |     | joseph  |       |\
++---------------+--------------+------+-----+---------+-------+\
+7 rows in set (0.00 sec)\
+\
+\
+
+\f0\b \ul Question 2. 
+\f1\b0 \ulnone Create a new column called \'93STUDENT_ID\'94. As students in class 10A and\
+class 10B can have similar roll numbers. In order to uniquely identify each student, set the value of STUDENT_ID as ROLL+\'94_\'94+NAME. (Hint: Use UPDATE, CONCAT\ul )\ulnone \
+\
+\
+\pard\pardeftab720\sl280\partightenfactor0
+\cf0 \ul \ulc0 Going through it:\ulnone \
+\pard\pardeftab720\sl280\partightenfactor0
+\cf0 \
+\
+mysql> alter table class_10a add column student_id varchar(50);\
+Query OK, 0 rows affected (0.06 sec)\
+Records: 0  Duplicates: 0  Warnings: 0\
+\
+mysql> update class_10a set student_id=concat(roll_no, "_", name);\
+Query OK, 9 rows affected (0.06 sec)\
+Rows matched: 9  Changed: 9  Warnings: 0\
+\
+mysql> select * from class_10a;\
++---------+--------+--------------+--------+-----+------+---------------+------------+\
+| roll_no | name   | city         | GENDER | age | cgpa | class_teacher | student_id |\
++---------+--------+--------------+--------+-----+------+---------------+------------+\
+|     101 | RAM    | BHUMBANESWAR | M      |  19 | 9.00 | JOSEPH        | 101_RAM    |\
+|     103 | UDAY   | NEW DELHI    | M      |  20 | 8.97 | JOSEPH        | 103_UDAY   |\
+|     104 | VIKAS  | KANPUR       | M      |  19 | 8.50 | JOSEPH        | 104_VIKAS  |\
+|     105 | SWETA  | RANCHI       | F      |  19 | 9.20 | JOSEPH        | 105_SWETA  |\
+|     106 | YOGESH | JAIPUR       | F      |  18 | 7.90 | JOSEPH        | 106_YOGESH |\
+|     165 | MANISH | MUMBAI       | F      |  19 | 9.15 | JOSEPH        | 165_MANISH |\
+|     210 | SMRITI | NEW DELHI    | F      |  19 | 8.99 | JOSEPH        | 210_SMRITI |\
+|     211 | SUDAM  | BHUBANESWAR  | M      |  21 | 8.60 | JOSEPH        | 211_SUDAM  |\
+|     212 | VIKAS  | KOLKATA      | M      |  23 | 5.98 | JOSEPH        | 212_VIKAS  |\
++---------+--------+--------------+--------+-----+------+---------------+------------+\
+9 rows in set (0.00 sec)\
+\
+mysql> select * from class_10b;\
++---------+----------+-----------+-----+------+---------------+\
+| ROLL_NO | NAME     | CITY      | AGE | CGPA | CLASS_TEACHER |\
++---------+----------+-----------+-----+------+---------------+\
+|      50 | ADITI    | NEW DELHI |  20 | 8.50 | MARIA         |\
+|      55 | ANAMIKA  | NEW DELHI |  20 | 7.20 | MARIA         |\
+|     102 | GAURAV   | RANCHI    |  20 | 8.15 | MARIA         |\
+|     123 | RANA     | NEW DELHI |  21 | 7.77 | MARIA         |\
+|     154 | ABHISHEK | BENGALURU |  19 | 7.25 | MARIA         |\
+|     202 | SHIVAM   | BENGALURU |  18 | 8.75 | MARIA         |\
+|     276 | SHUBHAM  | CHENNAI   |  20 | 9.12 | MARIA         |\
+|     292 | AKSHITA  | NEW DELHI |  23 | 8.95 | MARIA         |\
+|     302 | VIKAS    | JAIPUR    |  22 | 6.54 | MARIA         |\
+|     303 | ROMI     | JAIPUR    |  21 | 7.65 | MARIA         |\
+|     305 | ALISHA   | MUMBAI    |  22 | 8.35 | MARIA         |\
+|     365 | ADIL     | RANCHI    |  19 | 9.62 | MARIA         |\
++---------+----------+-----------+-----+------+---------------+\
+12 rows in set (0.00 sec)\
+\
+mysql> alter table class_10b add column student_id varchar(50);\
+Query OK, 0 rows affected (0.11 sec)\
+Records: 0  Duplicates: 0  Warnings: 0\
+\
+mysql> update class_10b set student_id=concat(roll_no, "_", name);\
+Query OK, 12 rows affected (0.01 sec)\
+Rows matched: 12  Changed: 12  Warnings: 0\
+\
+mysql> select * from class_10b;\
++---------+----------+-----------+-----+------+---------------+--------------+\
+| ROLL_NO | NAME     | CITY      | AGE | CGPA | CLASS_TEACHER | student_id   |\
++---------+----------+-----------+-----+------+---------------+--------------+\
+|      50 | ADITI    | NEW DELHI |  20 | 8.50 | MARIA         | 50_ADITI     |\
+|      55 | ANAMIKA  | NEW DELHI |  20 | 7.20 | MARIA         | 55_ANAMIKA   |\
+|     102 | GAURAV   | RANCHI    |  20 | 8.15 | MARIA         | 102_GAURAV   |\
+|     123 | RANA     | NEW DELHI |  21 | 7.77 | MARIA         | 123_RANA     |\
+|     154 | ABHISHEK | BENGALURU |  19 | 7.25 | MARIA         | 154_ABHISHEK |\
+|     202 | SHIVAM   | BENGALURU |  18 | 8.75 | MARIA         | 202_SHIVAM   |\
+|     276 | SHUBHAM  | CHENNAI   |  20 | 9.12 | MARIA         | 276_SHUBHAM  |\
+|     292 | AKSHITA  | NEW DELHI |  23 | 8.95 | MARIA         | 292_AKSHITA  |\
+|     302 | VIKAS    | JAIPUR    |  22 | 6.54 | MARIA         | 302_VIKAS    |\
+|     303 | ROMI     | JAIPUR    |  21 | 7.65 | MARIA         | 303_ROMI     |\
+|     305 | ALISHA   | MUMBAI    |  22 | 8.35 | MARIA         | 305_ALISHA   |\
+|     365 | ADIL     | RANCHI    |  19 | 9.62 | MARIA         | 365_ADIL     |\
++---------+----------+-----------+-----+------+---------------+--------------+\
+12 rows in set (0.00 sec)\
+\
+\
+\
+\ul 3. Make the STUDENT_ID as Primary Key in both the tables. (Use ALTER MODIFY)\ulnone \
+\
+\ul Notes:\ulnone \
+Trying this: ALTER MODIFY  TABLE CLASS_10A(STUDENT_ID VARCHAR(50) PRIMARY KEY);\
+Ah, I didn\'92t first drop current primary key, as I had earlier thought about: alter table class_10a drop primary key;\
+\
+\
+\
+\ul Going through it:\ulnone \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 \
+mysql> mysql> * from class_10a;\
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'seelct * from class_10a' at line 1\
+mysql> select * from class_10a;\
++---------+--------+--------------+--------+-----+------+---------------+------------+\
+| roll_no | name   | city         | GENDER | age | cgpa | class_teacher | student_id |\
++---------+--------+--------------+--------+-----+------+---------------+------------+\
+|     101 | RAM    | BHUMBANESWAR | M      |  19 | 9.00 | JOSEPH        | 101_RAM    |\
+|     103 | UDAY   | NEW DELHI    | M      |  20 | 8.97 | JOSEPH        | 103_UDAY   |\
+|     104 | VIKAS  | KANPUR       | M      |  19 | 8.50 | JOSEPH        | 104_VIKAS  |\
+|     105 | SWETA  | RANCHI       | F      |  19 | 9.20 | JOSEPH        | 105_SWETA  |\
+|     106 | YOGESH | JAIPUR       | F      |  18 | 7.90 | JOSEPH        | 106_YOGESH |\
+|     165 | MANISH | MUMBAI       | F      |  19 | 9.15 | JOSEPH        | 165_MANISH |\
+|     210 | SMRITI | NEW DELHI    | F      |  19 | 8.99 | JOSEPH        | 210_SMRITI |\
+|     211 | SUDAM  | BHUBANESWAR  | M      |  21 | 8.60 | JOSEPH        | 211_SUDAM  |\
+|     212 | VIKAS  | KOLKATA      | M      |  23 | 5.98 | JOSEPH        | 212_VIKAS  |\
++---------+--------+--------------+--------+-----+------+---------------+------------+\
+9 rows in set (0.00 sec)\
+\
+mysql> describe class_10a;\
++---------------+--------------+------+-----+---------+-------+\
+| Field         | Type         | Null | Key | Default | Extra |\
++---------------+--------------+------+-----+---------+-------+\
+| roll_no       | int          | NO   | PRI | NULL    |       |\
+| name          | varchar(200) | NO   |     | NULL    |       |\
+| city          | varchar(200) | NO   |     | NULL    |       |\
+| GENDER        | char(1)      | YES  |     | NULL    |       |\
+| age           | int          | NO   |     | NULL    |       |\
+| cgpa          | float(4,2)   | NO   |     | NULL    |       |\
+| class_teacher | varchar(150) | NO   |     | joseph  |       |\
+| student_id    | varchar(50)  | YES  |     | NULL    |       |\
++---------------+--------------+------+-----+---------+-------+\
+8 rows in set (0.00 sec)\
+\
+mysql> alter table class_10a drop primary key;\
+Query OK, 9 rows affected (0.16 sec)\
+Records: 9  Duplicates: 0  Warnings: 0\
+\
+mysql> alter table class_10a modify student_id varchar(50) primary key;\
+Query OK, 0 rows affected (0.15 sec)\
+Records: 0  Duplicates: 0  Warnings: 0\
+\
+mysql> describe class_10a;\
++---------------+--------------+------+-----+---------+-------+\
+| Field         | Type         | Null | Key | Default | Extra |\
++---------------+--------------+------+-----+---------+-------+\
+| roll_no       | int          | NO   |     | NULL    |       |\
+| name          | varchar(200) | NO   |     | NULL    |       |\
+| city          | varchar(200) | NO   |     | NULL    |       |\
+| GENDER        | char(1)      | YES  |     | NULL    |       |\
+| age           | int          | NO   |     | NULL    |       |\
+| cgpa          | float(4,2)   | NO   |     | NULL    |       |\
+| class_teacher | varchar(150) | NO   |     | joseph  |       |\
+| student_id    | varchar(50)  | NO   | PRI | NULL    |       |\
++---------------+--------------+------+-----+---------+-------+\
+8 rows in set (0.00 sec)\
+\
+mysql> alter table class_10b drop primary key;\
+Query OK, 12 rows affected (0.03 sec)\
+Records: 12  Duplicates: 0  Warnings: 0\
+\
+mysql> alter table class_10b modify student_id varchar(50) primary key;\
+Query OK, 0 rows affected (0.19 sec)\
+Records: 0  Duplicates: 0  Warnings: 0\
+\
+mysql> describe class_10b;\
++---------------+--------------+------+-----+---------+-------+\
+| Field         | Type         | Null | Key | Default | Extra |\
++---------------+--------------+------+-----+---------+-------+\
+| ROLL_NO       | int          | NO   |     | NULL    |       |\
+| NAME          | varchar(200) | NO   |     | NULL    |       |\
+| CITY          | varchar(100) | NO   |     | NULL    |       |\
+| AGE           | int          | NO   |     | NULL    |       |\
+| CGPA          | float(4,2)   | NO   |     | NULL    |       |\
+| CLASS_TEACHER | varchar(100) | NO   |     | MARIA   |       |\
+| student_id    | varchar(50)  | NO   | PRI | NULL    |       |\
++---------------+--------------+------+-----+---------+-------+\
+7 rows in set (0.00 sec)\
+\
+\
+\
+
+\f0\b \ul Question 
+\f1\b0 4. \ulnone Perform the following queries on CLASS_10B: (Use Operators\ul )\ulnone \
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 4.1. Display the city of all students whose name starts with \'93A\'94.\
+
+\f0\b Trying: select * from class_10b where city=\'93A%\'94;
+\f1\b0 \
+\
+4.2.Find all the students whose age is between 18 and 20 and who live in \'93New Delhi\'94\
+
+\f0\b Trying: select * from class_10b where age=>18 and age<=20;
+\f1\b0 \
+\
+4.3. List all the unique ages in this class.\
+
+\f0\b Trying: select distinct age from class_10b;
+\f1\b0 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 \
+4.4 Display all the students who have a name of length 5.\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\b \cf0 Trying: select class_10b.name from class_10b where length(name)<=5;
+\f1\b0 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 (from stack overflow; SELECT table.field1, table.field2 FROM table WHERE length(field) > 10;)\
+\
+4.5. Find all the students who live in Ranchi, Jaipur and Mumbai but their age is less than 21.\
+
+\f0\b Trying: select * from class_10b where city in (Ranchi, Jaipur, Mumbai) and age<=21;\
+
+\f1\b0 (stack overflow: https://stackoverflow.com/questions/3749933/mysql-select-multiple-values)\
+\
+4.6. Update the age of all students by 1 whose name starts with \'93A\'94 and ends with \'93S\'94.\
+
+\f0\b Trying: update * from class_10b \'85 (ran out of time).
+\f1\b0 \
+\
+\
+\
+\ul Going through it (see my tries above):\ulnone \
+\
+4.1 was  this - 
+\f0\b select city from class_10b where name like "A%";
+\f1\b0 \
+\
+4.2 was  this - 
+\f0\b select * from class_10b where (age between 18 and 20) and (city="new delhi");
+\f1\b0 \
+(Arda: \'93also works without the parens\'94, but Ali \'93for clarity this might be better\'94)\
+\
+4.3 was  this - 
+\f0\b select distinct(age) from class_10b;
+\f1\b0 \
+(actually, mine would have worked I guess without the parens)\
+\
+4.4 was  this - 
+\f0\b select * from class_10b where name like "_____";
+\f1\b0 \
+\
+(Ali\'92s using five underscores for the characters, my stack overflow one would have worked (
+\f0\b select class_10b.name from class_10b where length(name)<=5;
+\f1\b0 ) and Katriina had a similar one: SELECT * FROM CLASS_10B WHERE LENGTH(NAME)=5;)\
+\
+4.5 was  this - 
+\f0\b select * from class_10b where city in ("Ranchi" , "Jaipur" , "Mumbai") and age<21;
+\f1\b0 \
+\
+(so, I got very close!)\
+\
+4.6 was  this - 
+\f0\b update class_10b set age=age+1 where name like "A%S";
+\f1\b0 \
+\
+\
+
+\f0\b \ul Question 5.
+\f1\b0 \ulnone  For both tables Create a new column called \'91HOUSE\'92 and update the value of HOUSE depending upon the roll number. Also apply CHECK and NOT NULL constraint on these columns. (Use UPDATE, BETWEEN, MODIFY)\
+\
+0-99		YELLOW\
+100-199	RED\
+200-299	BLUE\
+300-399	GREEN\
+\
+\
+
+\f0\b \ul SQL TEST: \ulnone Ali and Vinh will send like 10 questions for us to work on for Monday including this last question. The Holvi workshop has been moved to 25.3.20
+\f1\b0 \
+\
+\
+\
+\
+}

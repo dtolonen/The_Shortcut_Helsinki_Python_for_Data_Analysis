@@ -1,0 +1,429 @@
+Make,Type,Model,Origin,Drive Train,MSRP,Engine Size,Cylinders,Horsepower,MPG_City,MPG_Highway,Weight,Wheelbase,Length
+Acura,SUV,MDX,Asia,All,$36945,3.5,6.0,265,17,23,4451.0,106.0,189.0
+Acura,Sedan,RSX Type S 2dr,Asia,Front,$23820,2.0,4.0,200,24,31,2778.0,101.0,172.0
+Acura,Sedan,TSX 4dr,Asia,Front,$26990,2.4,4.0,200,22,29,3230.0,105.0,183.0
+Acura,Sedan,TL 4dr,Asia,Front,$33195,3.2,6.0,270,20,28,3575.0,108.0,186.0
+Acura,Sedan,3.5 RL 4dr,Asia,Front,$43755,3.5,6.0,225,18,24,3880.0,115.0,197.0
+Acura,Sedan,3.5 RL w/Navigation 4dr,Asia,Front,$46100,3.5,6.0,225,18,24,3893.0,115.0,197.0
+Acura,Sports,NSX coupe 2dr manual S,Asia,Rear,$89765,3.2,6.0,290,17,24,3153.0,100.0,174.0
+Audi,Sedan,A4 1.8T 4dr,Europe,Front,$25940,1.8,4.0,170,22,31,3252.0,104.0,179.0
+Audi,Sedan,A41.8T convertible 2dr,Europe,Front,$35940,1.8,4.0,170,23,30,3638.0,105.0,180.0
+Audi,Sedan,A4 3.0 4dr,Europe,Front,$31840,3.0,6.0,220,20,28,3462.0,104.0,179.0
+Audi,Sedan,A4 3.0 Quattro 4dr manual,Europe,All,$33430,3.0,6.0,220,17,26,3583.0,104.0,179.0
+Audi,Sedan,A4 3.0 Quattro 4dr auto,Europe,All,$34480,3.0,6.0,220,18,25,3627.0,104.0,179.0
+Audi,Sedan,A6 3.0 4dr,Europe,Front,$36640,3.0,6.0,220,20,27,3561.0,109.0,192.0
+Audi,Sedan,A6 3.0 Quattro 4dr,Europe,All,$39640,3.0,6.0,220,18,25,3880.0,109.0,192.0
+Audi,Sedan,A4 3.0 convertible 2dr,Europe,Front,$42490,3.0,6.0,220,20,27,3814.0,105.0,180.0
+Audi,Sedan,A4 3.0 Quattro convertible 2dr,Europe,All,$44240,3.0,6.0,220,18,25,4013.0,105.0,180.0
+Audi,Sedan,A6 2.7 Turbo Quattro 4dr,Europe,All,$42840,2.7,6.0,250,18,25,3836.0,109.0,192.0
+Audi,Sedan,A6 4.2 Quattro 4dr,Europe,All,$49690,4.2,8.0,300,17,24,4024.0,109.0,193.0
+Audi,Sedan,A8 L Quattro 4dr,Europe,All,$69190,4.2,8.0,330,17,24,4399.0,121.0,204.0
+Audi,Sedan,S4 Quattro 4dr,Europe,All,$48040,4.2,8.0,340,14,20,3825.0,,179.0
+Audi,Sports,RS 6 4dr,Europe,Front,$84600,4.2,8.0,450,15,22,4024.0,109.0,191.0
+Audi,Sports,TT 1.8 convertible 2dr (coupe),Europe,Front,$35940,1.8,4.0,180,20,28,3131.0,95.0,159.0
+Audi,Sports,TT 1.8 Quattro 2dr (convertible),Europe,All,$37390,1.8,4.0,225,20,28,2921.0,96.0,159.0
+Audi,Sports,TT 3.2 coupe 2dr (convertible),Europe,All,$40590,3.2,6.0,250,21,29,3351.0,96.0,159.0
+Audi,Wagon,A6 3.0 Avant Quattro,Europe,All,$40840,3.0,6.0,220,18,25,4035.0,,192.0
+Audi,Wagon,S4 Avant Quattro,Europe,All,$49090,4.2,8.0,340,15,21,3936.0,104.0,179.0
+BMW,SUV,X3 3.0i,Europe,All,$37000,3.0,6.0,225,16,23,4023.0,110.0,180.0
+BMW,SUV,X5 4.4i,Europe,All,$52195,4.4,8.0,325,16,22,4824.0,,184.0
+BMW,Sedan,325i 4dr,Europe,Rear,$28495,2.5,6.0,184,20,29,3219.0,107.0,176.0
+BMW,Sedan,325Ci 2dr,Europe,Rear,$30795,2.5,6.0,184,20,29,3197.0,107.0,177.0
+BMW,Sedan,325Ci convertible 2dr,Europe,Rear,$37995,2.5,6.0,184,19,27,3560.0,107.0,177.0
+BMW,Sedan,325xi 4dr,Europe,All,$30245,2.5,6.0,184,19,27,3461.0,107.0,176.0
+BMW,Sedan,330i 4dr,Europe,Rear,$35495,3.0,6.0,225,20,30,3285.0,107.0,176.0
+BMW,Sedan,330Ci 2dr,Europe,Rear,$36995,3.0,6.0,225,20,30,3285.0,107.0,176.0
+BMW,Sedan,330xi 4dr,Europe,All,$37245,3.0,6.0,225,20,29,3483.0,,176.0
+BMW,Sedan,525i 4dr,Europe,Rear,$39995,2.5,6.0,184,19,28,3428.0,114.0,191.0
+BMW,Sedan,330Ci convertible 2dr,Europe,Rear,$44295,3.0,6.0,225,19,28,3616.0,107.0,177.0
+BMW,Sedan,530i 4dr,Europe,Rear,$44995,3.0,6.0,225,20,30,3472.0,114.0,191.0
+BMW,Sedan,545iA 4dr,Europe,Rear,$54995,4.4,8.0,325,18,26,3814.0,114.0,191.0
+BMW,Sedan,745i 4dr,Europe,Rear,$69195,4.4,8.0,325,18,26,4376.0,118.0,198.0
+BMW,Sedan,745Li 4dr,Europe,Rear,$73195,4.4,8.0,325,18,26,4464.0,123.0,204.0
+BMW,Sports,M3 coupe 2dr,Europe,Rear,$48195,3.2,6.0,333,16,24,3415.0,108.0,177.0
+BMW,Sports,M3 convertible 2dr,Europe,Rear,$56595,3.2,6.0,333,16,23,3781.0,108.0,177.0
+BMW,Sports,Z4 convertible 2.5i 2dr,Europe,Rear,$33895,2.5,6.0,184,20,28,2932.0,,161.0
+BMW,Sports,Z4 convertible 3.0i 2dr,Europe,Rear,$41045,3.0,6.0,225,21,29,2998.0,98.0,161.0
+BMW,Wagon,325xi Sport,Europe,All,$32845,2.5,6.0,184,19,26,3594.0,107.0,176.0
+Buick,SUV,Rainier,USA,All,$37895,4.2,6.0,275,15,21,4600.0,113.0,193.0
+Buick,SUV,Rendezvous CX,USA,Front,$26545,3.4,6.0,185,19,26,4024.0,112.0,187.0
+Buick,Sedan,Century Custom 4dr,USA,Front,$22180,3.1,6.0,175,20,30,3353.0,109.0,195.0
+Buick,Sedan,LeSabre Custom 4dr,USA,Front,$26470,3.8,6.0,205,20,29,3567.0,112.0,200.0
+Buick,Sedan,Regal LS 4dr,USA,Front,$24895,3.8,6.0,200,20,30,3461.0,109.0,196.0
+Buick,Sedan,Regal GS 4dr,USA,Front,$28345,3.8,6.0,240,18,28,3536.0,,196.0
+Buick,Sedan,LeSabre Limited 4dr,USA,Front,$32245,3.8,6.0,205,20,29,3591.0,112.0,200.0
+Buick,Sedan,Park Avenue 4dr,USA,Front,$35545,3.8,6.0,205,20,29,3778.0,114.0,207.0
+Buick,Sedan,Park Avenue Ultra 4dr,USA,Front,$40720,3.8,6.0,240,18,28,3909.0,114.0,207.0
+Cadillac,SUV,Escalade,USA,Front,$52795,5.3,8.0,295,14,18,5367.0,116.0,199.0
+Cadillac,SUV,SRX V8,USA,Front,$46995,4.6,8.0,320,16,21,4302.0,116.0,195.0
+Cadillac,Sedan,CTS VVT 4dr,USA,Rear,$30835,3.6,6.0,255,18,25,3694.0,113.0,190.0
+Cadillac,Sedan,Deville 4dr,USA,Front,$45445,4.6,8.0,275,18,26,3984.0,115.0,207.0
+Cadillac,Sedan,Deville DTS 4dr,USA,Front,$50595,4.6,8.0,300,18,26,4044.0,115.0,207.0
+Cadillac,Sedan,Seville SLS 4dr,USA,Front,$47955,4.6,8.0,275,18,26,3992.0,112.0,201.0
+Cadillac,Sports,XLR convertible 2dr,USA,Rear,$76200,4.6,8.0,320,17,25,3647.0,106.0,178.0
+Cadillac,Truck,Escalade EXT,USA,All,$52975,6.0,8.0,345,13,17,5879.0,130.0,221.0
+Chevrolet,SUV,Suburban 1500 LT,USA,Front,$42735,5.3,8.0,295,14,18,4947.0,130.0,219.0
+Chevrolet,SUV,Tahoe LT,USA,All,$41465,5.3,8.0,295,14,18,5050.0,116.0,197.0
+Chevrolet,SUV,TrailBlazer LT,USA,Front,$30295,4.2,6.0,275,16,21,4425.0,113.0,192.0
+Chevrolet,SUV,Tracker,USA,Front,$20255,2.5,6.0,165,19,22,2866.0,,163.0
+Chevrolet,Sedan,Aveo 4dr,USA,Front,$11690,1.6,4.0,103,28,34,2370.0,98.0,167.0
+Chevrolet,Sedan,Aveo LS 4dr hatch,USA,Front,$12585,1.6,4.0,103,28,34,2348.0,98.0,153.0
+Chevrolet,Sedan,Cavalier 2dr,USA,Front,$14610,2.2,4.0,140,26,37,2617.0,104.0,183.0
+Chevrolet,Sedan,Cavalier 4dr,USA,Front,$14810,2.2,4.0,140,26,37,,104.0,
+Chevrolet,Sedan,Cavalier LS 2dr,USA,Front,$16385,2.2,4.0,140,26,37,2617.0,104.0,183.0
+Chevrolet,Sedan,Impala 4dr,USA,Front,$21900,3.4,6.0,180,21,32,3465.0,111.0,200.0
+Chevrolet,Sedan,Malibu 4dr,USA,Front,$18995,2.2,4.0,145,24,34,3174.0,106.0,188.0
+Chevrolet,Sedan,Malibu LS 4dr,USA,Front,$20370,3.5,6.0,200,22,30,3297.0,,188.0
+Chevrolet,Sedan,Monte Carlo LS 2dr,USA,Front,$21825,3.4,6.0,180,21,32,3340.0,,198.0
+Chevrolet,Sedan,Impala LS 4dr,USA,Front,$25000,3.8,6.0,200,20,30,3476.0,111.0,200.0
+Chevrolet,Sedan,Impala SS 4dr,USA,Front,$27995,3.8,6.0,240,18,28,3606.0,111.0,200.0
+Chevrolet,Sedan,Malibu LT 4dr,USA,Front,$23495,3.5,6.0,200,23,32,3315.0,106.0,188.0
+Chevrolet,Sedan,Monte Carlo SS 2dr,USA,Front,$24225,3.8,6.0,200,18,28,3434.0,111.0,198.0
+Chevrolet,Sedan,Astro,USA,All,$26395,4.3,6.0,190,14,17,4605.0,111.0,190.0
+Chevrolet,Sedan,Venture LS,USA,Front,$27020,3.4,6.0,185,19,26,3699.0,,187.0
+Chevrolet,Sports,Corvette 2dr,USA,Rear,$44535,5.7,8.0,350,18,25,3246.0,105.0,180.0
+Chevrolet,Sports,Corvette convertible 2dr,USA,Rear,$51535,5.7,8.0,350,18,25,3248.0,105.0,180.0
+Chevrolet,Truck,Avalanche 1500,USA,All,$36100,5.3,8.0,295,14,18,5678.0,130.0,222.0
+Chevrolet,Truck,Colorado Z85,USA,All,$18760,2.8,4.0,175,18,23,3623.0,111.0,192.0
+Chevrolet,Truck,Silverado 1500 Regular Cab,USA,Rear,$20310,4.3,6.0,200,15,21,4142.0,119.0,206.0
+Chevrolet,Truck,Silverado SS,USA,All,$40340,6.0,8.0,300,13,17,4804.0,144.0,238.0
+Chevrolet,Truck,SSR,USA,Rear,$41995,5.3,8.0,300,16,19,4760.0,116.0,191.0
+Chevrolet,Wagon,Malibu Maxx LS,USA,Front,$22225,3.5,6.0,200,22,30,3458.0,112.0,188.0
+Chrysler,Sedan,PT Cruiser 4dr,USA,Front,$17985,2.4,4.0,150,22,29,3101.0,103.0,169.0
+Chrysler,Sedan,PT Cruiser Limited 4dr,USA,Front,$22000,2.4,4.0,150,22,29,3105.0,103.0,169.0
+Chrysler,Sedan,Sebring 4dr,USA,Front,$19090,2.4,4.0,150,22,30,3173.0,108.0,191.0
+Chrysler,Sedan,Sebring Touring 4dr,USA,Front,$21840,2.7,6.0,200,21,28,,108.0,
+Chrysler,Sedan,300M 4dr,USA,Front,$29865,3.5,6.0,250,18,27,3581.0,113.0,198.0
+Chrysler,Sedan,Concorde LX 4dr,USA,Front,$24130,2.7,6.0,200,21,29,3479.0,113.0,208.0
+Chrysler,Sedan,Concorde LXi 4dr,USA,Front,$26860,3.5,6.0,232,19,27,3548.0,113.0,208.0
+Chrysler,Sedan,PT Cruiser GT 4dr,USA,Front,$25955,2.4,4.0,220,21,27,3217.0,103.0,169.0
+Chrysler,Sedan,Sebring convertible 2dr,USA,Front,$25215,2.4,4.0,150,22,30,3357.0,,194.0
+Chrysler,Sedan,300M Special Edition 4dr,USA,Front,$33295,3.5,6.0,255,18,27,3650.0,113.0,198.0
+Chrysler,Sedan,Sebring Limited convertible 2dr,USA,Front,$30950,2.7,6.0,200,21,28,3448.0,106.0,194.0
+Chrysler,Sedan,Town and Country LX,USA,Front,$27490,3.3,6.0,180,19,26,4068.0,119.0,201.0
+Chrysler,Sedan,Town and Country Limited,USA,Front,$38380,3.8,6.0,215,18,25,4331.0,119.0,201.0
+Chrysler,Sports,Crossfire 2dr,USA,Rear,$34495,3.2,6.0,215,17,25,3060.0,95.0,160.0
+Chrysler,Wagon,Pacifica,USA,Rear,$31230,3.5,6.0,250,17,23,4675.0,116.0,199.0
+Dodge,SUV,Durango SLT,USA,All,$32235,4.7,8.0,230,15,21,4987.0,119.0,201.0
+Dodge,Sedan,Neon SE 4dr,USA,Front,$13670,2.0,4.0,132,29,36,2581.0,105.0,174.0
+Dodge,Sedan,Neon SXT 4dr,USA,Front,$15040,2.0,4.0,132,29,36,2626.0,105.0,174.0
+Dodge,Sedan,Intrepid SE 4dr,USA,Front,$22035,2.7,6.0,200,21,29,3469.0,113.0,204.0
+Dodge,Sedan,Stratus SXT 4dr,USA,Front,$18820,2.4,4.0,150,21,28,3182.0,108.0,191.0
+Dodge,Sedan,Stratus SE 4dr,USA,Front,$20220,2.4,4.0,150,21,28,3175.0,108.0,191.0
+Dodge,Sedan,Intrepid ES 4dr,USA,Front,$24885,3.5,6.0,232,18,27,3487.0,113.0,204.0
+Dodge,Sedan,Caravan SE,USA,Front,$21795,2.4,4.0,150,20,26,3862.0,113.0,189.0
+Dodge,Sedan,Grand Caravan SXT,USA,All,$32660,3.8,6.0,215,18,25,4440.0,119.0,201.0
+Dodge,Sports,Viper SRT-10 convertible 2dr,USA,Rear,$81795,8.3,10.0,500,12,20,3410.0,99.0,176.0
+Dodge,Truck,Dakota Regular Cab,USA,Rear,$17630,3.7,6.0,210,16,22,3714.0,112.0,193.0
+Dodge,Truck,Dakota Club Cab,USA,Rear,$20300,3.7,6.0,210,16,22,3829.0,131.0,219.0
+Dodge,Truck,Ram 1500 Regular Cab ST,USA,Rear,$20215,3.7,6.0,215,16,21,4542.0,121.0,208.0
+Ford,SUV,Excursion 6.8 XLT,USA,All,$41475,6.8,10.0,310,10,13,7190.0,137.0,227.0
+Ford,SUV,Expedition 4.6 XLT,USA,Front,$34560,4.6,8.0,232,15,19,5000.0,119.0,206.0
+Ford,SUV,Explorer XLT V6,USA,All,$29670,4.0,6.0,210,15,20,4463.0,114.0,190.0
+Ford,SUV,Escape XLS,USA,All,$22515,3.0,6.0,201,18,23,3346.0,103.0,173.0
+Ford,Sedan,Focus ZX3 2dr hatch,USA,Front,$13270,2.0,4.0,130,26,33,2612.0,103.0,168.0
+Ford,Sedan,Focus LX 4dr,USA,Front,$13730,2.0,4.0,110,27,36,2606.0,103.0,168.0
+Ford,Sedan,Focus SE 4dr,USA,Front,$15460,2.0,4.0,130,26,33,2606.0,103.0,168.0
+Ford,Sedan,Focus ZX5 5dr,USA,Front,$15580,2.0,4.0,130,26,33,2691.0,103.0,168.0
+Ford,Sedan,Focus SVT 2dr,USA,Front,$19135,2.0,4.0,170,21,28,2750.0,103.0,168.0
+Ford,Sedan,Taurus LX 4dr,USA,Front,$20320,3.0,6.0,155,20,27,3306.0,109.0,198.0
+Ford,Sedan,Taurus SES Duratec 4dr,USA,Front,$22735,3.0,6.0,201,19,26,3313.0,109.0,198.0
+Ford,Sedan,Crown Victoria 4dr,USA,Rear,$24345,4.6,8.0,224,17,25,4057.0,115.0,212.0
+Ford,Sedan,Crown Victoria LX 4dr,USA,Rear,$27370,4.6,8.0,224,17,25,4057.0,,212.0
+Ford,Sedan,Crown Victoria LX Sport 4dr,USA,Rear,$30315,4.6,8.0,239,17,25,4057.0,115.0,212.0
+Ford,Sedan,Freestar SE,USA,Front,$26930,3.9,6.0,193,17,23,4275.0,121.0,201.0
+Ford,Sports,Mustang 2dr (convertible),USA,Rear,$18345,3.8,6.0,193,20,29,3290.0,101.0,183.0
+Ford,Sports,Mustang GT Premium convertible 2dr,USA,Rear,$29380,4.6,8.0,260,17,25,3347.0,,183.0
+Ford,Sports,Thunderbird Deluxe convert w/hardtop 2d,USA,Front,$37530,3.9,8.0,280,17,24,,107.0,
+Ford,Truck,F-150 Regular Cab XL,USA,Rear,$22010,4.6,8.0,231,15,19,4788.0,126.0,211.0
+Ford,Truck,F-150 Supercab Lariat,USA,All,$33540,5.4,8.0,300,14,18,5464.0,133.0,218.0
+Ford,Truck,Ranger 2.3 XL Regular Cab,USA,Rear,$14385,2.3,4.0,143,24,29,3028.0,111.0,188.0
+Ford,Wagon,Focus ZTW,USA,Front,$17475,2.0,4.0,130,26,33,2702.0,103.0,178.0
+Ford,Wagon,Taurus SE,USA,Front,$22290,3.0,6.0,155,19,26,3497.0,109.0,198.0
+GMC,SUV,Envoy XUV SLE,USA,Front,$31890,4.2,6.0,275,15,19,4945.0,129.0,208.0
+GMC,SUV,Yukon 1500 SLE,USA,Front,$35725,4.8,8.0,285,16,19,5042.0,116.0,199.0
+GMC,SUV,Yukon XL 2500 SLT,USA,All,$46265,6.0,8.0,325,13,17,6133.0,130.0,219.0
+GMC,Sedan,Safari SLE,USA,Rear,$25640,4.3,6.0,190,16,20,4309.0,111.0,190.0
+GMC,Truck,Canyon Z85 SL Regular Cab,USA,Rear,$16530,2.8,4.0,175,18,25,3351.0,111.0,192.0
+GMC,Truck,Sierra Extended Cab 1500,USA,Rear,$25717,4.8,8.0,285,17,20,4548.0,144.0,230.0
+GMC,Truck,Sierra HD 2500,USA,All,$29322,6.0,8.0,300,13,18,5440.0,133.0,222.0
+GMC,Truck,Sonoma Crew Cab,USA,All,$25395,4.3,6.0,190,15,19,4083.0,123.0,208.0
+Honda,Hybrid,Civic Hybrid 4dr manual (gas/electric),Asia,Front,$20140,1.4,4.0,93,46,51,2732.0,103.0,175.0
+Honda,Hybrid,Insight 2dr (gas/electric),Asia,Front,$19110,2.0,3.0,73,60,66,1850.0,95.0,155.0
+Honda,SUV,Pilot LX,Asia,All,$27560,3.5,6.0,240,17,22,4387.0,106.0,188.0
+Honda,SUV,CR-V LX,Asia,All,$19860,2.4,4.0,160,21,25,3258.0,103.0,179.0
+Honda,SUV,Element LX,Asia,All,$18690,2.4,4.0,160,21,24,3468.0,101.0,167.0
+Honda,Sedan,Civic DX 2dr,Asia,Front,$13270,1.7,4.0,115,32,38,2432.0,103.0,175.0
+Honda,Sedan,Civic HX 2dr,Asia,Front,$14170,1.7,4.0,117,36,44,2500.0,103.0,175.0
+Honda,Sedan,Civic LX 4dr,Asia,Front,$15850,1.7,4.0,115,32,38,2513.0,103.0,175.0
+Honda,Sedan,Accord LX 2dr,Asia,Front,$19860,2.4,4.0,160,26,34,2994.0,105.0,188.0
+Honda,Sedan,Accord EX 2dr,Asia,Front,$22260,2.4,4.0,160,26,34,3047.0,105.0,188.0
+Honda,Sedan,Civic EX 4dr,Asia,Front,$17750,1.7,4.0,127,32,37,2601.0,103.0,175.0
+Honda,Sedan,Civic Si 2dr hatch,Asia,Front,$19490,2.0,4.0,160,26,30,2782.0,101.0,166.0
+Honda,Sedan,Accord LX V6 4dr,Asia,Front,$23760,3.0,6.0,240,21,30,3349.0,108.0,190.0
+Honda,Sedan,Accord EX V6 2dr,Asia,Front,$26960,3.0,6.0,240,21,30,3294.0,105.0,188.0
+Honda,Sedan,Odyssey LX,Asia,Front,$24950,3.5,6.0,240,18,25,4310.0,118.0,201.0
+Honda,Sedan,Odyssey EX,Asia,Front,$27450,3.5,6.0,240,18,25,4365.0,118.0,201.0
+Honda,Sports,S2000 convertible 2dr,Asia,Rear,$33260,2.2,4.0,240,20,25,2835.0,95.0,162.0
+Hummer,SUV,H2,USA,All,$49995,6.0,8.0,316,10,12,6400.0,123.0,190.0
+Hyundai,SUV,Santa Fe GLS,Asia,Front,$21589,2.7,6.0,173,20,26,3549.0,103.0,177.0
+Hyundai,Sedan,Accent 2dr hatch,Asia,Front,$10539,1.6,4.0,103,29,33,2255.0,96.0,167.0
+Hyundai,Sedan,Accent GL 4dr,Asia,Front,$11839,1.6,4.0,103,29,33,2290.0,96.0,167.0
+Hyundai,Sedan,Accent GT 2dr hatch,Asia,Front,$11939,1.6,4.0,103,29,33,2339.0,96.0,167.0
+Hyundai,Sedan,Elantra GLS 4dr,Asia,Front,$13839,2.0,4.0,138,26,34,2635.0,103.0,178.0
+Hyundai,Sedan,Elantra GT 4dr,Asia,Front,$15389,2.0,4.0,138,26,34,,103.0,
+Hyundai,Sedan,Elantra GT 4dr hatch,Asia,Front,$15389,2.0,4.0,138,26,34,2698.0,103.0,178.0
+Hyundai,Sedan,Sonata GLS 4dr,Asia,Front,$19339,2.7,6.0,170,19,27,3217.0,106.0,187.0
+Hyundai,Sedan,Sonata LX 4dr,Asia,Front,$20339,2.7,6.0,170,19,27,3217.0,106.0,187.0
+Hyundai,Sedan,XG350 4dr,Asia,Front,$24589,3.5,6.0,194,17,26,3651.0,108.0,192.0
+Hyundai,Sedan,XG350 L 4dr,Asia,Front,$26189,3.5,6.0,194,17,26,3651.0,108.0,192.0
+Hyundai,Sports,Tiburon GT V6 2dr,Asia,Front,$18739,2.7,6.0,172,19,26,3023.0,100.0,173.0
+Infiniti,Sedan,G35 4dr,Asia,Rear,$28495,3.5,6.0,260,18,26,3336.0,112.0,187.0
+Infiniti,Sedan,G35 Sport Coupe 2dr,Asia,Rear,$29795,3.5,6.0,280,18,26,3416.0,112.0,182.0
+Infiniti,Sedan,G35 4dr,Asia,All,$32445,3.5,6.0,260,18,26,3677.0,112.0,187.0
+Infiniti,Sedan,I35 4dr,Asia,Front,$31145,3.5,6.0,255,19,26,3306.0,108.0,194.0
+Infiniti,Sedan,M45 4dr,Asia,Rear,$42845,4.5,8.0,340,17,23,3851.0,110.0,197.0
+Infiniti,Sedan,Q45 Luxury 4dr,Asia,Rear,$52545,4.5,8.0,340,17,23,3977.0,113.0,200.0
+Infiniti,Wagon,FX35,Asia,Rear,$34895,3.5,6.0,280,16,22,4056.0,112.0,189.0
+Infiniti,Wagon,FX45,Asia,All,$36395,4.5,8.0,315,15,19,4309.0,112.0,189.0
+Isuzu,SUV,Ascender S,Asia,All,$31849,4.2,6.0,275,15,20,4967.0,129.0,208.0
+Isuzu,SUV,Rodeo S,Asia,Front,$20449,3.2,6.0,193,17,21,3836.0,106.0,178.0
+Jaguar,Sedan,X-Type 2.5 4dr,Europe,All,$29995,2.5,6.0,192,18,26,3428.0,107.0,184.0
+Jaguar,Sedan,X-Type 3.0 4dr,Europe,All,$33995,3.0,6.0,227,18,25,3516.0,107.0,184.0
+Jaguar,Sedan,S-Type 3.0 4dr,Europe,Rear,$43895,3.0,6.0,235,18,26,3777.0,115.0,192.0
+Jaguar,Sedan,S-Type 4.2 4dr,Europe,Rear,$49995,4.2,8.0,294,18,28,3874.0,115.0,192.0
+Jaguar,Sedan,S-Type R 4dr,Europe,Rear,$63120,4.2,8.0,390,17,24,4046.0,,192.0
+Jaguar,Sedan,Vanden Plas 4dr,Europe,Rear,$68995,4.2,8.0,294,18,28,3803.0,119.0,200.0
+Jaguar,Sedan,XJ8 4dr,Europe,Rear,$59995,4.2,8.0,294,18,28,3803.0,119.0,200.0
+Jaguar,Sedan,XJR 4dr,Europe,Rear,$74995,4.2,8.0,390,17,24,3948.0,119.0,200.0
+Jaguar,Sports,XK8 coupe 2dr,Europe,Rear,$69995,4.2,8.0,294,18,26,3779.0,102.0,187.0
+Jaguar,Sports,XK8 convertible 2dr,Europe,Rear,$74995,4.2,8.0,294,18,26,3980.0,102.0,187.0
+Jaguar,Sports,XKR coupe 2dr,Europe,Rear,$81995,4.2,8.0,390,16,23,3865.0,102.0,187.0
+Jaguar,Sports,XKR convertible 2dr,Europe,Rear,$86995,4.2,8.0,390,16,23,4042.0,102.0,187.0
+Jeep,SUV,Grand Cherokee Laredo,USA,Front,$27905,4.0,6.0,195,16,21,3790.0,106.0,181.0
+Jeep,SUV,Liberty Sport,USA,All,$20130,2.4,4.0,150,20,24,3826.0,104.0,174.0
+Jeep,SUV,Wrangler Sahara convertible 2dr,USA,All,$25520,4.0,6.0,190,16,19,3575.0,93.0,150.0
+Kia,SUV,Sorento LX,Asia,Front,$19635,3.5,6.0,192,16,19,4112.0,107.0,180.0
+Kia,Sedan,Optima LX 4dr,Asia,Front,$16040,2.4,4.0,138,23,30,3281.0,106.0,186.0
+Kia,Sedan,Rio 4dr manual,Asia,Front,$10280,1.6,4.0,104,26,33,2403.0,95.0,167.0
+Kia,Sedan,Rio 4dr auto,Asia,Front,$11155,1.6,4.0,104,25,32,2458.0,95.0,167.0
+Kia,Sedan,Spectra 4dr,Asia,Front,$12360,1.8,4.0,124,24,32,2661.0,101.0,178.0
+Kia,Sedan,Spectra GS 4dr hatch,Asia,Front,$13580,1.8,4.0,124,24,32,2686.0,101.0,178.0
+Kia,Sedan,Spectra GSX 4dr hatch,Asia,Front,$14630,1.8,4.0,124,24,32,2697.0,101.0,178.0
+Kia,Sedan,Optima LX V6 4dr,Asia,Front,$18435,2.7,6.0,170,20,27,3279.0,106.0,186.0
+Kia,Sedan,Amanti 4dr,Asia,Front,$26000,3.5,6.0,195,17,25,4021.0,110.0,196.0
+Kia,Sedan,Sedona LX,Asia,Front,$20615,3.5,6.0,195,16,22,4802.0,115.0,194.0
+Kia,Wagon,Rio Cinco,Asia,Front,$11905,1.6,4.0,104,26,33,2447.0,95.0,167.0
+Land Rover,SUV,Range Rover HSE,Europe,All,$72250,4.4,8.0,282,12,16,5379.0,113.0,195.0
+Land Rover,SUV,Discovery SE,Europe,All,$39250,4.6,8.0,217,12,16,4576.0,100.0,185.0
+Land Rover,SUV,Freelander SE,Europe,All,$25995,2.5,6.0,174,18,21,3577.0,101.0,175.0
+Lexus,SUV,GX 470,Asia,All,$45700,4.7,8.0,235,15,19,4740.0,110.0,188.0
+Lexus,SUV,LX 470,Asia,All,$64800,4.7,8.0,235,13,17,5590.0,112.0,193.0
+Lexus,SUV,RX 330,Asia,All,$39195,3.3,6.0,230,18,24,4065.0,107.0,186.0
+Lexus,Sedan,ES 330 4dr,Asia,Front,$32350,3.3,6.0,225,20,29,3460.0,107.0,191.0
+Lexus,Sedan,IS 300 4dr manual,Asia,Rear,$31045,3.0,6.0,215,18,25,3255.0,105.0,177.0
+Lexus,Sedan,IS 300 4dr auto,Asia,Rear,$32415,3.0,6.0,215,18,24,3285.0,105.0,177.0
+Lexus,Sedan,GS 300 4dr,Asia,Rear,$41010,3.0,6.0,220,18,25,3649.0,,189.0
+Lexus,Sedan,GS 430 4dr,Asia,Rear,$48450,4.3,8.0,300,18,23,3715.0,110.0,189.0
+Lexus,Sedan,LS 430 4dr,Asia,Rear,$55750,4.3,8.0,290,18,25,3990.0,115.0,197.0
+Lexus,Sports,SC 430 convertible 2dr,Asia,Rear,$63200,4.3,8.0,300,18,23,3840.0,103.0,178.0
+Lexus,Wagon,IS 300 SportCross,Asia,Rear,$32455,3.0,6.0,215,18,24,3410.0,105.0,177.0
+Lincoln,SUV,Navigator Luxury,USA,All,$52775,5.4,8.0,300,13,18,5969.0,119.0,206.0
+Lincoln,SUV,Aviator Ultimate,USA,Front,$42915,4.6,8.0,302,13,18,4834.0,114.0,193.0
+Lincoln,Sedan,LS V6 Luxury 4dr,USA,Rear,$32495,3.0,6.0,232,20,26,3681.0,115.0,194.0
+Lincoln,Sedan,LS V6 Premium 4dr,USA,Rear,$36895,3.0,6.0,232,20,26,3681.0,115.0,194.0
+Lincoln,Sedan,LS V8 Sport 4dr,USA,Rear,$40095,3.9,8.0,280,17,24,3768.0,115.0,194.0
+Lincoln,Sedan,LS V8 Ultimate 4dr,USA,Rear,$43495,3.9,8.0,280,17,24,3768.0,115.0,194.0
+Lincoln,Sedan,Town Car Signature 4dr,USA,Rear,$41815,4.6,8.0,239,17,25,4369.0,118.0,215.0
+Lincoln,Sedan,Town Car Ultimate 4dr,USA,Rear,$44925,4.6,8.0,239,17,25,4369.0,118.0,215.0
+Lincoln,Sedan,Town Car Ultimate L 4dr,USA,Rear,$50470,4.6,8.0,239,17,25,4474.0,124.0,221.0
+MINI,Sedan,Cooper,Europe,Front,$16999,1.6,4.0,115,28,37,2524.0,,143.0
+MINI,Sedan,Cooper S,Europe,Front,$19999,1.6,4.0,163,25,34,2678.0,97.0,144.0
+Mazda,SUV,Tribute DX 2.0,Asia,All,$21087,2.0,4.0,130,22,25,3091.0,103.0,173.0
+Mazda,Sedan,Mazda3 i 4dr,Asia,Front,$15500,2.0,4.0,148,26,34,2696.0,104.0,178.0
+Mazda,Sedan,Mazda3 s 4dr,Asia,Front,$17200,2.3,4.0,160,25,31,2762.0,104.0,179.0
+Mazda,Sedan,Mazda6 i 4dr,Asia,Front,$19270,2.3,4.0,160,24,32,3042.0,105.0,187.0
+Mazda,Sedan,MPV ES,Asia,Front,$28750,3.0,6.0,200,18,25,3812.0,112.0,188.0
+Mazda,Sports,MX-5 Miata convertible 2dr,Asia,Rear,$22388,1.8,4.0,142,23,28,2387.0,89.0,156.0
+Mazda,Sports,MX-5 Miata LS convertible 2dr,Asia,Rear,$25193,1.8,4.0,142,23,28,2387.0,89.0,156.0
+Mazda,Sports,RX-8 4dr automatic,Asia,Rear,$25700,1.3,,197,18,25,3053.0,106.0,174.0
+Mazda,Sports,RX-8 4dr manual,Asia,Rear,$27200,1.3,,238,18,24,3029.0,106.0,174.0
+Mazda,Truck,B2300 SX Regular Cab,Asia,Rear,$14840,2.3,4.0,143,24,29,2960.0,112.0,188.0
+Mazda,Truck,B4000 SE Cab Plus,Asia,All,$22350,4.0,6.0,207,15,19,3571.0,126.0,203.0
+Mercedes-Benz,SUV,G500,Europe,All,$76870,5.0,8.0,292,13,14,5423.0,112.0,186.0
+Mercedes-Benz,SUV,ML500,Europe,All,$46470,5.0,8.0,288,14,17,4874.0,111.0,183.0
+Mercedes-Benz,Sedan,C230 Sport 2dr,Europe,Rear,$26060,1.8,4.0,189,22,30,3250.0,107.0,178.0
+Mercedes-Benz,Sedan,C320 Sport 2dr,Europe,Rear,$28370,3.2,6.0,215,19,26,3430.0,,178.0
+Mercedes-Benz,Sedan,C240 4dr,Europe,Rear,$32280,2.6,6.0,168,20,25,3360.0,107.0,178.0
+Mercedes-Benz,Sedan,C240 4dr,Europe,All,$33480,2.6,6.0,168,19,25,3360.0,107.0,178.0
+Mercedes-Benz,Sedan,C320 Sport 4dr,Europe,Rear,$35920,3.2,6.0,215,19,26,3430.0,107.0,178.0
+Mercedes-Benz,Sedan,C320 4dr,Europe,Rear,$37630,3.2,6.0,215,20,26,3450.0,107.0,178.0
+Mercedes-Benz,Sedan,C320 4dr,Europe,All,$38830,3.2,6.0,215,19,27,3450.0,,178.0
+Mercedes-Benz,Sedan,C32 AMG 4dr,Europe,Rear,$52120,3.2,6.0,349,16,21,3540.0,107.0,178.0
+Mercedes-Benz,Sedan,CL500 2dr,Europe,Rear,$94820,5.0,8.0,302,16,24,4085.0,114.0,196.0
+Mercedes-Benz,Sedan,CL600 2dr,Europe,Rear,$128420,5.5,12.0,493,13,19,4473.0,114.0,196.0
+Mercedes-Benz,Sedan,CLK320 coupe 2dr (convertible),Europe,Rear,$45707,3.2,6.0,215,20,26,3770.0,107.0,183.0
+Mercedes-Benz,Sedan,CLK500 coupe 2dr (convertible),Europe,Rear,$52800,5.0,8.0,302,17,22,3585.0,107.0,183.0
+Mercedes-Benz,Sedan,E320 4dr,Europe,Rear,$48170,3.2,6.0,221,19,27,3635.0,112.0,190.0
+Mercedes-Benz,Sedan,E500 4dr,Europe,Rear,$57270,5.0,8.0,302,16,20,3815.0,112.0,190.0
+Mercedes-Benz,Sedan,S430 4dr,Europe,Rear,$74320,4.3,8.0,275,18,26,4160.0,122.0,203.0
+Mercedes-Benz,Sedan,S500 4dr,Europe,All,$86970,5.0,8.0,302,16,24,4390.0,122.0,203.0
+Mercedes-Benz,Sports,SL500 convertible 2dr,Europe,Rear,$90520,5.0,8.0,302,16,23,4065.0,101.0,179.0
+Mercedes-Benz,Sports,SL55 AMG 2dr,Europe,Rear,$121770,5.5,8.0,493,14,21,4235.0,101.0,179.0
+Mercedes-Benz,Sports,SL600 convertible 2dr,Europe,Rear,$126670,5.5,12.0,493,13,19,4429.0,101.0,179.0
+Mercedes-Benz,Sports,SLK230 convertible 2dr,Europe,Rear,$40320,2.3,4.0,192,21,29,3055.0,95.0,158.0
+Mercedes-Benz,Sports,SLK32 AMG 2dr,Europe,Rear,$56170,3.2,6.0,349,17,22,3220.0,95.0,158.0
+Mercedes-Benz,Wagon,C240,Europe,Rear,$33780,2.6,6.0,168,19,25,3470.0,107.0,179.0
+Mercedes-Benz,Wagon,E320,Europe,Rear,$50670,3.2,6.0,221,19,27,3966.0,112.0,190.0
+Mercedes-Benz,Wagon,E500,Europe,All,$60670,5.0,8.0,302,16,24,4230.0,112.0,190.0
+Mercury,SUV,Mountaineer,USA,Front,$29995,4.0,6.0,210,16,21,4374.0,114.0,190.0
+Mercury,Sedan,Sable GS 4dr,USA,Front,$21595,3.0,6.0,155,20,27,3308.0,109.0,200.0
+Mercury,Sedan,Grand Marquis GS 4dr,USA,Rear,$24695,4.6,8.0,224,17,25,4052.0,115.0,212.0
+Mercury,Sedan,Grand Marquis LS Premium 4dr,USA,Rear,$29595,4.6,8.0,224,17,25,4052.0,115.0,212.0
+Mercury,Sedan,Sable LS Premium 4dr,USA,Front,$23895,3.0,6.0,201,19,26,3315.0,109.0,200.0
+Mercury,Sedan,Grand Marquis LS Ultimate 4dr,USA,Rear,$30895,4.6,8.0,224,17,25,4052.0,115.0,212.0
+Mercury,Sedan,Marauder 4dr,USA,Rear,$34495,4.6,8.0,302,17,23,4195.0,115.0,212.0
+Mercury,Sedan,Monterey Luxury,USA,Front,$33995,4.2,6.0,201,16,23,4340.0,,202.0
+Mercury,Wagon,Sable GS,USA,Front,$22595,3.0,6.0,155,19,26,3488.0,109.0,198.0
+Mitsubishi,SUV,Endeavor XLS,Asia,All,$30492,3.8,6.0,215,17,21,4134.0,109.0,190.0
+Mitsubishi,SUV,Montero XLS,Asia,All,$33112,3.8,6.0,215,15,19,4718.0,110.0,190.0
+Mitsubishi,SUV,Outlander LS,Asia,Front,$18892,2.4,4.0,160,21,27,3240.0,103.0,179.0
+Mitsubishi,Sedan,Lancer ES 4dr,Asia,Front,$14622,2.0,4.0,120,25,31,2656.0,102.0,181.0
+Mitsubishi,Sedan,Lancer LS 4dr,Asia,Front,$16722,2.0,4.0,120,25,31,2795.0,102.0,181.0
+Mitsubishi,Sedan,Galant ES 2.4L 4dr,Asia,Front,$19312,2.4,4.0,160,23,30,3351.0,108.0,191.0
+Mitsubishi,Sedan,Lancer OZ Rally 4dr auto,Asia,Front,$17232,2.0,4.0,120,25,31,2744.0,102.0,181.0
+Mitsubishi,Sedan,Diamante LS 4dr,Asia,Front,$29282,3.5,6.0,205,18,25,3549.0,107.0,194.0
+Mitsubishi,Sedan,Galant GTS 4dr,Asia,Front,$25700,3.8,6.0,230,18,26,3649.0,108.0,191.0
+Mitsubishi,Sports,Eclipse GTS 2dr,Asia,Front,$25092,3.0,6.0,210,21,28,3241.0,101.0,177.0
+Mitsubishi,Sports,Eclipse Spyder GT convertible 2dr,Asia,Front,$26992,3.0,6.0,210,21,28,3296.0,101.0,177.0
+Mitsubishi,Sports,Lancer Evolution 4dr,Asia,Front,$29562,2.0,4.0,271,18,26,3263.0,103.0,179.0
+Mitsubishi,Wagon,Lancer Sportback LS,Asia,Front,$17495,2.4,4.0,160,25,31,3020.0,102.0,181.0
+Nissan,SUV,Pathfinder Armada SE,Asia,Front,$33840,5.6,8.0,305,13,19,5013.0,123.0,207.0
+Nissan,SUV,Pathfinder SE,Asia,Front,$27339,3.5,6.0,240,16,21,3871.0,106.0,183.0
+Nissan,SUV,Xterra XE V6,Asia,Front,$20939,3.3,6.0,180,17,20,3760.0,104.0,178.0
+Nissan,Sedan,Sentra 1.8 4dr,Asia,Front,$12740,1.8,4.0,126,28,35,2513.0,100.0,178.0
+Nissan,Sedan,Sentra 1.8 S 4dr,Asia,Front,$14740,1.8,4.0,126,28,35,2581.0,100.0,178.0
+Nissan,Sedan,Altima S 4dr,Asia,Front,$19240,2.5,4.0,175,21,26,3039.0,110.0,192.0
+Nissan,Sedan,Sentra SE-R 4dr,Asia,Front,$17640,2.5,4.0,165,23,28,2761.0,100.0,178.0
+Nissan,Sedan,Altima SE 4dr,Asia,Front,$23290,3.5,6.0,245,21,26,3197.0,110.0,192.0
+Nissan,Sedan,Maxima SE 4dr,Asia,Front,$27490,3.5,6.0,265,20,28,3473.0,111.0,194.0
+Nissan,Sedan,Maxima SL 4dr,Asia,Front,$29440,3.5,6.0,265,20,28,3476.0,111.0,194.0
+Nissan,Sedan,Quest S,Asia,Front,$24780,3.5,6.0,240,19,26,4012.0,124.0,204.0
+Nissan,Sedan,Quest SE,Asia,Front,$32780,3.5,6.0,240,18,25,4175.0,124.0,204.0
+Nissan,Sports,350Z coupe 2dr,Asia,Rear,$26910,3.5,6.0,287,20,26,3188.0,104.0,169.0
+Nissan,Sports,350Z Enthusiast convertible 2dr,Asia,Rear,$34390,3.5,6.0,287,20,26,3428.0,104.0,169.0
+Nissan,Truck,Frontier King Cab XE V6,Asia,All,$19479,3.3,6.0,180,17,20,3932.0,116.0,191.0
+Nissan,Truck,Titan King Cab XE,Asia,All,$26650,5.6,8.0,305,14,18,5287.0,140.0,224.0
+Nissan,Wagon,Murano SL,Asia,Rear,$28739,3.5,6.0,245,20,25,3801.0,111.0,188.0
+Oldsmobile,Sedan,Alero GX 2dr,USA,Front,$18825,2.2,4.0,140,24,32,2946.0,107.0,187.0
+Oldsmobile,Sedan,Alero GLS 2dr,USA,Front,$23675,3.4,6.0,170,20,29,3085.0,107.0,187.0
+Oldsmobile,Sedan,Silhouette GL,USA,Front,$28790,3.4,6.0,185,19,26,3948.0,120.0,201.0
+Pontiac,SUV,Aztekt,USA,Front,$21595,3.4,6.0,185,19,26,3779.0,108.0,182.0
+Pontiac,Sedan,Sunfire 1SA 2dr,USA,Front,$15495,2.2,4.0,140,24,33,2771.0,104.0,182.0
+Pontiac,Sedan,Grand Am GT 2dr,USA,Front,$22450,3.4,6.0,175,20,29,3118.0,107.0,186.0
+Pontiac,Sedan,Grand Prix GT1 4dr,USA,Front,$22395,3.8,6.0,200,20,30,3477.0,111.0,198.0
+Pontiac,Sedan,Sunfire 1SC 2dr,USA,Front,$17735,2.2,4.0,140,24,33,2771.0,104.0,182.0
+Pontiac,Sedan,Grand Prix GT2 4dr,USA,Front,$24295,3.8,6.0,200,20,30,3484.0,111.0,198.0
+Pontiac,Sedan,Bonneville GXP 4dr,USA,Front,$35995,4.6,8.0,275,17,20,3790.0,112.0,203.0
+Pontiac,Sedan,Montana,USA,Front,$23845,3.4,6.0,185,19,26,3803.0,112.0,187.0
+Pontiac,Sedan,Montana EWB,USA,All,$31370,3.4,6.0,185,18,24,4431.0,121.0,201.0
+Pontiac,Sports,GTO 2dr,USA,Rear,$33500,5.7,8.0,340,16,20,3725.0,110.0,190.0
+Pontiac,Wagon,Vibe,USA,Rear,$17045,1.8,4.0,130,29,36,2701.0,102.0,172.0
+Porsche,SUV,Cayenne S,Europe,All,$56665,4.5,8.0,340,14,18,4950.0,112.0,188.0
+Porsche,Sports,911 Carrera convertible 2dr (coupe),Europe,Rear,$79165,3.6,6.0,315,18,26,3135.0,,175.0
+Porsche,Sports,911 Carrera 4S coupe 2dr (convert),Europe,All,$84165,3.6,6.0,315,17,24,3240.0,93.0,175.0
+Porsche,Sports,911 Targa coupe 2dr,Europe,Rear,$76765,3.6,6.0,315,18,26,3119.0,93.0,175.0
+Porsche,Sports,911 GT2 2dr,Europe,Rear,$192465,3.6,6.0,477,17,24,3131.0,93.0,175.0
+Porsche,Sports,Boxster convertible 2dr,Europe,Rear,$43365,2.7,6.0,228,20,29,2811.0,95.0,170.0
+Porsche,Sports,Boxster S convertible 2dr,Europe,Rear,$52365,3.2,6.0,258,18,26,2911.0,95.0,170.0
+Saab,Sedan,9-3 Arc Sport 4dr,Europe,Front,$30860,2.0,4.0,210,20,28,3175.0,105.0,183.0
+Saab,Sedan,9-3 Aero 4dr,Europe,Front,$33360,2.0,4.0,210,20,28,3175.0,105.0,183.0
+Saab,Sedan,9-5 Arc 4dr,Europe,Front,$35105,2.3,4.0,220,21,29,3470.0,106.0,190.0
+Saab,Sedan,9-5 Aero 4dr,Europe,Front,$39465,2.3,4.0,250,21,29,3470.0,106.0,190.0
+Saab,Sedan,9-3 Arc convertible 2dr,Europe,Front,$40670,2.0,4.0,210,21,29,3480.0,105.0,182.0
+Saab,Sedan,9-3 Aero convertible 2dr,Europe,Front,$43175,2.0,4.0,210,21,30,3700.0,105.0,182.0
+Saab,Wagon,9-5 Aero,Europe,Front,$40845,2.3,4.0,250,19,29,3620.0,106.0,190.0
+Saturn,SUV,VUE,USA,All,$20585,2.2,4.0,143,21,26,3381.0,107.0,181.0
+Saturn,Sedan,Ion1 4dr,USA,Front,$10995,2.2,4.0,140,26,35,2692.0,103.0,185.0
+Saturn,Sedan,lon2 4dr,USA,Front,$14300,2.2,4.0,140,26,35,2692.0,103.0,185.0
+Saturn,Sedan,lon3 4dr,USA,Front,$15825,2.2,4.0,140,26,35,2692.0,103.0,185.0
+Saturn,Sedan,lon2 quad coupe 2dr,USA,Front,$14850,2.2,4.0,140,26,35,,103.0,
+Saturn,Sedan,lon3 quad coupe 2dr,USA,Front,$16350,2.2,4.0,140,26,35,2751.0,103.0,185.0
+Saturn,Sedan,L300-2 4dr,USA,Front,$21410,3.0,6.0,182,20,28,3197.0,107.0,190.0
+Saturn,Wagon,L300 2,USA,Front,$23560,2.2,4.0,140,24,34,3109.0,107.0,190.0
+Scion,Sedan,xA 4dr hatch,Asia,Front,$12965,1.5,4.0,108,32,38,2340.0,93.0,154.0
+Scion,Wagon,xB,Asia,Front,$14165,1.5,4.0,108,31,35,2425.0,98.0,155.0
+Subaru,Sedan,Impreza 2.5 RS 4dr,Asia,All,$19945,2.5,4.0,165,22,28,2965.0,99.0,174.0
+Subaru,Sedan,Legacy L 4dr,Asia,All,$20445,2.5,4.0,165,21,28,3285.0,104.0,184.0
+Subaru,Sedan,Legacy GT 4dr,Asia,All,$25645,2.5,4.0,165,21,28,3395.0,104.0,184.0
+Subaru,Sedan,Outback Limited Sedan 4dr,Asia,All,$27145,2.5,4.0,165,20,27,3495.0,104.0,184.0
+Subaru,Sedan,Outback H6 4dr,Asia,All,$29345,3.0,6.0,212,19,26,3610.0,104.0,184.0
+Subaru,Sedan,Outback H-6 VDC 4dr,Asia,All,$31545,3.0,6.0,212,19,26,3630.0,104.0,184.0
+Subaru,Sports,Impreza WRX 4dr,Asia,All,$25045,2.0,4.0,227,20,27,3085.0,99.0,174.0
+Subaru,Sports,Impreza WRX STi 4dr,Asia,All,$31545,2.5,4.0,300,18,24,3263.0,100.0,174.0
+Subaru,Truck,Baja,Asia,All,$24520,2.5,4.0,165,21,28,3485.0,104.0,193.0
+Subaru,Wagon,Forester X,Asia,All,$21445,2.5,4.0,165,21,28,3090.0,99.0,175.0
+Subaru,Wagon,Outback,Asia,All,$23895,2.5,4.0,165,21,28,3430.0,104.0,187.0
+Suzuki,SUV,XL-7 EX,Asia,Front,$23699,2.7,6.0,185,18,22,3682.0,110.0,187.0
+Suzuki,SUV,Vitara LX,Asia,All,$17163,2.5,6.0,165,19,22,3020.0,98.0,163.0
+Suzuki,Sedan,Aeno S 4dr,Asia,Front,$12884,2.3,4.0,155,25,31,,98.0,
+Suzuki,Sedan,Aerio LX 4dr,Asia,Front,$14500,2.3,4.0,155,25,31,2676.0,98.0,171.0
+Suzuki,Sedan,Forenza S 4dr,Asia,Front,$12269,2.0,4.0,119,24,31,2701.0,102.0,177.0
+Suzuki,Sedan,Forenza EX 4dr,Asia,Front,$15568,2.0,4.0,119,22,30,2756.0,102.0,177.0
+Suzuki,Sedan,Verona LX 4dr,Asia,Front,$17262,2.5,6.0,155,20,27,3380.0,106.0,188.0
+Suzuki,Wagon,Aerio SX,Asia,All,$16497,2.3,4.0,155,24,29,2932.0,98.0,167.0
+Toyota,Hybrid,Prius 4dr (gas/electric),Asia,Front,$20510,1.5,4.0,110,59,51,2890.0,106.0,175.0
+Toyota,SUV,Sequoia SR5,Asia,All,$35695,4.7,8.0,240,14,17,5270.0,118.0,204.0
+Toyota,SUV,4Runner SR5 V6,Asia,Front,$27710,4.0,6.0,245,18,21,4035.0,110.0,189.0
+Toyota,SUV,Highlander V6,Asia,All,$27930,3.3,6.0,230,18,24,3935.0,,185.0
+Toyota,SUV,Land Cruiser,Asia,All,$54765,4.7,8.0,325,13,17,5390.0,,193.0
+Toyota,SUV,RAV4,Asia,All,$20290,2.4,4.0,161,22,27,3119.0,98.0,167.0
+Toyota,Sedan,Corolla CE 4dr,Asia,Front,$14085,1.8,4.0,130,32,40,2502.0,102.0,178.0
+Toyota,Sedan,Corolla S 4dr,Asia,Front,$15030,1.8,4.0,130,32,40,2524.0,102.0,178.0
+Toyota,Sedan,Corolla LE 4dr,Asia,Front,$15295,1.8,4.0,130,32,40,2524.0,102.0,178.0
+Toyota,Sedan,Echo 2dr manual,Asia,Front,$10760,1.5,4.0,108,35,43,2035.0,93.0,163.0
+Toyota,Sedan,Echo 2dr auto,Asia,Front,$11560,1.5,4.0,108,33,39,2085.0,93.0,163.0
+Toyota,Sedan,Echo 4dr,Asia,Front,$11290,1.5,4.0,108,35,43,2055.0,93.0,163.0
+Toyota,Sedan,Camry LE 4dr,Asia,Front,$19560,2.4,4.0,157,24,33,3086.0,107.0,189.0
+Toyota,Sedan,Camry LE V6 4dr,Asia,Front,$22775,3.0,6.0,210,21,29,3296.0,107.0,189.0
+Toyota,Sedan,Camry Solara SE 2dr,Asia,Front,$19635,2.4,4.0,157,24,33,,107.0,
+Toyota,Sedan,Camry Solara SE V6 2dr,Asia,Front,$21965,3.3,6.0,225,20,29,3417.0,107.0,193.0
+Toyota,Sedan,Avalon XL 4dr,Asia,Front,$26560,3.0,6.0,210,21,29,3417.0,107.0,192.0
+Toyota,Sedan,Camry XLE V6 4dr,Asia,Front,$25920,3.0,6.0,210,21,29,3362.0,107.0,189.0
+Toyota,Sedan,Camry Solara SLE V6 2dr,Asia,Front,$26510,3.3,6.0,225,20,29,3439.0,107.0,193.0
+Toyota,Sedan,Avalon XLS 4dr,Asia,Front,$30920,3.0,6.0,210,21,29,3439.0,107.0,192.0
+Toyota,Sedan,Sienna CE,Asia,Front,$23495,3.3,6.0,230,19,27,4120.0,119.0,200.0
+Toyota,Sedan,Sienna XLE Limited,Asia,Front,$28800,3.3,6.0,230,19,27,4165.0,119.0,200.0
+Toyota,Sports,Celica GT-S 2dr,Asia,Front,$22570,1.8,4.0,180,24,33,2500.0,102.0,171.0
+Toyota,Sports,MR2 Spyder convertible 2dr,Asia,Rear,$25130,1.8,4.0,138,26,32,2195.0,97.0,153.0
+Toyota,Truck,Tacoma,Asia,Rear,$12800,2.4,4.0,142,22,27,,103.0,
+Toyota,Truck,Tundra Regular Cab V6,Asia,Rear,$16495,3.4,6.0,190,16,18,3925.0,128.0,218.0
+Toyota,Truck,Tundra Access Cab V6 SR5,Asia,All,$25935,3.4,6.0,190,14,17,4435.0,128.0,218.0
+Toyota,Wagon,Matrix XR,Asia,Front,$16695,1.8,4.0,130,29,36,,102.0,
+Volkswagen,SUV,Touareg V6,Europe,All,$35515,3.2,6.0,220,15,20,5086.0,112.0,187.0
+Volkswagen,Sedan,Golf GLS 4dr,Europe,Front,$18715,2.0,4.0,115,24,31,2897.0,99.0,165.0
+Volkswagen,Sedan,GTI 1.8T 2dr hatch,Europe,Front,$19825,1.8,4.0,180,24,31,2934.0,99.0,168.0
+Volkswagen,Sedan,Jetta GLS TDI 4dr,Europe,Front,$21055,1.9,4.0,100,38,46,3003.0,99.0,172.0
+Volkswagen,Sedan,New Beetle GLS 1.8T 2dr,Europe,Front,$21055,1.8,4.0,150,24,31,2820.0,99.0,161.0
+Volkswagen,Sedan,Jetta GLI VR6 4dr,Europe,Front,$23785,2.8,6.0,200,21,30,3179.0,99.0,172.0
+Volkswagen,Sedan,New Beetle GLS convertible 2dr,Europe,Front,$23215,2.0,4.0,115,24,30,3082.0,99.0,161.0
+Volkswagen,Sedan,Passat GLS 4dr,Europe,Front,$23955,1.8,4.0,170,22,31,3241.0,106.0,185.0
+Volkswagen,Sedan,Passat GLX V6 4MOTION 4dr,Europe,Front,$33180,2.8,6.0,190,19,26,3721.0,106.0,185.0
+Volkswagen,Sedan,Passat W8 4MOTION 4dr,Europe,Front,$39235,4.0,8.0,270,18,25,3953.0,106.0,185.0
+Volkswagen,Sedan,Phaeton 4dr,Europe,Front,$65000,4.2,8.0,335,16,22,5194.0,118.0,204.0
+Volkswagen,Sedan,Phaeton W12 4dr,Europe,Front,$75000,6.0,12.0,420,12,19,5399.0,118.0,204.0
+Volkswagen,Wagon,Jetta GL,Europe,Front,$19005,2.0,4.0,115,24,30,3034.0,99.0,174.0
+Volkswagen,Wagon,Passat GLS 1.8T,Europe,Front,$24955,1.8,4.0,170,22,31,3338.0,106.0,184.0
+Volkswagen,Wagon,Passat W8,Europe,Front,$40235,4.0,8.0,270,18,25,4067.0,106.0,184.0
+Volvo,SUV,XC90 T6,Europe,All,$41250,2.9,6.0,268,15,20,4638.0,113.0,189.0
+Volvo,Sedan,S40 4dr,Europe,Front,$25135,1.9,4.0,170,22,29,2767.0,101.0,178.0
+Volvo,Sedan,S60 2.5 4dr,Europe,All,$31745,2.5,5.0,208,20,27,3903.0,107.0,180.0
+Volvo,Sedan,S60 T5 4dr,Europe,Front,$34845,2.3,5.0,247,20,28,3766.0,107.0,180.0
+Volvo,Sedan,S60 R 4dr,Europe,All,$37560,2.5,5.0,300,18,25,,107.0,
+Volvo,Sedan,S80 2.9 4dr,Europe,Front,$37730,2.9,6.0,208,20,28,3576.0,110.0,190.0
+Volvo,Sedan,S80 2.5T 4dr,Europe,All,$37885,2.5,5.0,194,20,27,3691.0,110.0,190.0
+Volvo,Sedan,C70 LPT convertible 2dr,Europe,Front,$40565,2.4,5.0,197,21,28,3450.0,105.0,186.0
+Volvo,Sedan,C70 HPT convertible 2dr,Europe,Front,$42565,2.3,5.0,242,20,26,3450.0,105.0,186.0
+Volvo,Sedan,S80 T6 4dr,Europe,Front,$45210,2.9,6.0,268,19,26,3653.0,110.0,190.0
+Volvo,Wagon,V40,Europe,Front,$26135,1.9,4.0,170,22,29,2822.0,101.0,180.0
+Volvo,Wagon,XC70,Europe,All,$35145,2.5,5.0,208,20,27,3823.0,109.0,186.0

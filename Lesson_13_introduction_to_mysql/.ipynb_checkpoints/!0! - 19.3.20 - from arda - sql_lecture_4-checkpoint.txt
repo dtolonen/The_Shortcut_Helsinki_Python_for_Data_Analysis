@@ -1,0 +1,702 @@
+mysql> CREATE DATABASE CLASS3;
+Query OK, 1 row affected (0.01 sec)
+
+mysql> SHOW DATABASES;
++--------------------+
+| Database           |
++--------------------+
+| class2             |
+| class3             |
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+6 rows in set (0.00 sec)
+
+mysql> USE CLASS3;
+Database changed
+mysql> SHOW TABLES;
+Empty set (0.00 sec)
+
+mysql> CREATE TABLE DEPT(DEPTNO INT(2) PRIMARY KEY, DNAME VARCHAR(30), LOC VARCHAR(30));
+Query OK, 0 rows affected, 1 warning (0.02 sec)
+
+mysql> INSERT INTO DEPT VALUES(10,"ACCOUNTING", "NEW YORK");
+Query OK, 1 row affected (0.00 sec)
+
+mysql> NSERT INTO DEPT VALUES(20,"RESEARCH", "DALLAS");
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'NSERT INTO DEPT VALUES(20,"RESEARCH", "DALLAS")' at line 1
+mysql> INSERT INTO DEPT VALUES(20,"RESEARCH", "DALLAS");
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO DEPT VALUES(30,"SALES", "CHICAGO");
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO DEPT VALUES(40,"OPERATIONS", "BOSTON");
+Query OK, 1 row affected (0.00 sec)
+
+mysql> DECRIBE DEPT;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'DECRIBE DEPT' at line 1
+mysql> DESCRIBE DEPT;
++--------+-------------+------+-----+---------+-------+
+| Field  | Type        | Null | Key | Default | Extra |
++--------+-------------+------+-----+---------+-------+
+| DEPTNO | int         | NO   | PRI | NULL    |       |
+| DNAME  | varchar(30) | YES  |     | NULL    |       |
+| LOC    | varchar(30) | YES  |     | NULL    |       |
++--------+-------------+------+-----+---------+-------+
+3 rows in set (0.00 sec)
+
+mysql> SELECT * FROM DEPT;
++--------+------------+----------+
+| DEPTNO | DNAME      | LOC      |
++--------+------------+----------+
+|     10 | ACCOUNTING | NEW YORK |
+|     20 | RESEARCH   | DALLAS   |
+|     30 | SALES      | CHICAGO  |
+|     40 | OPERATIONS | BOSTON   |
++--------+------------+----------+
+4 rows in set (0.00 sec)
+
+mysql> CREATE TABLE EMPLOYEE(EMPNO INT(4),ENAME VARCHAR(50), JOB VARCHAR(50), MGR INT(4),HIREDATE DATE, SAL INT(4),COMM INT(4),DEPTNO INT(2), CONTRAINT PK_EMP PRIMARY KEY(EMPNO),CONSTRAINT FK_DEPTNO FOREIGN KEY (DEPTNO) REFERENCES DEPT(DEPTNO));
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'PK_EMP PRIMARY KEY(EMPNO),CONSTRAINT FK_DEPTNO FOREIGN KEY (DEPTNO) REFERENCES D' at line 1
+mysql> CREATE TABLE EMPLOYEE(EMPNO INT(4),ENAME VARCHAR(50), JOB VARCHAR(50), MGR INT(4),HIREDATE DATE, SAL INT(4),COMM INT(4),DEPTNO INT(2), CONSTRAINT PK_EMP PRIMARY KEY(EMPNO),CONSTRAINT FK_DEPTNO FOREIGN KEY (DEPTNO) REFERENCES DEPT(DEPTNO));
+Query OK, 0 rows affected, 5 warnings (0.03 sec)
+
+mysql> DESCRIBE EMPLOYEE;
++----------+-------------+------+-----+---------+-------+
+| Field    | Type        | Null | Key | Default | Extra |
++----------+-------------+------+-----+---------+-------+
+| EMPNO    | int         | NO   | PRI | NULL    |       |
+| ENAME    | varchar(50) | YES  |     | NULL    |       |
+| JOB      | varchar(50) | YES  |     | NULL    |       |
+| MGR      | int         | YES  |     | NULL    |       |
+| HIREDATE | date        | YES  |     | NULL    |       |
+| SAL      | int         | YES  |     | NULL    |       |
+| COMM     | int         | YES  |     | NULL    |       |
+| DEPTNO   | int         | YES  | MUL | NULL    |       |
++----------+-------------+------+-----+---------+-------+
+8 rows in set (0.01 sec)
+
+mysql> INSERT INTO EMPLOYEE VALUES(7369,"SMITH","CLERK",7902,"1980-12-17",800,NULL,20);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> INSERT INTO EMPLOYEE VALUES(7499,"ALLEN","SALESMAN",7698,"1981-02-20",1600,300,30);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO EMPLOYEE VALUES(7521,,"WARD","SALESMAN",7698,"1981-02-22",1250,500,30);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ',"WARD","SALESMAN",7698,"1981-02-22",1250,500,30)' at line 1
+mysql> INSERT INTO EMPLOYEE VALUES(7566,"JONES","MANAGER",7839,"1981-04-02",2975,NULL,20);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO EMPLOYEE VALUES(7654,"MARTIN","SALESMAN",7698,"1981-09-28",1250,1400,30);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO EMPLOYEE VALUES(7698,"BLAKE","MANAGER",7839,"1981-05-01",2850,NULL,30);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO EMPLOYEE VALUES(7782,"CLARK","MANAGER",7839,"1981-06-09",2450,NULL,10);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO EMPLOYEE VALUES(7788,"SCOTT","ANALYST",7566,"1981-11-09",3000,NULL,20);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO EMPLOYEE VALUES(7839,"KING","PRESIDENT",NULL,"1981-11-17",5000,NULL,10);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> INSERT INTO EMPLOYEE VALUES(7844,"TURNER","SALESMAN",7698,"1981-09-08",1500,0,30);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO EMPLOYEE VALUES(7876,"ADAMS","CLERK",7788,"1981-09-23",1100,NULL,20);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO EMPLOYEE VALUES(7900,"JAMES","CLERK",7698,"1981-12-03",950,NULL,30);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO EMPLOYEE VALUES(7902,"FORD","ANALYST",7566,"1981-12-03",3000,NULL,20);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO EMPLOYEE VALUES(7934,"MILLER","CLERK",7782,"1982-01-23",1300,NULL,10);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO EMPLOYEE VALUES(7521,"WARD","SALESMAN",7698,"1981-02-22",1250,500,30);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> SELECT * FROM EMPLOYEE;
++-------+--------+-----------+------+------------+------+------+--------+
+| EMPNO | ENAME  | JOB       | MGR  | HIREDATE   | SAL  | COMM | DEPTNO |
++-------+--------+-----------+------+------------+------+------+--------+
+|  7369 | SMITH  | CLERK     | 7902 | 1980-12-17 |  800 | NULL |     20 |
+|  7499 | ALLEN  | SALESMAN  | 7698 | 1981-02-20 | 1600 |  300 |     30 |
+|  7521 | WARD   | SALESMAN  | 7698 | 1981-02-22 | 1250 |  500 |     30 |
+|  7566 | JONES  | MANAGER   | 7839 | 1981-04-02 | 2975 | NULL |     20 |
+|  7654 | MARTIN | SALESMAN  | 7698 | 1981-09-28 | 1250 | 1400 |     30 |
+|  7698 | BLAKE  | MANAGER   | 7839 | 1981-05-01 | 2850 | NULL |     30 |
+|  7782 | CLARK  | MANAGER   | 7839 | 1981-06-09 | 2450 | NULL |     10 |
+|  7788 | SCOTT  | ANALYST   | 7566 | 1981-11-09 | 3000 | NULL |     20 |
+|  7839 | KING   | PRESIDENT | NULL | 1981-11-17 | 5000 | NULL |     10 |
+|  7844 | TURNER | SALESMAN  | 7698 | 1981-09-08 | 1500 |    0 |     30 |
+|  7876 | ADAMS  | CLERK     | 7788 | 1981-09-23 | 1100 | NULL |     20 |
+|  7900 | JAMES  | CLERK     | 7698 | 1981-12-03 |  950 | NULL |     30 |
+|  7902 | FORD   | ANALYST   | 7566 | 1981-12-03 | 3000 | NULL |     20 |
+|  7934 | MILLER | CLERK     | 7782 | 1982-01-23 | 1300 | NULL |     10 |
++-------+--------+-----------+------+------------+------+------+--------+
+14 rows in set (0.00 sec)
+
+mysql> SELECT 2*2 FROM DUAL;
++-----+
+| 2*2 |
++-----+
+|   4 |
++-----+
+1 row in set (0.00 sec)
+
+mysql> SELEC * FROM DUAL;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'SELEC * FROM DUAL' at line 1
+mysql> SELECT * FROM DUAL;
+ERROR 1096 (HY000): No tables used
+mysql> SELECT FLOOR(-5.2), FLOOR(5.7) FROM DUAL;
++-------------+------------+
+| FLOOR(-5.2) | FLOOR(5.7) |
++-------------+------------+
+|          -6 |          5 |
++-------------+------------+
+1 row in set (0.00 sec)
+
+mysql> DESCRIBE DUAL;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'DUAL' at line 1
+mysql> SELECT LOWER("HeLLo") FROM DUAL;
++----------------+
+| LOWER("HeLLo") |
++----------------+
+| hello          |
++----------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT COUNT(MGR) FROM EMPLOYEE;
++------------+
+| COUNT(MGR) |
++------------+
+|         13 |
++------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT COUNT(DISTINCT MGR) FROM EMPLOYEE;
++---------------------+
+| COUNT(DISTINCT MGR) |
++---------------------+
+|                   6 |
++---------------------+
+1 row in set (0.00 sec)
+
+mysql> COUNT(*);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'COUNT(*)' at line 1
+mysql> SELECT COUNT(*) FROM EMPLOYEE;;
++----------+
+| COUNT(*) |
++----------+
+|       14 |
++----------+
+1 row in set (0.00 sec)
+
+ERROR:
+No query specified
+
+mysql> SELECT SUM(SAL) FROM EMPLOYEE;
++----------+
+| SUM(SAL) |
++----------+
+|    29025 |
++----------+
+1 row in set (0.00 sec)
+
+mysql> SELECT AVG(SAL) FROM EMPLOYEE;
++-----------+
+| AVG(SAL)  |
++-----------+
+| 2073.2143 |
++-----------+
+1 row in set (0.00 sec)
+
+mysql> SELECT MIN(SAL) FROM EMPLOYEE;
++----------+
+| MIN(SAL) |
++----------+
+|      800 |
++----------+
+1 row in set (0.00 sec)
+
+mysql> SELECT ABS(5), ABS(-100) FROM DUAL;
++--------+-----------+
+| ABS(5) | ABS(-100) |
++--------+-----------+
+|      5 |       100 |
++--------+-----------+
+1 row in set (0.00 sec)
+
+mysql> SELECT CEIL(-5.2), CEIL(5.7) FROM DUAL;
++------------+-----------+
+| CEIL(-5.2) | CEIL(5.7) |
++------------+-----------+
+|         -5 |         6 |
++------------+-----------+
+1 row in set (0.00 sec)
+
+mysql> SELECT FLOOR(-5.2), FLOOR(5.7) FROM DUAL;
++-------------+------------+
+| FLOOR(-5.2) | FLOOR(5.7) |
++-------------+------------+
+|          -6 |          5 |
++-------------+------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT EXP(5) FROM DUAL;
++-------------------+
+| EXP(5)            |
++-------------------+
+| 148.4131591025766 |
++-------------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT LN(2) FROM DUAL;
++--------------------+
+| LN(2)              |
++--------------------+
+| 0.6931471805599453 |
++--------------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT LOG(4,10) FROM DUAL;
++--------------------+
+| LOG(4,10)          |
++--------------------+
+| 1.6609640474436813 |
++--------------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT MOD(15,4) FROM DUAL;
++-----------+
+| MOD(15,4) |
++-----------+
+|         3 |
++-----------+
+1 row in set (0.00 sec)
+
+mysql> SELECT POWER(4,3) FROM DUAL;
++------------+
+| POWER(4,3) |
++------------+
+|         64 |
++------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT SQRT(25) FROM DUAL;
++----------+
+| SQRT(25) |
++----------+
+|        5 |
++----------+
+1 row in set (0.00 sec)
+
+mysql> SELECT ROUND(15.19,1), ROUND(15.19) FROM DUAL;
++----------------+--------------+
+| ROUND(15.19,1) | ROUND(15.19) |
++----------------+--------------+
+|           15.2 |           15 |
++----------------+--------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT SIGN(-8.5) FROM DUAL;
++------------+
+| SIGN(-8.5) |
++------------+
+|         -1 |
++------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT UPPER("HeLLo") FROM DUAL;
++----------------+
+| UPPER("HeLLo") |
++----------------+
+| HELLO          |
++----------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT RTRIM(ENAME) FROM EMPLOYEE;
++--------------+
+| RTRIM(ENAME) |
++--------------+
+| SMITH        |
+| ALLEN        |
+| WARD         |
+| JONES        |
+| MARTIN       |
+| BLAKE        |
+| CLARK        |
+| SCOTT        |
+| KING         |
+| TURNER       |
+| ADAMS        |
+| JAMES        |
+| FORD         |
+| MILLER       |
++--------------+
+14 rows in set (0.00 sec)
+
+mysql> SELECT RTRIM(ENAME) FROM EMPLOYEE;
++--------------+
+| RTRIM(ENAME) |
++--------------+
+| SMITH        |
+| ALLEN        |
+| WARD         |
+| JONES        |
+| MARTIN       |
+| BLAKE        |
+| CLARK        |
+| SCOTT        |
+| KING         |
+| TURNER       |
+| ADAMS        |
+| JAMES        |
+| FORD         |
+| MILLER       |
++--------------+
+14 rows in set (0.00 sec)
+
+mysql> SELECT REPLACE("ORACLE","RAC","V") FROM DUAL;
++-----------------------------+
+| REPLACE("ORACLE","RAC","V") |
++-----------------------------+
+| OVLE                        |
++-----------------------------+
+1 row in set (0.00 sec)
+
+mysql> ^C
+mysql> SELECT SUBSTR("DATABASE",3,2) FROM DUAL;
++------------------------+
+| SUBSTR("DATABASE",3,2) |
++------------------------+
+| TA                     |
++------------------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT LENGTH("ORACLE") FROM DUAL;
++------------------+
+| LENGTH("ORACLE") |
++------------------+
+|                6 |
++------------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT DEPTNO, AVG(SAL) FROM EMPLOYEE GROUP BY DEPTNO;
++--------+-----------+
+| DEPTNO | AVG(SAL)  |
++--------+-----------+
+|     10 | 2916.6667 |
+|     20 | 2175.0000 |
+|     30 | 1566.6667 |
++--------+-----------+
+3 rows in set (0.00 sec)
+
+mysql> SELECT DEPTNO, AVG(SAL) FROM EMPLOYEE GROUP BY DEPTNO HAVING AVG(SAL)>2000;
++--------+-----------+
+| DEPTNO | AVG(SAL)  |
++--------+-----------+
+|     10 | 2916.6667 |
+|     20 | 2175.0000 |
++--------+-----------+
+2 rows in set (0.00 sec)
+
+mysql> SELECT DEPTNO, AVG(SAL) FROM EMPLOYEE WHERE SAL>2000 GROUP BY DEPTNO;
++--------+-----------+
+| DEPTNO | AVG(SAL)  |
++--------+-----------+
+|     10 | 3725.0000 |
+|     20 | 2991.6667 |
+|     30 | 2850.0000 |
++--------+-----------+
+3 rows in set (0.00 sec)
+
+mysql> SELECT DEPTNO, AVG(SAL) FROM EMPLOYEE WHERE SAL>2000 GROUP BY DEPTNO HAVING
+    -> AVG(SAL)<3000;
++--------+-----------+
+| DEPTNO | AVG(SAL)  |
++--------+-----------+
+|     20 | 2991.6667 |
+|     30 | 2850.0000 |
++--------+-----------+
+2 rows in set (0.00 sec)
+
+mysql> SELECT ENAME, JOB FROM EMPLOYEE WHERE DEPTNO=20 UNION SELECT ENAME, JOB FROM
+    -> EMPLOYEE WHERE DEPTNO=30;
++--------+----------+
+| ENAME  | JOB      |
++--------+----------+
+| SMITH  | CLERK    |
+| JONES  | MANAGER  |
+| SCOTT  | ANALYST  |
+| ADAMS  | CLERK    |
+| FORD   | ANALYST  |
+| ALLEN  | SALESMAN |
+| WARD   | SALESMAN |
+| MARTIN | SALESMAN |
+| BLAKE  | MANAGER  |
+| TURNER | SALESMAN |
+| JAMES  | CLERK    |
++--------+----------+
+11 rows in set (0.00 sec)
+
+mysql> SELECT ENAME, JOB FROM EMPLOYEE WHERE DEPTNO=20 UNION ALL SELECT ENAME, JOB
+    -> FROM EMPLOYEE WHERE DEPTNO=30;
++--------+----------+
+| ENAME  | JOB      |
++--------+----------+
+| SMITH  | CLERK    |
+| JONES  | MANAGER  |
+| SCOTT  | ANALYST  |
+| ADAMS  | CLERK    |
+| FORD   | ANALYST  |
+| ALLEN  | SALESMAN |
+| WARD   | SALESMAN |
+| MARTIN | SALESMAN |
+| BLAKE  | MANAGER  |
+| TURNER | SALESMAN |
+| JAMES  | CLERK    |
++--------+----------+
+11 rows in set (0.00 sec)
+
+mysql> SELECT DEPARTMENT.DEPTNO, DEPARTMENT.LOC, ENAME, EMPNO FROM EMPLOYEE,DEPARTMENT;
+ERROR 1146 (42S02): Table 'class3.department' doesn't exist
+mysql> SELECT DEPT.DEPTNO, DEPT.LOC, ENAME, EMPNO FROM EMPLOYEE,DEPT;
++--------+----------+--------+-------+
+| DEPTNO | LOC      | ENAME  | EMPNO |
++--------+----------+--------+-------+
+|     10 | NEW YORK | SMITH  |  7369 |
+|     20 | DALLAS   | SMITH  |  7369 |
+|     30 | CHICAGO  | SMITH  |  7369 |
+|     40 | BOSTON   | SMITH  |  7369 |
+|     10 | NEW YORK | ALLEN  |  7499 |
+|     20 | DALLAS   | ALLEN  |  7499 |
+|     30 | CHICAGO  | ALLEN  |  7499 |
+|     40 | BOSTON   | ALLEN  |  7499 |
+|     10 | NEW YORK | WARD   |  7521 |
+|     20 | DALLAS   | WARD   |  7521 |
+|     30 | CHICAGO  | WARD   |  7521 |
+|     40 | BOSTON   | WARD   |  7521 |
+|     10 | NEW YORK | JONES  |  7566 |
+|     20 | DALLAS   | JONES  |  7566 |
+|     30 | CHICAGO  | JONES  |  7566 |
+|     40 | BOSTON   | JONES  |  7566 |
+|     10 | NEW YORK | MARTIN |  7654 |
+|     20 | DALLAS   | MARTIN |  7654 |
+|     30 | CHICAGO  | MARTIN |  7654 |
+|     40 | BOSTON   | MARTIN |  7654 |
+|     10 | NEW YORK | BLAKE  |  7698 |
+|     20 | DALLAS   | BLAKE  |  7698 |
+|     30 | CHICAGO  | BLAKE  |  7698 |
+|     40 | BOSTON   | BLAKE  |  7698 |
+|     10 | NEW YORK | CLARK  |  7782 |
+|     20 | DALLAS   | CLARK  |  7782 |
+|     30 | CHICAGO  | CLARK  |  7782 |
+|     40 | BOSTON   | CLARK  |  7782 |
+|     10 | NEW YORK | SCOTT  |  7788 |
+|     20 | DALLAS   | SCOTT  |  7788 |
+|     30 | CHICAGO  | SCOTT  |  7788 |
+|     40 | BOSTON   | SCOTT  |  7788 |
+|     10 | NEW YORK | KING   |  7839 |
+|     20 | DALLAS   | KING   |  7839 |
+|     30 | CHICAGO  | KING   |  7839 |
+|     40 | BOSTON   | KING   |  7839 |
+|     10 | NEW YORK | TURNER |  7844 |
+|     20 | DALLAS   | TURNER |  7844 |
+|     30 | CHICAGO  | TURNER |  7844 |
+|     40 | BOSTON   | TURNER |  7844 |
+|     10 | NEW YORK | ADAMS  |  7876 |
+|     20 | DALLAS   | ADAMS  |  7876 |
+|     30 | CHICAGO  | ADAMS  |  7876 |
+|     40 | BOSTON   | ADAMS  |  7876 |
+|     10 | NEW YORK | JAMES  |  7900 |
+|     20 | DALLAS   | JAMES  |  7900 |
+|     30 | CHICAGO  | JAMES  |  7900 |
+|     40 | BOSTON   | JAMES  |  7900 |
+|     10 | NEW YORK | FORD   |  7902 |
+|     20 | DALLAS   | FORD   |  7902 |
+|     30 | CHICAGO  | FORD   |  7902 |
+|     40 | BOSTON   | FORD   |  7902 |
+|     10 | NEW YORK | MILLER |  7934 |
+|     20 | DALLAS   | MILLER |  7934 |
+|     30 | CHICAGO  | MILLER |  7934 |
+|     40 | BOSTON   | MILLER |  7934 |
++--------+----------+--------+-------+
+56 rows in set (0.00 sec)
+
+mysql> SELECT D.DEPTNO, D.LOC, E.ENAME, E.EMPNO FROM EMPLOYEE E, DEPT D;
++--------+----------+--------+-------+
+| DEPTNO | LOC      | ENAME  | EMPNO |
++--------+----------+--------+-------+
+|     10 | NEW YORK | SMITH  |  7369 |
+|     20 | DALLAS   | SMITH  |  7369 |
+|     30 | CHICAGO  | SMITH  |  7369 |
+|     40 | BOSTON   | SMITH  |  7369 |
+|     10 | NEW YORK | ALLEN  |  7499 |
+|     20 | DALLAS   | ALLEN  |  7499 |
+|     30 | CHICAGO  | ALLEN  |  7499 |
+|     40 | BOSTON   | ALLEN  |  7499 |
+|     10 | NEW YORK | WARD   |  7521 |
+|     20 | DALLAS   | WARD   |  7521 |
+|     30 | CHICAGO  | WARD   |  7521 |
+|     40 | BOSTON   | WARD   |  7521 |
+|     10 | NEW YORK | JONES  |  7566 |
+|     20 | DALLAS   | JONES  |  7566 |
+|     30 | CHICAGO  | JONES  |  7566 |
+|     40 | BOSTON   | JONES  |  7566 |
+|     10 | NEW YORK | MARTIN |  7654 |
+|     20 | DALLAS   | MARTIN |  7654 |
+|     30 | CHICAGO  | MARTIN |  7654 |
+|     40 | BOSTON   | MARTIN |  7654 |
+|     10 | NEW YORK | BLAKE  |  7698 |
+|     20 | DALLAS   | BLAKE  |  7698 |
+|     30 | CHICAGO  | BLAKE  |  7698 |
+|     40 | BOSTON   | BLAKE  |  7698 |
+|     10 | NEW YORK | CLARK  |  7782 |
+|     20 | DALLAS   | CLARK  |  7782 |
+|     30 | CHICAGO  | CLARK  |  7782 |
+|     40 | BOSTON   | CLARK  |  7782 |
+|     10 | NEW YORK | SCOTT  |  7788 |
+|     20 | DALLAS   | SCOTT  |  7788 |
+|     30 | CHICAGO  | SCOTT  |  7788 |
+|     40 | BOSTON   | SCOTT  |  7788 |
+|     10 | NEW YORK | KING   |  7839 |
+|     20 | DALLAS   | KING   |  7839 |
+|     30 | CHICAGO  | KING   |  7839 |
+|     40 | BOSTON   | KING   |  7839 |
+|     10 | NEW YORK | TURNER |  7844 |
+|     20 | DALLAS   | TURNER |  7844 |
+|     30 | CHICAGO  | TURNER |  7844 |
+|     40 | BOSTON   | TURNER |  7844 |
+|     10 | NEW YORK | ADAMS  |  7876 |
+|     20 | DALLAS   | ADAMS  |  7876 |
+|     30 | CHICAGO  | ADAMS  |  7876 |
+|     40 | BOSTON   | ADAMS  |  7876 |
+|     10 | NEW YORK | JAMES  |  7900 |
+|     20 | DALLAS   | JAMES  |  7900 |
+|     30 | CHICAGO  | JAMES  |  7900 |
+|     40 | BOSTON   | JAMES  |  7900 |
+|     10 | NEW YORK | FORD   |  7902 |
+|     20 | DALLAS   | FORD   |  7902 |
+|     30 | CHICAGO  | FORD   |  7902 |
+|     40 | BOSTON   | FORD   |  7902 |
+|     10 | NEW YORK | MILLER |  7934 |
+|     20 | DALLAS   | MILLER |  7934 |
+|     30 | CHICAGO  | MILLER |  7934 |
+|     40 | BOSTON   | MILLER |  7934 |
++--------+----------+--------+-------+
+56 rows in set (0.00 sec)
+
+mysql> SELECT * FROM DEPARTMENT INNER JOIN EMPLOYEE ON DEPARTMENT.DEPTNO =
+    -> EMPLOYEE.DEPTNO;
+ERROR 1146 (42S02): Table 'class3.department' doesn't exist
+mysql> SELECT * FROM DEPT INNER JOIN EMPLOYEE ON DEPT.DEPTNO = EMPLOYEE.DEPTNO;
++--------+------------+----------+-------+--------+-----------+------+------------+------+------+--------+
+| DEPTNO | DNAME      | LOC      | EMPNO | ENAME  | JOB       | MGR  | HIREDATE   | SAL  | COMM | DEPTNO |
++--------+------------+----------+-------+--------+-----------+------+------------+------+------+--------+
+|     10 | ACCOUNTING | NEW YORK |  7782 | CLARK  | MANAGER   | 7839 | 1981-06-09 | 2450 | NULL |     10 |
+|     10 | ACCOUNTING | NEW YORK |  7839 | KING   | PRESIDENT | NULL | 1981-11-17 | 5000 | NULL |     10 |
+|     10 | ACCOUNTING | NEW YORK |  7934 | MILLER | CLERK     | 7782 | 1982-01-23 | 1300 | NULL |     10 |
+|     20 | RESEARCH   | DALLAS   |  7369 | SMITH  | CLERK     | 7902 | 1980-12-17 |  800 | NULL |     20 |
+|     20 | RESEARCH   | DALLAS   |  7566 | JONES  | MANAGER   | 7839 | 1981-04-02 | 2975 | NULL |     20 |
+|     20 | RESEARCH   | DALLAS   |  7788 | SCOTT  | ANALYST   | 7566 | 1981-11-09 | 3000 | NULL |     20 |
+|     20 | RESEARCH   | DALLAS   |  7876 | ADAMS  | CLERK     | 7788 | 1981-09-23 | 1100 | NULL |     20 |
+|     20 | RESEARCH   | DALLAS   |  7902 | FORD   | ANALYST   | 7566 | 1981-12-03 | 3000 | NULL |     20 |
+|     30 | SALES      | CHICAGO  |  7499 | ALLEN  | SALESMAN  | 7698 | 1981-02-20 | 1600 |  300 |     30 |
+|     30 | SALES      | CHICAGO  |  7521 | WARD   | SALESMAN  | 7698 | 1981-02-22 | 1250 |  500 |     30 |
+|     30 | SALES      | CHICAGO  |  7654 | MARTIN | SALESMAN  | 7698 | 1981-09-28 | 1250 | 1400 |     30 |
+|     30 | SALES      | CHICAGO  |  7698 | BLAKE  | MANAGER   | 7839 | 1981-05-01 | 2850 | NULL |     30 |
+|     30 | SALES      | CHICAGO  |  7844 | TURNER | SALESMAN  | 7698 | 1981-09-08 | 1500 |    0 |     30 |
+|     30 | SALES      | CHICAGO  |  7900 | JAMES  | CLERK     | 7698 | 1981-12-03 |  950 | NULL |     30 |
++--------+------------+----------+-------+--------+-----------+------+------------+------+------+--------+
+14 rows in set (0.00 sec)
+
+mysql> SELECT * FROM DEPARTMENT LEFT JOIN EMPLOYEE ON DEPARTMENT.DEPTNO =
+    ->
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+mysql> SELECT * FROM DEPARTMENT LEFT JOIN EMPLOYEE ON DEPARTMENT.DEPTNO = EMPLOYEE.DEPTNO;
+ERROR 1146 (42S02): Table 'class3.department' doesn't exist
+mysql> SELECT * FROM DEPT LEFT JOIN EMPLOYEE ON DEPT.DEPTNO = EMPLOYEE.DEPTNO;
++--------+------------+----------+-------+--------+-----------+------+------------+------+------+--------+
+| DEPTNO | DNAME      | LOC      | EMPNO | ENAME  | JOB       | MGR  | HIREDATE   | SAL  | COMM | DEPTNO |
++--------+------------+----------+-------+--------+-----------+------+------------+------+------+--------+
+|     10 | ACCOUNTING | NEW YORK |  7782 | CLARK  | MANAGER   | 7839 | 1981-06-09 | 2450 | NULL |     10 |
+|     10 | ACCOUNTING | NEW YORK |  7839 | KING   | PRESIDENT | NULL | 1981-11-17 | 5000 | NULL |     10 |
+|     10 | ACCOUNTING | NEW YORK |  7934 | MILLER | CLERK     | 7782 | 1982-01-23 | 1300 | NULL |     10 |
+|     20 | RESEARCH   | DALLAS   |  7369 | SMITH  | CLERK     | 7902 | 1980-12-17 |  800 | NULL |     20 |
+|     20 | RESEARCH   | DALLAS   |  7566 | JONES  | MANAGER   | 7839 | 1981-04-02 | 2975 | NULL |     20 |
+|     20 | RESEARCH   | DALLAS   |  7788 | SCOTT  | ANALYST   | 7566 | 1981-11-09 | 3000 | NULL |     20 |
+|     20 | RESEARCH   | DALLAS   |  7876 | ADAMS  | CLERK     | 7788 | 1981-09-23 | 1100 | NULL |     20 |
+|     20 | RESEARCH   | DALLAS   |  7902 | FORD   | ANALYST   | 7566 | 1981-12-03 | 3000 | NULL |     20 |
+|     30 | SALES      | CHICAGO  |  7499 | ALLEN  | SALESMAN  | 7698 | 1981-02-20 | 1600 |  300 |     30 |
+|     30 | SALES      | CHICAGO  |  7521 | WARD   | SALESMAN  | 7698 | 1981-02-22 | 1250 |  500 |     30 |
+|     30 | SALES      | CHICAGO  |  7654 | MARTIN | SALESMAN  | 7698 | 1981-09-28 | 1250 | 1400 |     30 |
+|     30 | SALES      | CHICAGO  |  7698 | BLAKE  | MANAGER   | 7839 | 1981-05-01 | 2850 | NULL |     30 |
+|     30 | SALES      | CHICAGO  |  7844 | TURNER | SALESMAN  | 7698 | 1981-09-08 | 1500 |    0 |     30 |
+|     30 | SALES      | CHICAGO  |  7900 | JAMES  | CLERK     | 7698 | 1981-12-03 |  950 | NULL |     30 |
+|     40 | OPERATIONS | BOSTON   |  NULL | NULL   | NULL      | NULL | NULL       | NULL | NULL |   NULL |
++--------+------------+----------+-------+--------+-----------+------+------------+------+------+--------+
+15 rows in set (0.00 sec)
+
+mysql> SELECT * FROM DEPT RIGHT JOIN EMPLOYEE ON DEPT.DEPTNO = EMPLOYEE.DEPTNO;
++--------+------------+----------+-------+--------+-----------+------+------------+------+------+--------+
+| DEPTNO | DNAME      | LOC      | EMPNO | ENAME  | JOB       | MGR  | HIREDATE   | SAL  | COMM | DEPTNO |
++--------+------------+----------+-------+--------+-----------+------+------------+------+------+--------+
+|     20 | RESEARCH   | DALLAS   |  7369 | SMITH  | CLERK     | 7902 | 1980-12-17 |  800 | NULL |     20 |
+|     30 | SALES      | CHICAGO  |  7499 | ALLEN  | SALESMAN  | 7698 | 1981-02-20 | 1600 |  300 |     30 |
+|     30 | SALES      | CHICAGO  |  7521 | WARD   | SALESMAN  | 7698 | 1981-02-22 | 1250 |  500 |     30 |
+|     20 | RESEARCH   | DALLAS   |  7566 | JONES  | MANAGER   | 7839 | 1981-04-02 | 2975 | NULL |     20 |
+|     30 | SALES      | CHICAGO  |  7654 | MARTIN | SALESMAN  | 7698 | 1981-09-28 | 1250 | 1400 |     30 |
+|     30 | SALES      | CHICAGO  |  7698 | BLAKE  | MANAGER   | 7839 | 1981-05-01 | 2850 | NULL |     30 |
+|     10 | ACCOUNTING | NEW YORK |  7782 | CLARK  | MANAGER   | 7839 | 1981-06-09 | 2450 | NULL |     10 |
+|     20 | RESEARCH   | DALLAS   |  7788 | SCOTT  | ANALYST   | 7566 | 1981-11-09 | 3000 | NULL |     20 |
+|     10 | ACCOUNTING | NEW YORK |  7839 | KING   | PRESIDENT | NULL | 1981-11-17 | 5000 | NULL |     10 |
+|     30 | SALES      | CHICAGO  |  7844 | TURNER | SALESMAN  | 7698 | 1981-09-08 | 1500 |    0 |     30 |
+|     20 | RESEARCH   | DALLAS   |  7876 | ADAMS  | CLERK     | 7788 | 1981-09-23 | 1100 | NULL |     20 |
+|     30 | SALES      | CHICAGO  |  7900 | JAMES  | CLERK     | 7698 | 1981-12-03 |  950 | NULL |     30 |
+|     20 | RESEARCH   | DALLAS   |  7902 | FORD   | ANALYST   | 7566 | 1981-12-03 | 3000 | NULL |     20 |
+|     10 | ACCOUNTING | NEW YORK |  7934 | MILLER | CLERK     | 7782 | 1982-01-23 | 1300 | NULL |     10 |
++--------+------------+----------+-------+--------+-----------+------+------------+------+------+--------+
+14 rows in set (0.00 sec)
+
+mysql> SELECT * FROM DEPT;
++--------+------------+----------+
+| DEPTNO | DNAME      | LOC      |
++--------+------------+----------+
+|     10 | ACCOUNTING | NEW YORK |
+|     20 | RESEARCH   | DALLAS   |
+|     30 | SALES      | CHICAGO  |
+|     40 | OPERATIONS | BOSTON   |
++--------+------------+----------+
+4 rows in set (0.00 sec)
+
+mysql> SELECT * FROM EMPLOYEE LEFT JOIN DEPT ON EMPLOYEE.DEPTNO = DEPT.DEPTNO UNION SELECT * FROM EMPLOYEE RIGHT JOIN DEPT ON EMPLOYEE.DEPTNO = DEPT.DEPTNO;
++-------+--------+-----------+------+------------+------+------+--------+--------+------------+----------+
+| EMPNO | ENAME  | JOB       | MGR  | HIREDATE   | SAL  | COMM | DEPTNO | DEPTNO | DNAME      | LOC      |
++-------+--------+-----------+------+------------+------+------+--------+--------+------------+----------+
+|  7369 | SMITH  | CLERK     | 7902 | 1980-12-17 |  800 | NULL |     20 |     20 | RESEARCH   | DALLAS   |
+|  7499 | ALLEN  | SALESMAN  | 7698 | 1981-02-20 | 1600 |  300 |     30 |     30 | SALES      | CHICAGO  |
+|  7521 | WARD   | SALESMAN  | 7698 | 1981-02-22 | 1250 |  500 |     30 |     30 | SALES      | CHICAGO  |
+|  7566 | JONES  | MANAGER   | 7839 | 1981-04-02 | 2975 | NULL |     20 |     20 | RESEARCH   | DALLAS   |
+|  7654 | MARTIN | SALESMAN  | 7698 | 1981-09-28 | 1250 | 1400 |     30 |     30 | SALES      | CHICAGO  |
+|  7698 | BLAKE  | MANAGER   | 7839 | 1981-05-01 | 2850 | NULL |     30 |     30 | SALES      | CHICAGO  |
+|  7782 | CLARK  | MANAGER   | 7839 | 1981-06-09 | 2450 | NULL |     10 |     10 | ACCOUNTING | NEW YORK |
+|  7788 | SCOTT  | ANALYST   | 7566 | 1981-11-09 | 3000 | NULL |     20 |     20 | RESEARCH   | DALLAS   |
+|  7839 | KING   | PRESIDENT | NULL | 1981-11-17 | 5000 | NULL |     10 |     10 | ACCOUNTING | NEW YORK |
+|  7844 | TURNER | SALESMAN  | 7698 | 1981-09-08 | 1500 |    0 |     30 |     30 | SALES      | CHICAGO  |
+|  7876 | ADAMS  | CLERK     | 7788 | 1981-09-23 | 1100 | NULL |     20 |     20 | RESEARCH   | DALLAS   |
+|  7900 | JAMES  | CLERK     | 7698 | 1981-12-03 |  950 | NULL |     30 |     30 | SALES      | CHICAGO  |
+|  7902 | FORD   | ANALYST   | 7566 | 1981-12-03 | 3000 | NULL |     20 |     20 | RESEARCH   | DALLAS   |
+|  7934 | MILLER | CLERK     | 7782 | 1982-01-23 | 1300 | NULL |     10 |     10 | ACCOUNTING | NEW YORK |
+|  NULL | NULL   | NULL      | NULL | NULL       | NULL | NULL |   NULL |     40 | OPERATIONS | BOSTON   |
++-------+--------+-----------+------+------------+------+------+--------+--------+------------+----------+
+15 rows in set (0.00 sec)

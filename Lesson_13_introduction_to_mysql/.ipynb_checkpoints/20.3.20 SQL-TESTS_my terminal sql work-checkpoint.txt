@@ -1,0 +1,338 @@
+Last login: Sat Mar 21 11:20:39 on console
+home@homes-Mac-mini ~ % cdns
+Password:
+zsh: command not found: sleep
+home@homes-Mac-mini ~ % cdns
+zsh: command not found: sleep
+home@homes-Mac-mini ~ % my
+Enter password:
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 8
+Server version: 8.0.19 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2020, Oracle and/or its affiliates. All rights reserved.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| class              |
+| class2             |
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+6 rows in set (0.52 sec)
+
+mysql> use class2;
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
+mysql> show tables;
++------------------+
+| Tables_in_class2 |
++------------------+
+| class_10a        |
+| class_10b        |
+| COURSES          |
+| FACULTY          |
+| TEST             |
++------------------+
+5 rows in set (0.00 sec)
+
+mysql> create table class_10c select * from class_10b;
+Query OK, 12 rows affected, 1 warning (0.37 sec)
+Records: 12  Duplicates: 0  Warnings: 1
+
+mysql> show tables;
++------------------+
+| Tables_in_class2 |
++------------------+
+| class_10a        |
+| class_10b        |
+| class_10c        |
+| COURSES          |
+| FACULTY          |
+| TEST             |
++------------------+
+6 rows in set (0.00 sec)
+
+mysql> select * from class_10b;
++---------+----------+-----------+-----+------+---------------+--------------+
+| ROLL_NO | NAME     | CITY      | AGE | CGPA | CLASS_TEACHER | student_id   |
++---------+----------+-----------+-----+------+---------------+--------------+
+|     102 | GAURAV   | RANCHI    |  20 | 8.15 | MARIA         | 102_GAURAV   |
+|     123 | RANA     | NEW DELHI |  21 | 7.77 | MARIA         | 123_RANA     |
+|     154 | ABHISHEK | BENGALURU |  19 | 7.25 | MARIA         | 154_ABHISHEK |
+|     202 | SHIVAM   | BENGALURU |  18 | 8.75 | MARIA         | 202_SHIVAM   |
+|     276 | SHUBHAM  | CHENNAI   |  20 | 9.12 | MARIA         | 276_SHUBHAM  |
+|     292 | AKSHITA  | NEW DELHI |  23 | 8.95 | MARIA         | 292_AKSHITA  |
+|     302 | VIKAS    | JAIPUR    |  22 | 6.54 | MARIA         | 302_VIKAS    |
+|     303 | ROMI     | JAIPUR    |  21 | 7.65 | MARIA         | 303_ROMI     |
+|     305 | ALISHA   | MUMBAI    |  22 | 8.35 | MARIA         | 305_ALISHA   |
+|     365 | ADIL     | RANCHI    |  19 | 9.62 | MARIA         | 365_ADIL     |
+|      50 | ADITI    | NEW DELHI |  20 | 8.50 | MARIA         | 50_ADITI     |
+|      55 | ANAMIKA  | NEW DELHI |  20 | 7.20 | MARIA         | 55_ANAMIKA   |
++---------+----------+-----------+-----+------+---------------+--------------+
+12 rows in set (0.00 sec)
+
+mysql> select * from class_10c;
++---------+----------+-----------+-----+------+---------------+--------------+
+| ROLL_NO | NAME     | CITY      | AGE | CGPA | CLASS_TEACHER | student_id   |
++---------+----------+-----------+-----+------+---------------+--------------+
+|     102 | GAURAV   | RANCHI    |  20 | 8.15 | MARIA         | 102_GAURAV   |
+|     123 | RANA     | NEW DELHI |  21 | 7.77 | MARIA         | 123_RANA     |
+|     154 | ABHISHEK | BENGALURU |  19 | 7.25 | MARIA         | 154_ABHISHEK |
+|     202 | SHIVAM   | BENGALURU |  18 | 8.75 | MARIA         | 202_SHIVAM   |
+|     276 | SHUBHAM  | CHENNAI   |  20 | 9.12 | MARIA         | 276_SHUBHAM  |
+|     292 | AKSHITA  | NEW DELHI |  23 | 8.95 | MARIA         | 292_AKSHITA  |
+|     302 | VIKAS    | JAIPUR    |  22 | 6.54 | MARIA         | 302_VIKAS    |
+|     303 | ROMI     | JAIPUR    |  21 | 7.65 | MARIA         | 303_ROMI     |
+|     305 | ALISHA   | MUMBAI    |  22 | 8.35 | MARIA         | 305_ALISHA   |
+|     365 | ADIL     | RANCHI    |  19 | 9.62 | MARIA         | 365_ADIL     |
+|      50 | ADITI    | NEW DELHI |  20 | 8.50 | MARIA         | 50_ADITI     |
+|      55 | ANAMIKA  | NEW DELHI |  20 | 7.20 | MARIA         | 55_ANAMIKA   |
++---------+----------+-----------+-----+------+---------------+--------------+
+12 rows in set (0.00 sec)
+
+mysql> select * from class_10a;
++---------+--------+--------------+--------+-----+------+---------------+------------+
+| roll_no | name   | city         | GENDER | age | cgpa | class_teacher | student_id |
++---------+--------+--------------+--------+-----+------+---------------+------------+
+|     101 | RAM    | BHUMBANESWAR | M      |  19 | 9.00 | JOSEPH        | 101_RAM    |
+|     103 | UDAY   | NEW DELHI    | M      |  20 | 8.97 | JOSEPH        | 103_UDAY   |
+|     104 | VIKAS  | KANPUR       | M      |  19 | 8.50 | JOSEPH        | 104_VIKAS  |
+|     105 | SWETA  | RANCHI       | F      |  19 | 9.20 | JOSEPH        | 105_SWETA  |
+|     106 | YOGESH | JAIPUR       | F      |  18 | 7.90 | JOSEPH        | 106_YOGESH |
+|     165 | MANISH | MUMBAI       | F      |  19 | 9.15 | JOSEPH        | 165_MANISH |
+|     210 | SMRITI | NEW DELHI    | F      |  19 | 8.99 | JOSEPH        | 210_SMRITI |
+|     211 | SUDAM  | BHUBANESWAR  | M      |  21 | 8.60 | JOSEPH        | 211_SUDAM  |
+|     212 | VIKAS  | KOLKATA      | M      |  23 | 5.98 | JOSEPH        | 212_VIKAS  |
++---------+--------+--------------+--------+-----+------+---------------+------------+
+9 rows in set (0.00 sec)
+
+mysql> select * from class_10a;
++---------+--------+--------------+--------+-----+------+---------------+------------+
+| roll_no | name   | city         | GENDER | age | cgpa | class_teacher | student_id |
++---------+--------+--------------+--------+-----+------+---------------+------------+
+|     101 | RAM    | BHUMBANESWAR | M      |  19 | 9.00 | JOSEPH        | 101_RAM    |
+|     103 | UDAY   | NEW DELHI    | M      |  20 | 8.97 | JOSEPH        | 103_UDAY   |
+|     104 | VIKAS  | KANPUR       | M      |  19 | 8.50 | JOSEPH        | 104_VIKAS  |
+|     105 | SWETA  | RANCHI       | F      |  19 | 9.20 | JOSEPH        | 105_SWETA  |
+|     106 | YOGESH | JAIPUR       | F      |  18 | 7.90 | JOSEPH        | 106_YOGESH |
+|     165 | MANISH | MUMBAI       | F      |  19 | 9.15 | JOSEPH        | 165_MANISH |
+|     210 | SMRITI | NEW DELHI    | F      |  19 | 8.99 | JOSEPH        | 210_SMRITI |
+|     211 | SUDAM  | BHUBANESWAR  | M      |  21 | 8.60 | JOSEPH        | 211_SUDAM  |
+|     212 | VIKAS  | KOLKATA      | M      |  23 | 5.98 | JOSEPH        | 212_VIKAS  |
++---------+--------+--------------+--------+-----+------+---------------+------------+
+9 rows in set (0.00 sec)
+
+mysql> create table class_10d(roll_no int(3), name varchar(50));
+Query OK, 0 rows affected, 1 warning (0.01 sec)
+
+mysql> show tables;
++------------------+
+| Tables_in_class2 |
++------------------+
+| class_10a        |
+| class_10b        |
+| class_10c        |
+| class_10d        |
+| COURSES          |
+| FACULTY          |
+| TEST             |
++------------------+
+7 rows in set (0.00 sec)
+
+mysql> select * from class_10d;
+Empty set (0.00 sec)
+
+mysql> describe class_10d;
++---------+-------------+------+-----+---------+-------+
+| Field   | Type        | Null | Key | Default | Extra |
++---------+-------------+------+-----+---------+-------+
+| roll_no | int         | YES  |     | NULL    |       |
+| name    | varchar(50) | YES  |     | NULL    |       |
++---------+-------------+------+-----+---------+-------+
+2 rows in set (0.05 sec)
+
+mysql> insert into class_10d(name) select name from class_10a;
+Query OK, 9 rows affected (0.03 sec)
+Records: 9  Duplicates: 0  Warnings: 0
+
+mysql> insert into class_10d(name) select name from class_10a;
+Query OK, 9 rows affected (0.00 sec)
+Records: 9  Duplicates: 0  Warnings: 0
+
+mysql> describe class_10d;
++---------+-------------+------+-----+---------+-------+
+| Field   | Type        | Null | Key | Default | Extra |
++---------+-------------+------+-----+---------+-------+
+| roll_no | int         | YES  |     | NULL    |       |
+| name    | varchar(50) | YES  |     | NULL    |       |
++---------+-------------+------+-----+---------+-------+
+2 rows in set (0.01 sec)
+
+mysql> select * from class_10d;
++---------+--------+
+| roll_no | name   |
++---------+--------+
+|    NULL | RAM    |
+|    NULL | UDAY   |
+|    NULL | VIKAS  |
+|    NULL | SWETA  |
+|    NULL | YOGESH |
+|    NULL | MANISH |
+|    NULL | SMRITI |
+|    NULL | SUDAM  |
+|    NULL | VIKAS  |
+|    NULL | RAM    |
+|    NULL | UDAY   |
+|    NULL | VIKAS  |
+|    NULL | SWETA  |
+|    NULL | YOGESH |
+|    NULL | MANISH |
+|    NULL | SMRITI |
+|    NULL | SUDAM  |
+|    NULL | VIKAS  |
++---------+--------+
+18 rows in set (0.00 sec)
+
+mysql> select * from class_10a;
++---------+--------+--------------+--------+-----+------+---------------+------------+
+| roll_no | name   | city         | GENDER | age | cgpa | class_teacher | student_id |
++---------+--------+--------------+--------+-----+------+---------------+------------+
+|     101 | RAM    | BHUMBANESWAR | M      |  19 | 9.00 | JOSEPH        | 101_RAM    |
+|     103 | UDAY   | NEW DELHI    | M      |  20 | 8.97 | JOSEPH        | 103_UDAY   |
+|     104 | VIKAS  | KANPUR       | M      |  19 | 8.50 | JOSEPH        | 104_VIKAS  |
+|     105 | SWETA  | RANCHI       | F      |  19 | 9.20 | JOSEPH        | 105_SWETA  |
+|     106 | YOGESH | JAIPUR       | F      |  18 | 7.90 | JOSEPH        | 106_YOGESH |
+|     165 | MANISH | MUMBAI       | F      |  19 | 9.15 | JOSEPH        | 165_MANISH |
+|     210 | SMRITI | NEW DELHI    | F      |  19 | 8.99 | JOSEPH        | 210_SMRITI |
+|     211 | SUDAM  | BHUBANESWAR  | M      |  21 | 8.60 | JOSEPH        | 211_SUDAM  |
+|     212 | VIKAS  | KOLKATA      | M      |  23 | 5.98 | JOSEPH        | 212_VIKAS  |
++---------+--------+--------------+--------+-----+------+---------------+------------+
+9 rows in set (0.00 sec)
+
+mysql> drop class_10d;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'class_10d' at line 1
+mysql> drop table class_10d;
+Query OK, 0 rows affected (0.09 sec)
+
+mysql> show tables;
++------------------+
+| Tables_in_class2 |
++------------------+
+| class_10a        |
+| class_10b        |
+| class_10c        |
+| COURSES          |
+| FACULTY          |
+| TEST             |
++------------------+
+6 rows in set (0.01 sec)
+
+mysql> create table class_10d(roll_no int(3), name varchar(50));
+Query OK, 0 rows affected, 1 warning (0.02 sec)
+
+mysql> select * from class_10d;
+Empty set (0.00 sec)
+
+mysql> insert into class_10d(name) select name from class_10a;
+Query OK, 9 rows affected (0.00 sec)
+Records: 9  Duplicates: 0  Warnings: 0
+
+mysql> select * from class_10d;
++---------+--------+
+| roll_no | name   |
++---------+--------+
+|    NULL | RAM    |
+|    NULL | UDAY   |
+|    NULL | VIKAS  |
+|    NULL | SWETA  |
+|    NULL | YOGESH |
+|    NULL | MANISH |
+|    NULL | SMRITI |
+|    NULL | SUDAM  |
+|    NULL | VIKAS  |
++---------+--------+
+9 rows in set (0.00 sec)
+
+mysql> alter table class_10d drop column roll_no;
+Query OK, 0 rows affected (0.23 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> select * from class_10d;
++--------+
+| name   |
++--------+
+| RAM    |
+| UDAY   |
+| VIKAS  |
+| SWETA  |
+| YOGESH |
+| MANISH |
+| SMRITI |
+| SUDAM  |
+| VIKAS  |
++--------+
+9 rows in set (0.00 sec)
+
+mysql> alter table class_10d add column roll_no INT(3) primary key not null auto_increment;
+Query OK, 0 rows affected, 1 warning (0.13 sec)
+Records: 0  Duplicates: 0  Warnings: 1
+
+mysql> describe class_10d;
++---------+-------------+------+-----+---------+----------------+
+| Field   | Type        | Null | Key | Default | Extra          |
++---------+-------------+------+-----+---------+----------------+
+| name    | varchar(50) | YES  |     | NULL    |                |
+| roll_no | int         | NO   | PRI | NULL    | auto_increment |
++---------+-------------+------+-----+---------+----------------+
+2 rows in set (0.00 sec)
+
+mysql> select * from class_10d;
++--------+---------+
+| name   | roll_no |
++--------+---------+
+| RAM    |       1 |
+| UDAY   |       2 |
+| VIKAS  |       3 |
+| SWETA  |       4 |
+| YOGESH |       5 |
+| MANISH |       6 |
+| SMRITI |       7 |
+| SUDAM  |       8 |
+| VIKAS  |       9 |
++--------+---------+
+9 rows in set (0.01 sec)
+
+mysql> ALTER TABLE class_10d MODIFY roll_no int(3) AFTER name;
+Query OK, 9 rows affected, 1 warning (0.06 sec)
+Records: 9  Duplicates: 0  Warnings: 1
+
+mysql> select * from class_10d;
++--------+---------+
+| name   | roll_no |
++--------+---------+
+| RAM    |       1 |
+| UDAY   |       2 |
+| VIKAS  |       3 |
+| SWETA  |       4 |
+| YOGESH |       5 |
+| MANISH |       6 |
+| SMRITI |       7 |
+| SUDAM  |       8 |
+| VIKAS  |       9 |
++--------+---------+
+9 rows in set (0.00 sec)
+
+mysql>

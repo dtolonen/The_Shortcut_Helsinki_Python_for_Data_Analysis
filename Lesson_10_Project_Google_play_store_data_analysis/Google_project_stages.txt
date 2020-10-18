@@ -1,0 +1,35 @@
+Note! One problem I am having is inconsistency and lack of focus, so things don't seem to stick. See the Kaggle Jupyter sample file - it's Markdown headings - it seems to be going through things,  SYSTEMATICALLY CLEANING UP COLUMN BY COLUMN.
+
+
+1- Data cleaning: - Use string slicing and string methods to change columns like 'Size', 'Installs', 'Price', ... to numbers - Remove duplicate rows
+
+2- Inspect the data, calculate some statistics and write some comments on interesting observations. 
+- Which are the top 10-20 most installed (reviewed) apps? 
+- Do you see any weird app? 
+- Which are the top 10-20 most expensive apps? 
+- Which popular apps (100,000+ installs) are disliked the most?
+
+3- Visualize and comment on some or all columns. For example: 
+- Pick a few interesting columns and make a pairplot. 
+- Do you see any interesting scatterplot? 
+- Which categories have the most apps? Which categories are most popular (by installs)? 
+- What is the range of application size (maybe using a boxplot?) 
+- Visualize the distribution of price for paid apps only 
+- Plot the Content Rating column
+
+4- More possibly interesting questions to explore: 
+- Shows the relationship between price, rating and category (pick only 5 categories) 
+- Do free apps have more installs than paid apps on average? 
+- Which categories appear the most among top 100 most expensive apps? 
+- Can you show the top 100 most common words that appear in apps name?
+
+5- Ultimately, even without predictive analytic, your report should have at least 1 actionable recommendation. You could: 
+- Pick a category/genre and answer this question: If I want to develop an app in this domain, what should I remember? - Or a more general question: I want to be a mobile dev, what is a good advice for me?
+
+
+------
+
+
+Remember to comment something after you produce a statistic table or chart to summarize the results or discuss things that you found interesting.
+
+Communication is also an important skill in data analysis. Without meaningful summary and comments, people won't understand your beautiful chart.

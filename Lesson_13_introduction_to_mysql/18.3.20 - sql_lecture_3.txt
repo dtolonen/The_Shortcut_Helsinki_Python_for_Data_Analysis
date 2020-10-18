@@ -1,0 +1,528 @@
+mysql> SHOW DATABASES;
++--------------------+
+| Database           |
++--------------------+
+| class2             |
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+5 rows in set (0.06 sec)
+
+mysql> USE CLASS2;
+Database changed
+mysql> SHOW TABLES;
++------------------+
+| Tables_in_class2 |
++------------------+
+| student          |
+| students         |
++------------------+
+2 rows in set (0.01 sec)
+
+mysql> DROP TABLE STUDENTS;
+Query OK, 0 rows affected (0.05 sec)
+
+mysql> SELECT * STUDENT;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'STUDENT' at line 1
+mysql> SELECT * FROM STUDENT;
++------+--------+--------------+--------+------+------+
+| ROLL | NAME   | CITY         | GENDER | AGE  | CGPA |
++------+--------+--------------+--------+------+------+
+|  101 | RAM    | BHUMBANESWAR | M      |   19 | 9.00 |
+|  103 | UDAY   | NEW DELHI    | M      |   20 | 8.97 |
+|  104 | VIKAS  | KANPUR       | M      |   19 | 8.50 |
+|  105 | SWETA  | RANCHI       | F      |   19 | 9.20 |
+|  106 | YOGESH | JAIPUR       | F      |   18 | 7.90 |
+|  210 | SMRITI | NEW DELHI    | F      |   19 | 8.99 |
+|  211 | SUDAM  | BHUBANESWAR  | M      |   21 | 8.60 |
+|  212 | VIKAS  | KOLKATA      | M      |   23 | 5.98 |
+|  165 | MANISH | MUMBAI       | F      |   19 | 9.15 |
+|  102 | HARI   | BHUBANESWAR  | M      | NULL | 6.70 |
++------+--------+--------------+--------+------+------+
+10 rows in set (0.00 sec)
+
+mysql> ALTER TABLE STUDENT ADD COLUMN ADDRESS INT(40);
+Query OK, 0 rows affected, 1 warning (0.03 sec)
+Records: 0  Duplicates: 0  Warnings: 1
+
+mysql> SELECT * FROM STUDENT;
++------+--------+--------------+--------+------+------+---------+
+| ROLL | NAME   | CITY         | GENDER | AGE  | CGPA | ADDRESS |
++------+--------+--------------+--------+------+------+---------+
+|  101 | RAM    | BHUMBANESWAR | M      |   19 | 9.00 |    NULL |
+|  103 | UDAY   | NEW DELHI    | M      |   20 | 8.97 |    NULL |
+|  104 | VIKAS  | KANPUR       | M      |   19 | 8.50 |    NULL |
+|  105 | SWETA  | RANCHI       | F      |   19 | 9.20 |    NULL |
+|  106 | YOGESH | JAIPUR       | F      |   18 | 7.90 |    NULL |
+|  210 | SMRITI | NEW DELHI    | F      |   19 | 8.99 |    NULL |
+|  211 | SUDAM  | BHUBANESWAR  | M      |   21 | 8.60 |    NULL |
+|  212 | VIKAS  | KOLKATA      | M      |   23 | 5.98 |    NULL |
+|  165 | MANISH | MUMBAI       | F      |   19 | 9.15 |    NULL |
+|  102 | HARI   | BHUBANESWAR  | M      | NULL | 6.70 |    NULL |
++------+--------+--------------+--------+------+------+---------+
+10 rows in set (0.00 sec)
+
+mysql> DESCRIBE STUDENT;
++---------+--------------+------+-----+---------+-------+
+| Field   | Type         | Null | Key | Default | Extra |
++---------+--------------+------+-----+---------+-------+
+| ROLL    | int          | YES  |     | NULL    |       |
+| NAME    | varchar(200) | YES  |     | NULL    |       |
+| CITY    | varchar(200) | YES  |     | NULL    |       |
+| GENDER  | char(1)      | YES  |     | NULL    |       |
+| AGE     | int          | YES  |     | NULL    |       |
+| CGPA    | float(4,2)   | YES  |     | NULL    |       |
+| ADDRESS | int          | YES  |     | NULL    |       |
++---------+--------------+------+-----+---------+-------+
+7 rows in set (0.01 sec)
+
+mysql> ALTER TABLE STUDENT MODIFY ADDRESS VARCHAR(100);
+Query OK, 10 rows affected (0.05 sec)
+Records: 10  Duplicates: 0  Warnings: 0
+
+mysql> SELECT * FROM STUDENT;
++------+--------+--------------+--------+------+------+---------+
+| ROLL | NAME   | CITY         | GENDER | AGE  | CGPA | ADDRESS |
++------+--------+--------------+--------+------+------+---------+
+|  101 | RAM    | BHUMBANESWAR | M      |   19 | 9.00 | NULL    |
+|  103 | UDAY   | NEW DELHI    | M      |   20 | 8.97 | NULL    |
+|  104 | VIKAS  | KANPUR       | M      |   19 | 8.50 | NULL    |
+|  105 | SWETA  | RANCHI       | F      |   19 | 9.20 | NULL    |
+|  106 | YOGESH | JAIPUR       | F      |   18 | 7.90 | NULL    |
+|  210 | SMRITI | NEW DELHI    | F      |   19 | 8.99 | NULL    |
+|  211 | SUDAM  | BHUBANESWAR  | M      |   21 | 8.60 | NULL    |
+|  212 | VIKAS  | KOLKATA      | M      |   23 | 5.98 | NULL    |
+|  165 | MANISH | MUMBAI       | F      |   19 | 9.15 | NULL    |
+|  102 | HARI   | BHUBANESWAR  | M      | NULL | 6.70 | NULL    |
++------+--------+--------------+--------+------+------+---------+
+10 rows in set (0.00 sec)
+
+mysql> DESCRIBE STUDENT;
++---------+--------------+------+-----+---------+-------+
+| Field   | Type         | Null | Key | Default | Extra |
++---------+--------------+------+-----+---------+-------+
+| ROLL    | int          | YES  |     | NULL    |       |
+| NAME    | varchar(200) | YES  |     | NULL    |       |
+| CITY    | varchar(200) | YES  |     | NULL    |       |
+| GENDER  | char(1)      | YES  |     | NULL    |       |
+| AGE     | int          | YES  |     | NULL    |       |
+| CGPA    | float(4,2)   | YES  |     | NULL    |       |
+| ADDRESS | varchar(100) | YES  |     | NULL    |       |
++---------+--------------+------+-----+---------+-------+
+7 rows in set (0.00 sec)
+
+mysql> ALTER TABLE STUDENT DROP COLUMN ADDRESS;
+Query OK, 0 rows affected (0.15 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> SELECT * FROM STUDENT;
++------+--------+--------------+--------+------+------+
+| ROLL | NAME   | CITY         | GENDER | AGE  | CGPA |
++------+--------+--------------+--------+------+------+
+|  101 | RAM    | BHUMBANESWAR | M      |   19 | 9.00 |
+|  103 | UDAY   | NEW DELHI    | M      |   20 | 8.97 |
+|  104 | VIKAS  | KANPUR       | M      |   19 | 8.50 |
+|  105 | SWETA  | RANCHI       | F      |   19 | 9.20 |
+|  106 | YOGESH | JAIPUR       | F      |   18 | 7.90 |
+|  210 | SMRITI | NEW DELHI    | F      |   19 | 8.99 |
+|  211 | SUDAM  | BHUBANESWAR  | M      |   21 | 8.60 |
+|  212 | VIKAS  | KOLKATA      | M      |   23 | 5.98 |
+|  165 | MANISH | MUMBAI       | F      |   19 | 9.15 |
+|  102 | HARI   | BHUBANESWAR  | M      | NULL | 6.70 |
++------+--------+--------------+--------+------+------+
+10 rows in set (0.00 sec)
+
+mysql> ALTER TABLE STUDENT RENAME COLUMN ROLL TO ROLL_NO;
+Query OK, 0 rows affected (0.01 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> SELECT * FROM STUDENT;
++---------+--------+--------------+--------+------+------+
+| ROLL_NO | NAME   | CITY         | GENDER | AGE  | CGPA |
++---------+--------+--------------+--------+------+------+
+|     101 | RAM    | BHUMBANESWAR | M      |   19 | 9.00 |
+|     103 | UDAY   | NEW DELHI    | M      |   20 | 8.97 |
+|     104 | VIKAS  | KANPUR       | M      |   19 | 8.50 |
+|     105 | SWETA  | RANCHI       | F      |   19 | 9.20 |
+|     106 | YOGESH | JAIPUR       | F      |   18 | 7.90 |
+|     210 | SMRITI | NEW DELHI    | F      |   19 | 8.99 |
+|     211 | SUDAM  | BHUBANESWAR  | M      |   21 | 8.60 |
+|     212 | VIKAS  | KOLKATA      | M      |   23 | 5.98 |
+|     165 | MANISH | MUMBAI       | F      |   19 | 9.15 |
+|     102 | HARI   | BHUBANESWAR  | M      | NULL | 6.70 |
++---------+--------+--------------+--------+------+------+
+10 rows in set (0.00 sec)
+
+mysql> UPDATE sTUDENT SET AGE = 20 WHERE NAME="HARI";
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> SELECT * FROM STUDENT;
++---------+--------+--------------+--------+------+------+
+| ROLL_NO | NAME   | CITY         | GENDER | AGE  | CGPA |
++---------+--------+--------------+--------+------+------+
+|     101 | RAM    | BHUMBANESWAR | M      |   19 | 9.00 |
+|     103 | UDAY   | NEW DELHI    | M      |   20 | 8.97 |
+|     104 | VIKAS  | KANPUR       | M      |   19 | 8.50 |
+|     105 | SWETA  | RANCHI       | F      |   19 | 9.20 |
+|     106 | YOGESH | JAIPUR       | F      |   18 | 7.90 |
+|     210 | SMRITI | NEW DELHI    | F      |   19 | 8.99 |
+|     211 | SUDAM  | BHUBANESWAR  | M      |   21 | 8.60 |
+|     212 | VIKAS  | KOLKATA      | M      |   23 | 5.98 |
+|     165 | MANISH | MUMBAI       | F      |   19 | 9.15 |
+|     102 | HARI   | BHUBANESWAR  | M      |   20 | 6.70 |
++---------+--------+--------------+--------+------+------+
+10 rows in set (0.00 sec)
+
+mysql> ALTER TABLE STUDENT ADD COLUMN CLASS_TEACHER VARCHAR(150);
+Query OK, 0 rows affected (0.01 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> SELECT * FROM STUDENT;
++---------+--------+--------------+--------+------+------+---------------+
+| ROLL_NO | NAME   | CITY         | GENDER | AGE  | CGPA | CLASS_TEACHER |
++---------+--------+--------------+--------+------+------+---------------+
+|     101 | RAM    | BHUMBANESWAR | M      |   19 | 9.00 | NULL          |
+|     103 | UDAY   | NEW DELHI    | M      |   20 | 8.97 | NULL          |
+|     104 | VIKAS  | KANPUR       | M      |   19 | 8.50 | NULL          |
+|     105 | SWETA  | RANCHI       | F      |   19 | 9.20 | NULL          |
+|     106 | YOGESH | JAIPUR       | F      |   18 | 7.90 | NULL          |
+|     210 | SMRITI | NEW DELHI    | F      |   19 | 8.99 | NULL          |
+|     211 | SUDAM  | BHUBANESWAR  | M      |   21 | 8.60 | NULL          |
+|     212 | VIKAS  | KOLKATA      | M      |   23 | 5.98 | NULL          |
+|     165 | MANISH | MUMBAI       | F      |   19 | 9.15 | NULL          |
+|     102 | HARI   | BHUBANESWAR  | M      |   20 | 6.70 | NULL          |
++---------+--------+--------------+--------+------+------+---------------+
+10 rows in set (0.00 sec)
+
+mysql> UPDATE STUDENT SET CLASS_TEACHER = "JOSEPH";
+Query OK, 10 rows affected (0.00 sec)
+Rows matched: 10  Changed: 10  Warnings: 0
+
+mysql> SELECT * FROM STUDENT;
++---------+--------+--------------+--------+------+------+---------------+
+| ROLL_NO | NAME   | CITY         | GENDER | AGE  | CGPA | CLASS_TEACHER |
++---------+--------+--------------+--------+------+------+---------------+
+|     101 | RAM    | BHUMBANESWAR | M      |   19 | 9.00 | JOSEPH        |
+|     103 | UDAY   | NEW DELHI    | M      |   20 | 8.97 | JOSEPH        |
+|     104 | VIKAS  | KANPUR       | M      |   19 | 8.50 | JOSEPH        |
+|     105 | SWETA  | RANCHI       | F      |   19 | 9.20 | JOSEPH        |
+|     106 | YOGESH | JAIPUR       | F      |   18 | 7.90 | JOSEPH        |
+|     210 | SMRITI | NEW DELHI    | F      |   19 | 8.99 | JOSEPH        |
+|     211 | SUDAM  | BHUBANESWAR  | M      |   21 | 8.60 | JOSEPH        |
+|     212 | VIKAS  | KOLKATA      | M      |   23 | 5.98 | JOSEPH        |
+|     165 | MANISH | MUMBAI       | F      |   19 | 9.15 | JOSEPH        |
+|     102 | HARI   | BHUBANESWAR  | M      |   20 | 6.70 | JOSEPH        |
++---------+--------+--------------+--------+------+------+---------------+
+10 rows in set (0.00 sec)
+
+mysql> DELETE FROM STUDENT WHERE NAME = "HARI";
+Query OK, 1 row affected (0.00 sec)
+
+mysql> SELECT * FROM STUDENT;
++---------+--------+--------------+--------+------+------+---------------+
+| ROLL_NO | NAME   | CITY         | GENDER | AGE  | CGPA | CLASS_TEACHER |
++---------+--------+--------------+--------+------+------+---------------+
+|     101 | RAM    | BHUMBANESWAR | M      |   19 | 9.00 | JOSEPH        |
+|     103 | UDAY   | NEW DELHI    | M      |   20 | 8.97 | JOSEPH        |
+|     104 | VIKAS  | KANPUR       | M      |   19 | 8.50 | JOSEPH        |
+|     105 | SWETA  | RANCHI       | F      |   19 | 9.20 | JOSEPH        |
+|     106 | YOGESH | JAIPUR       | F      |   18 | 7.90 | JOSEPH        |
+|     210 | SMRITI | NEW DELHI    | F      |   19 | 8.99 | JOSEPH        |
+|     211 | SUDAM  | BHUBANESWAR  | M      |   21 | 8.60 | JOSEPH        |
+|     212 | VIKAS  | KOLKATA      | M      |   23 | 5.98 | JOSEPH        |
+|     165 | MANISH | MUMBAI       | F      |   19 | 9.15 | JOSEPH        |
++---------+--------+--------------+--------+------+------+---------------+
+9 rows in set (0.00 sec)
+
+mysql> CREATE TABLE TEST(ID INT(2), NAME VARCHAR(50));
+Query OK, 0 rows affected, 1 warning (0.02 sec)
+
+mysql> SELECT * FROM TEST;
+Empty set (0.00 sec)
+
+mysql> DESCRIBE TEST;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| ID    | int         | YES  |     | NULL    |       |
+| NAME  | varchar(50) | YES  |     | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+2 rows in set (0.00 sec)
+
+mysql> INSERT INTO TEST VALUES(1,"Z");
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO TEST VALUES(2,"A");
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO TEST VALUES(3,"J");
+Query OK, 1 row affected (0.00 sec)
+
+mysql> SELECT * FROM TEST;
++------+------+
+| ID   | NAME |
++------+------+
+|    1 | Z    |
+|    2 | A    |
+|    3 | J    |
++------+------+
+3 rows in set (0.00 sec)
+
+mysql> TRUNCATE TABLE TEST;
+Query OK, 0 rows affected (0.03 sec)
+
+mysql> SELECT * FROM TEST;
+Empty set (0.00 sec)
+
+mysql> SELECT * FROM STUDENT;
++---------+--------+--------------+--------+------+------+---------------+
+| ROLL_NO | NAME   | CITY         | GENDER | AGE  | CGPA | CLASS_TEACHER |
++---------+--------+--------------+--------+------+------+---------------+
+|     101 | RAM    | BHUMBANESWAR | M      |   19 | 9.00 | JOSEPH        |
+|     103 | UDAY   | NEW DELHI    | M      |   20 | 8.97 | JOSEPH        |
+|     104 | VIKAS  | KANPUR       | M      |   19 | 8.50 | JOSEPH        |
+|     105 | SWETA  | RANCHI       | F      |   19 | 9.20 | JOSEPH        |
+|     106 | YOGESH | JAIPUR       | F      |   18 | 7.90 | JOSEPH        |
+|     210 | SMRITI | NEW DELHI    | F      |   19 | 8.99 | JOSEPH        |
+|     211 | SUDAM  | BHUBANESWAR  | M      |   21 | 8.60 | JOSEPH        |
+|     212 | VIKAS  | KOLKATA      | M      |   23 | 5.98 | JOSEPH        |
+|     165 | MANISH | MUMBAI       | F      |   19 | 9.15 | JOSEPH        |
++---------+--------+--------------+--------+------+------+---------------+
+9 rows in set (0.00 sec)
+
+mysql> RENAME TABLE STUDENT TO CLASS_10A;
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> SELECT * FROM STUDENT;
+ERROR 1146 (42S02): Table 'class2.student' doesn't exist
+mysql> SELECT * FROM CLASS_10A;
++---------+--------+--------------+--------+------+------+---------------+
+| ROLL_NO | NAME   | CITY         | GENDER | AGE  | CGPA | CLASS_TEACHER |
++---------+--------+--------------+--------+------+------+---------------+
+|     101 | RAM    | BHUMBANESWAR | M      |   19 | 9.00 | JOSEPH        |
+|     103 | UDAY   | NEW DELHI    | M      |   20 | 8.97 | JOSEPH        |
+|     104 | VIKAS  | KANPUR       | M      |   19 | 8.50 | JOSEPH        |
+|     105 | SWETA  | RANCHI       | F      |   19 | 9.20 | JOSEPH        |
+|     106 | YOGESH | JAIPUR       | F      |   18 | 7.90 | JOSEPH        |
+|     210 | SMRITI | NEW DELHI    | F      |   19 | 8.99 | JOSEPH        |
+|     211 | SUDAM  | BHUBANESWAR  | M      |   21 | 8.60 | JOSEPH        |
+|     212 | VIKAS  | KOLKATA      | M      |   23 | 5.98 | JOSEPH        |
+|     165 | MANISH | MUMBAI       | F      |   19 | 9.15 | JOSEPH        |
++---------+--------+--------------+--------+------+------+---------------+
+9 rows in set (0.00 sec)
+
+mysql> CREATE TABLE COURSES(COURSE_NAME VARCHAR(100), FACULTY_CODE VARCHAR(6));
+Query OK, 0 rows affected (0.03 sec)
+
+mysql> INSERT INTO COURSES VALUES ("Introduction to Computer Networks", "SCI001");
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO COURSES VALUES ("Modern Art","ART121");
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO COURSES VALUES ("Finance","BUS101");
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO COURSES VALUES ("Database Management System","SCI001");
+Query OK, 1 row affected (0.00 sec)
+
+mysql> SELECT * FROM COURSES;
++-----------------------------------+--------------+
+| COURSE_NAME                       | FACULTY_CODE |
++-----------------------------------+--------------+
+| Introduction to Computer Networks | SCI001       |
+| Modern Art                        | ART121       |
+| Finance                           | BUS101       |
+| Database Management System        | SCI001       |
++-----------------------------------+--------------+
+4 rows in set (0.00 sec)
+
+mysql> CREATE TABLE FACULTY(FACULTY_NAME VARCHAR(100), FACULTY_CODE VARCHAR(6));
+Query OK, 0 rows affected (0.03 sec)
+
+mysql> INSERT INTO FACULTY VALUES("KASPER","SCI001");
+Query OK, 1 row affected (0.01 sec)
+
+mysql> INSERT INTO FACULTY VALUES("SAMUEL","SCI012");
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO FACULTY VALUES("MARIA","ART121");
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO FACULTY VALUES("JOHN","BUS101");
+Query OK, 1 row affected (0.01 sec)
+
+mysql> SELECT * FROM COURSE;
+ERROR 1146 (42S02): Table 'class2.course' doesn't exist
+mysql> SELECT * FROM COURSES;
++-----------------------------------+--------------+
+| COURSE_NAME                       | FACULTY_CODE |
++-----------------------------------+--------------+
+| Introduction to Computer Networks | SCI001       |
+| Modern Art                        | ART121       |
+| Finance                           | BUS101       |
+| Database Management System        | SCI001       |
++-----------------------------------+--------------+
+4 rows in set (0.00 sec)
+
+mysql> SELECT *  FROM FACULTY;
++--------------+--------------+
+| FACULTY_NAME | FACULTY_CODE |
++--------------+--------------+
+| KASPER       | SCI001       |
+| SAMUEL       | SCI012       |
+| MARIA        | ART121       |
+| JOHN         | BUS101       |
++--------------+--------------+
+4 rows in set (0.00 sec)
+
+mysql> SELECT * FROM COURSE;
+ERROR 1146 (42S02): Table 'class2.course' doesn't exist
+mysql> SELECT * FROM COURSES;
++-----------------------------------+--------------+
+| COURSE_NAME                       | FACULTY_CODE |
++-----------------------------------+--------------+
+| Introduction to Computer Networks | SCI001       |
+| Modern Art                        | ART121       |
+| Finance                           | BUS101       |
+| Database Management System        | SCI001       |
++-----------------------------------+--------------+
+4 rows in set (0.00 sec)
+
+mysql> SELECT COURSE_NAME FROM COURSES WHERE COURSES.FACULTY_CODE = (SELECT FACULTY_CODE FROM FACULTY WHERE FACULTY_NAME="KASPER");
++-----------------------------------+
+| COURSE_NAME                       |
++-----------------------------------+
+| Introduction to Computer Networks |
+| Database Management System        |
++-----------------------------------+
+2 rows in set (0.00 sec)
+
+mysql> SELECT COURSE_NAME FROM COURSES WHERE FACULTY_CODE = (SELECT FACULTY_CODE FROM FACULTY WHERE FACULTY_NAME="KASPER");
++-----------------------------------+
+| COURSE_NAME                       |
++-----------------------------------+
+| Introduction to Computer Networks |
+| Database Management System        |
++-----------------------------------+
+2 rows in set (0.00 sec)
+
+mysql> SELECT * FROM CLASS_10a;
++---------+--------+--------------+--------+------+------+---------------+
+| ROLL_NO | NAME   | CITY         | GENDER | AGE  | CGPA | CLASS_TEACHER |
++---------+--------+--------------+--------+------+------+---------------+
+|     101 | RAM    | BHUMBANESWAR | M      |   19 | 9.00 | JOSEPH        |
+|     103 | UDAY   | NEW DELHI    | M      |   20 | 8.97 | JOSEPH        |
+|     104 | VIKAS  | KANPUR       | M      |   19 | 8.50 | JOSEPH        |
+|     105 | SWETA  | RANCHI       | F      |   19 | 9.20 | JOSEPH        |
+|     106 | YOGESH | JAIPUR       | F      |   18 | 7.90 | JOSEPH        |
+|     210 | SMRITI | NEW DELHI    | F      |   19 | 8.99 | JOSEPH        |
+|     211 | SUDAM  | BHUBANESWAR  | M      |   21 | 8.60 | JOSEPH        |
+|     212 | VIKAS  | KOLKATA      | M      |   23 | 5.98 | JOSEPH        |
+|     165 | MANISH | MUMBAI       | F      |   19 | 9.15 | JOSEPH        |
++---------+--------+--------------+--------+------+------+---------------+
+9 rows in set (0.00 sec)
+
+mysql> CREATE TABLE CLASS_10B(ROLL_NO INT(3) PRIMARY KEY, NAME VARCHAR(200) NOT NULL, CITY VARCHAR(100) NOT NULL, AGE INT(2) CHECK (AGE>=18 AND AGE<=23) NOT NULL, CGPA FLOAT(4,2), CLASS_TEACHER VARCHAR(100) DEFAULT "MARIA");
+Query OK, 0 rows affected, 3 warnings (0.02 sec)
+
+mysql> SELECT * FROM CLASS_10B;
+Empty set (0.00 sec)
+
+mysql> DESCRIBE CLASS_10B;
++---------------+--------------+------+-----+---------+-------+
+| Field         | Type         | Null | Key | Default | Extra |
++---------------+--------------+------+-----+---------+-------+
+| ROLL_NO       | int          | NO   | PRI | NULL    |       |
+| NAME          | varchar(200) | NO   |     | NULL    |       |
+| CITY          | varchar(100) | NO   |     | NULL    |       |
+| AGE           | int          | NO   |     | NULL    |       |
+| CGPA          | float(4,2)   | YES  |     | NULL    |       |
+| CLASS_TEACHER | varchar(100) | YES  |     | MARIA   |       |
++---------------+--------------+------+-----+---------+-------+
+6 rows in set (0.00 sec)
+
+mysql> ALTER TABLE CLASS_10B MODIFY GCPA FLOAT(4,2) NOT NULL, MODIFY CLASS_TEACHER VARCHAR(100) NOT NULL DEFAULT "MARIA";
+ERROR 1054 (42S22): Unknown column 'GCPA' in 'class_10b'
+mysql> ALTER TABLE CLASS_10B MODIFY CGPA FLOAT(4,2) NOT NULL, MODIFY CLASS_TEACHER VARCHAR(100) NOT NULL DEFAULT "MARIA";
+Query OK, 0 rows affected, 1 warning (0.04 sec)
+Records: 0  Duplicates: 0  Warnings: 1
+
+mysql> DESCRIBE CLASS_10b;
++---------------+--------------+------+-----+---------+-------+
+| Field         | Type         | Null | Key | Default | Extra |
++---------------+--------------+------+-----+---------+-------+
+| ROLL_NO       | int          | NO   | PRI | NULL    |       |
+| NAME          | varchar(200) | NO   |     | NULL    |       |
+| CITY          | varchar(100) | NO   |     | NULL    |       |
+| AGE           | int          | NO   |     | NULL    |       |
+| CGPA          | float(4,2)   | NO   |     | NULL    |       |
+| CLASS_TEACHER | varchar(100) | NO   |     | MARIA   |       |
++---------------+--------------+------+-----+---------+-------+
+6 rows in set (0.00 sec)
+
+mysql> INSERT INTO CLASS_10B VALUES(50,"ADITI","NEW DELHI",20,8.5,"MARIA");
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO CLASS_10B VALUES(55,"ANAMIKA","NEW DELHI",20,7.2,"MARIA");
+Query OK, 1 row affected (0.01 sec)
+
+mysql> INSERT INTO CLASS_10B VALUES(96,"VISHAL","RANCHI",25,7.22,"MARIA");
+ERROR 3819 (HY000): Check constraint 'class_10b_chk_1' is violated.
+mysql> INSERT INTO CLASS_10B VALUES(123,"RANA","NEW DELHI",21,7.77,"MARIA");
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO CLASS_10B VALUES(154,"ABHISHEK","BENGALURU",19,7.25,"MARIA");
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO CLASS_10B VALUES(202,"SHIVAM","BENGALURU",18,8.75,"MARIA");
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO CLASS_10B VALUES(276,"SHUBHAM","CHENNAI",20,9.12,"MARIA");
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO CLASS_10B VALUES(285,"VIDYA","KOLKATA",17,9.25,"MARIA");
+ERROR 3819 (HY000): Check constraint 'class_10b_chk_1' is violated.
+mysql> INSERT INTO CLASS_10B VALUES(292,"AKSHITA","NEW DELHI",23,8.95,"MARIA");
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO CLASS_10B VALUES(302,"VIKAS","JAIPUR",22,6.54,"MARIA");
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO CLASS_10B VALUES(303,"ROMI","JAIPUR",21,7.65,"MARIA");
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO CLASS_10B VALUES(304,"SONAL","MUMBAI",24,7.25,"MARIA");
+ERROR 3819 (HY000): Check constraint 'class_10b_chk_1' is violated.
+mysql> INSERT INTO CLASS_10B VALUES(305,"ALISHA","MUMBAI",22,8.35,"MARIA");
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO CLASS_10B VALUES(102,"GAURAV","RANCHI",20,8.15,"MARIA");
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO CLASS_10B VALUES(365,"ADIL","RANCHI",19,9.62,"MARIA");
+Query OK, 1 row affected (0.00 sec)
+
+mysql> SELECT * FROM CLASS10_B;
+ERROR 1146 (42S02): Table 'class2.class10_b' doesn't exist
+mysql> SELECT * FROM CLASS_10B;
++---------+----------+-----------+-----+------+---------------+
+| ROLL_NO | NAME     | CITY      | AGE | CGPA | CLASS_TEACHER |
++---------+----------+-----------+-----+------+---------------+
+|      50 | ADITI    | NEW DELHI |  20 | 8.50 | MARIA         |
+|      55 | ANAMIKA  | NEW DELHI |  20 | 7.20 | MARIA         |
+|     102 | GAURAV   | RANCHI    |  20 | 8.15 | MARIA         |
+|     123 | RANA     | NEW DELHI |  21 | 7.77 | MARIA         |
+|     154 | ABHISHEK | BENGALURU |  19 | 7.25 | MARIA         |
+|     202 | SHIVAM   | BENGALURU |  18 | 8.75 | MARIA         |
+|     276 | SHUBHAM  | CHENNAI   |  20 | 9.12 | MARIA         |
+|     292 | AKSHITA  | NEW DELHI |  23 | 8.95 | MARIA         |
+|     302 | VIKAS    | JAIPUR    |  22 | 6.54 | MARIA         |
+|     303 | ROMI     | JAIPUR    |  21 | 7.65 | MARIA         |
+|     305 | ALISHA   | MUMBAI    |  22 | 8.35 | MARIA         |
+|     365 | ADIL     | RANCHI    |  19 | 9.62 | MARIA         |
++---------+----------+-----------+-----+------+---------------+
+12 rows in set (0.00 sec)

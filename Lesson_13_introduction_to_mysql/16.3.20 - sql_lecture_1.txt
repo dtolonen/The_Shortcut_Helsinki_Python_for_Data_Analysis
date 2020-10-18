@@ -1,0 +1,515 @@
+
+To start up Mysql, type in Terminal: 
+/usr/local/mysql/bin/mysql -uroot -p
+
+
+
+Enter password: ****
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 11
+Server version: 8.0.19 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2020, Oracle and/or its affiliates. All rights reserved.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+4 rows in set (0.00 sec)
+
+mysql> create database class2;
+Query OK, 1 row affected (0.01 sec)
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| class2             |
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+5 rows in set (0.00 sec)
+
+mysql> use class2;
+Database changed
+mysql> show tables;
+Empty set (0.01 sec)
+
+mysql> create table students(roll int(6), name varchar(200), gender char(1), city varchar(100), age int(3);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+mysql> create table students(roll int(6), name varchar(200), gender char(1), city varchar(100), age int(3));
+Query OK, 0 rows affected, 2 warnings (0.03 sec)
+
+mysql> delete table students;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'table students' at line 1
+mysql> drop table students;
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> create table students(roll int(6), name varchar(200), gender char(1), city varchar(100), age int(3)), cgpa float(4,2));
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ', cgpa float(4,2))' at line 1
+mysql> create table students(roll int(6), name varchar(200), gender char(1), city varchar(100), age int(3)), cgpa FLOAT(4,2));
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ', cgpa FLOAT(4,2))' at line 1
+mysql> reate table students(roll int(6), name varchar(200), gender char(1), city varchar(100), age int(3), cgpa float(4,2));
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'reate table students(roll int(6), name varchar(200), gender char(1), city varcha' at line 1
+mysql> create table students(roll int(6), name varchar(200), gender char(1), city varchar(100), age int(3), cgpa float(4,2));
+Query OK, 0 rows affected, 3 warnings (0.02 sec)
+
+mysql> describe student;
+ERROR 1146 (42S02): Table 'class2.student' doesn't exist
+mysql> describe students;
++--------+--------------+------+-----+---------+-------+
+| Field  | Type         | Null | Key | Default | Extra |
++--------+--------------+------+-----+---------+-------+
+| roll   | int          | YES  |     | NULL    |       |
+| name   | varchar(200) | YES  |     | NULL    |       |
+| gender | char(1)      | YES  |     | NULL    |       |
+| city   | varchar(100) | YES  |     | NULL    |       |
+| age    | int          | YES  |     | NULL    |       |
+| cgpa   | float(4,2)   | YES  |     | NULL    |       |
++--------+--------------+------+-----+---------+-------+
+6 rows in set (0.00 sec)
+
+mysql> insert into students values(100, "Katriina", "F", "Helsinki", 19, 9.56);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> instert into students values(101, "Katy", "F", "Paris", 29, 8.56);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'instert into students values(101, "Katy", "F", "Paris", 29, 8.56)' at line 1
+mysql> insert into students values(101, "Katy", "F", "Paris", 29, 8.56);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into students values(103, "Ali", "M", "Espoo", 19,6.56);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into students values(104, "Evelina","F", "Lappeenranta", 24, 7);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> select * from students;
++------+----------+--------+--------------+------+------+
+| roll | name     | gender | city         | age  | cgpa |
++------+----------+--------+--------------+------+------+
+|  100 | Katriina | F      | Helsinki     |   19 | 9.56 |
+|  101 | Katy     | F      | Paris        |   29 | 8.56 |
+|  103 | Ali      | M      | Espoo        |   19 | 6.56 |
+|  104 | Evelina  | F      | Lappeenranta |   24 | 7.00 |
++------+----------+--------+--------------+------+------+
+4 rows in set (0.00 sec)
+
+mysql> select count(*) fron students;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'students' at line 1
+mysql> select count(*) from students;
++----------+
+| count(*) |
++----------+
+|        4 |
++----------+
+1 row in set (0.00 sec)
+
+mysql> select name, age+3 from students;
++----------+-------+
+| name     | age+3 |
++----------+-------+
+| Katriina |    22 |
+| Katy     |    32 |
+| Ali      |    22 |
+| Evelina  |    27 |
++----------+-------+
+4 rows in set (0.00 sec)
+
+mysql> select name, age, age+3 as "Passing age" from students;
++----------+------+-------------+
+| name     | age  | Passing age |
++----------+------+-------------+
+| Katriina |   19 |          22 |
+| Katy     |   29 |          32 |
+| Ali      |   19 |          22 |
+| Evelina  |   24 |          27 |
++----------+------+-------------+
+4 rows in set (0.00 sec)
+
+mysql> select concat(name,"", city), age from students;
++-----------------------+------+
+| concat(name,"", city) | age  |
++-----------------------+------+
+| KatriinaHelsinki      |   19 |
+| KatyParis             |   29 |
+| AliEspoo              |   19 |
+| EvelinaLappeenranta   |   24 |
++-----------------------+------+
+4 rows in set (0.00 sec)
+
+mysql> select concat(name, " " , city), age from students;
++--------------------------+------+
+| concat(name, " " , city) | age  |
++--------------------------+------+
+| Katriina Helsinki        |   19 |
+| Katy Paris               |   29 |
+| Ali Espoo                |   19 |
+| Evelina Lappeenranta     |   24 |
++--------------------------+------+
+4 rows in set (0.00 sec)
+
+mysql> select concat(name, " ", city) as name and city, age from students;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'and city, age from students' at line 1
+mysql> select concat(name, " ", city) as "name and city", age from students;
++----------------------+------+
+| name and city        | age  |
++----------------------+------+
+| Katriina Helsinki    |   19 |
+| Katy Paris           |   29 |
+| Ali Espoo            |   19 |
+| Evelina Lappeenranta |   24 |
++----------------------+------+
+4 rows in set (0.00 sec)
+
+mysql> select concat(name, " ", city) as "name and city", age from students;
++----------------------+------+
+| name and city        | age  |
++----------------------+------+
+| Katriina Helsinki    |   19 |
+| Katy Paris           |   29 |
+| Ali Espoo            |   19 |
+| Evelina Lappeenranta |   24 |
++----------------------+------+
+4 rows in set (0.00 sec)
+
+mysql> select * from students where roll=100;
++------+----------+--------+----------+------+------+
+| roll | name     | gender | city     | age  | cgpa |
++------+----------+--------+----------+------+------+
+|  100 | Katriina | F      | Helsinki |   19 | 9.56 |
++------+----------+--------+----------+------+------+
+1 row in set (0.00 sec)
+
+mysql> select * from students where city = "Paris";
++------+------+--------+-------+------+------+
+| roll | name | gender | city  | age  | cgpa |
++------+------+--------+-------+------+------+
+|  101 | Katy | F      | Paris |   29 | 8.56 |
++------+------+--------+-------+------+------+
+1 row in set (0.00 sec)
+
+mysql> select * from students where roll < 104;
++------+----------+--------+----------+------+------+
+| roll | name     | gender | city     | age  | cgpa |
++------+----------+--------+----------+------+------+
+|  100 | Katriina | F      | Helsinki |   19 | 9.56 |
+|  101 | Katy     | F      | Paris    |   29 | 8.56 |
+|  103 | Ali      | M      | Espoo    |   19 | 6.56 |
++------+----------+--------+----------+------+------+
+3 rows in set (0.00 sec)
+
+mysql> select * from students where roll !=102;
++------+----------+--------+--------------+------+------+
+| roll | name     | gender | city         | age  | cgpa |
++------+----------+--------+--------------+------+------+
+|  100 | Katriina | F      | Helsinki     |   19 | 9.56 |
+|  101 | Katy     | F      | Paris        |   29 | 8.56 |
+|  103 | Ali      | M      | Espoo        |   19 | 6.56 |
+|  104 | Evelina  | F      | Lappeenranta |   24 | 7.00 |
++------+----------+--------+--------------+------+------+
+4 rows in set (0.00 sec)
+
+mysql> select roll, gender from students;
++------+--------+
+| roll | gender |
++------+--------+
+|  100 | F      |
+|  101 | F      |
+|  103 | M      |
+|  104 | F      |
++------+--------+
+4 rows in set (0.00 sec)
+
+mysql> select roll, gender from students;
++------+--------+
+| roll | gender |
++------+--------+
+|  100 | F      |
+|  101 | F      |
+|  103 | M      |
+|  104 | F      |
++------+--------+
+4 rows in set (0.00 sec)
+
+mysql> select * from students where gender = "F" and roll > 102;
++------+---------+--------+--------------+------+------+
+| roll | name    | gender | city         | age  | cgpa |
++------+---------+--------+--------------+------+------+
+|  104 | Evelina | F      | Lappeenranta |   24 | 7.00 |
++------+---------+--------+--------------+------+------+
+1 row in set (0.00 sec)
+
+mysql> select * from students where gender = "F" or roll > 102;
++------+----------+--------+--------------+------+------+
+| roll | name     | gender | city         | age  | cgpa |
++------+----------+--------+--------------+------+------+
+|  100 | Katriina | F      | Helsinki     |   19 | 9.56 |
+|  101 | Katy     | F      | Paris        |   29 | 8.56 |
+|  103 | Ali      | M      | Espoo        |   19 | 6.56 |
+|  104 | Evelina  | F      | Lappeenranta |   24 | 7.00 |
++------+----------+--------+--------------+------+------+
+4 rows in set (0.00 sec)
+
+mysql> select * from students where not city = "Helsinki";
++------+---------+--------+--------------+------+------+
+| roll | name    | gender | city         | age  | cgpa |
++------+---------+--------+--------------+------+------+
+|  101 | Katy    | F      | Paris        |   29 | 8.56 |
+|  103 | Ali     | M      | Espoo        |   19 | 6.56 |
+|  104 | Evelina | F      | Lappeenranta |   24 | 7.00 |
++------+---------+--------+--------------+------+------+
+3 rows in set (0.00 sec)
+
+mysql> select * from students where name like "A%";
++------+------+--------+-------+------+------+
+| roll | name | gender | city  | age  | cgpa |
++------+------+--------+-------+------+------+
+|  103 | Ali  | M      | Espoo |   19 | 6.56 |
++------+------+--------+-------+------+------+
+1 row in set (0.00 sec)
+
+mysql> select * from students where name like "K%";
++------+----------+--------+----------+------+------+
+| roll | name     | gender | city     | age  | cgpa |
++------+----------+--------+----------+------+------+
+|  100 | Katriina | F      | Helsinki |   19 | 9.56 |
+|  101 | Katy     | F      | Paris    |   29 | 8.56 |
++------+----------+--------+----------+------+------+
+2 rows in set (0.00 sec)
+
+mysql> select * from students where city like "%o";
++------+------+--------+-------+------+------+
+| roll | name | gender | city  | age  | cgpa |
++------+------+--------+-------+------+------+
+|  103 | Ali  | M      | Espoo |   19 | 6.56 |
++------+------+--------+-------+------+------+
+1 row in set (0.00 sec)
+
+mysql> select * from students where city like "%O";
++------+------+--------+-------+------+------+
+| roll | name | gender | city  | age  | cgpa |
++------+------+--------+-------+------+------+
+|  103 | Ali  | M      | Espoo |   19 | 6.56 |
++------+------+--------+-------+------+------+
+1 row in set (0.00 sec)
+
+mysql> select * from students where city like "_a%";
++------+---------+--------+--------------+------+------+
+| roll | name    | gender | city         | age  | cgpa |
++------+---------+--------+--------------+------+------+
+|  101 | Katy    | F      | Paris        |   29 | 8.56 |
+|  104 | Evelina | F      | Lappeenranta |   24 | 7.00 |
++------+---------+--------+--------------+------+------+
+2 rows in set (0.00 sec)
+
+mysql> select * from students where city in ("Helsinki", "Lappeenranta");
++------+----------+--------+--------------+------+------+
+| roll | name     | gender | city         | age  | cgpa |
++------+----------+--------+--------------+------+------+
+|  100 | Katriina | F      | Helsinki     |   19 | 9.56 |
+|  104 | Evelina  | F      | Lappeenranta |   24 | 7.00 |
++------+----------+--------+--------------+------+------+
+2 rows in set (0.00 sec)
+
+mysql> select * from students where age between 18 and 24;
++------+----------+--------+--------------+------+------+
+| roll | name     | gender | city         | age  | cgpa |
++------+----------+--------+--------------+------+------+
+|  100 | Katriina | F      | Helsinki     |   19 | 9.56 |
+|  103 | Ali      | M      | Espoo        |   19 | 6.56 |
+|  104 | Evelina  | F      | Lappeenranta |   24 | 7.00 |
++------+----------+--------+--------------+------+------+
+3 rows in set (0.00 sec)
+mysql> select * from students where age is null;
+Empty set (0.00 sec)
+
+mysql> select * from students order by age;
++------+----------+--------+--------------+------+------+
+| roll | name     | gender | city         | age  | cgpa |
++------+----------+--------+--------------+------+------+
+|  100 | Katriina | F      | Helsinki     |   19 | 9.56 |
+|  103 | Ali      | M      | Espoo        |   19 | 6.56 |
+|  104 | Evelina  | F      | Lappeenranta |   24 | 7.00 |
+|  101 | Katy     | F      | Paris        |   29 | 8.56 |
++------+----------+--------+--------------+------+------+
+4 rows in set (0.00 sec)
+
+mysql> select * from students order by age desc;
++------+----------+--------+--------------+------+------+
+| roll | name     | gender | city         | age  | cgpa |
++------+----------+--------+--------------+------+------+
+|  101 | Katy     | F      | Paris        |   29 | 8.56 |
+|  104 | Evelina  | F      | Lappeenranta |   24 | 7.00 |
+|  100 | Katriina | F      | Helsinki     |   19 | 9.56 |
+|  103 | Ali      | M      | Espoo        |   19 | 6.56 |
++------+----------+--------+--------------+------+------+
+4 rows in set (0.00 sec)
+
+mysql> select * from students order by name;
++------+----------+--------+--------------+------+------+
+| roll | name     | gender | city         | age  | cgpa |
++------+----------+--------+--------------+------+------+
+|  103 | Ali      | M      | Espoo        |   19 | 6.56 |
+|  104 | Evelina  | F      | Lappeenranta |   24 | 7.00 |
+|  100 | Katriina | F      | Helsinki     |   19 | 9.56 |
+|  101 | Katy     | F      | Paris        |   29 | 8.56 |
++------+----------+--------+--------------+------+------+
+4 rows in set (0.00 sec)
+
+mysql> select * from students order by name desc;
++------+----------+--------+--------------+------+------+
+| roll | name     | gender | city         | age  | cgpa |
++------+----------+--------+--------------+------+------+
+|  101 | Katy     | F      | Paris        |   29 | 8.56 |
+|  100 | Katriina | F      | Helsinki     |   19 | 9.56 |
+|  104 | Evelina  | F      | Lappeenranta |   24 | 7.00 |
+|  103 | Ali      | M      | Espoo        |   19 | 6.56 |
++------+----------+--------+--------------+------+------+
+4 rows in set (0.00 sec)
+
+mysql> select * from students;
++------+----------+--------+--------------+------+------+
+| roll | name     | gender | city         | age  | cgpa |
++------+----------+--------+--------------+------+------+
+|  100 | Katriina | F      | Helsinki     |   19 | 9.56 |
+|  101 | Katy     | F      | Paris        |   29 | 8.56 |
+|  103 | Ali      | M      | Espoo        |   19 | 6.56 |
+|  104 | Evelina  | F      | Lappeenranta |   24 | 7.00 |
++------+----------+--------+--------------+------+------+
+4 rows in set (0.00 sec)
+
+mysql> alter table students add column address int(40);
+Query OK, 0 rows affected, 1 warning (0.02 sec)
+Records: 0  Duplicates: 0  Warnings: 1
+
+mysql> select * from students;
++------+----------+--------+--------------+------+------+---------+
+| roll | name     | gender | city         | age  | cgpa | address |
++------+----------+--------+--------------+------+------+---------+
+|  100 | Katriina | F      | Helsinki     |   19 | 9.56 |    NULL |
+|  101 | Katy     | F      | Paris        |   29 | 8.56 |    NULL |
+|  103 | Ali      | M      | Espoo        |   19 | 6.56 |    NULL |
+|  104 | Evelina  | F      | Lappeenranta |   24 | 7.00 |    NULL |
++------+----------+--------+--------------+------+------+---------+
+4 rows in set (0.00 sec)
+
+mysql> alter table student modify column adress varchar(100);
+ERROR 1146 (42S02): Table 'class2.student' doesn't exist
+mysql> alter table students modify column adress varchar(100);
+ERROR 1054 (42S22): Unknown column 'adress' in 'students'
+mysql> alter table students modify column address varchar(100);
+Query OK, 4 rows affected (0.05 sec)
+Records: 4  Duplicates: 0  Warnings: 0
+
+mysql> select * from students;
++------+----------+--------+--------------+------+------+---------+
+| roll | name     | gender | city         | age  | cgpa | address |
++------+----------+--------+--------------+------+------+---------+
+|  100 | Katriina | F      | Helsinki     |   19 | 9.56 | NULL    |
+|  101 | Katy     | F      | Paris        |   29 | 8.56 | NULL    |
+|  103 | Ali      | M      | Espoo        |   19 | 6.56 | NULL    |
+|  104 | Evelina  | F      | Lappeenranta |   24 | 7.00 | NULL    |
++------+----------+--------+--------------+------+------+---------+
+4 rows in set (0.00 sec)
+
+mysql> describe students;
++---------+--------------+------+-----+---------+-------+
+| Field   | Type         | Null | Key | Default | Extra |
++---------+--------------+------+-----+---------+-------+
+| roll    | int          | YES  |     | NULL    |       |
+| name    | varchar(200) | YES  |     | NULL    |       |
+| gender  | char(1)      | YES  |     | NULL    |       |
+| city    | varchar(100) | YES  |     | NULL    |       |
+| age     | int          | YES  |     | NULL    |       |
+| cgpa    | float(4,2)   | YES  |     | NULL    |       |
+| address | varchar(100) | YES  |     | NULL    |       |
++---------+--------------+------+-----+---------+-------+
+7 rows in set (0.00 sec)
+
+mysql> alter table students drop column address;
+Query OK, 0 rows affected (0.15 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> select * from students;
++------+----------+--------+--------------+------+------+
+| roll | name     | gender | city         | age  | cgpa |
++------+----------+--------+--------------+------+------+
+|  100 | Katriina | F      | Helsinki     |   19 | 9.56 |
+|  101 | Katy     | F      | Paris        |   29 | 8.56 |
+|  103 | Ali      | M      | Espoo        |   19 | 6.56 |
+|  104 | Evelina  | F      | Lappeenranta |   24 | 7.00 |
++------+----------+--------+--------------+------+------+
+4 rows in set (0.00 sec)
+
+mysql> alter table students rename column roll to roll_no;
+Query OK, 0 rows affected (0.48 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> select * from students;
++---------+----------+--------+--------------+------+------+
+| roll_no | name     | gender | city         | age  | cgpa |
++---------+----------+--------+--------------+------+------+
+|     100 | Katriina | F      | Helsinki     |   19 | 9.56 |
+|     101 | Katy     | F      | Paris        |   29 | 8.56 |
+|     103 | Ali      | M      | Espoo        |   19 | 6.56 |
+|     104 | Evelina  | F      | Lappeenranta |   24 | 7.00 |
++---------+----------+--------+--------------+------+------+
+4 rows in set (0.00 sec)
+
+mysql> update students set age = 27 where name = "Ali";
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from students;
++---------+----------+--------+--------------+------+------+
+| roll_no | name     | gender | city         | age  | cgpa |
++---------+----------+--------+--------------+------+------+
+|     100 | Katriina | F      | Helsinki     |   19 | 9.56 |
+|     101 | Katy     | F      | Paris        |   29 | 8.56 |
+|     103 | Ali      | M      | Espoo        |   27 | 6.56 |
+|     104 | Evelina  | F      | Lappeenranta |   24 | 7.00 |
++---------+----------+--------+--------------+------+------+
+4 rows in set (0.00 sec)
+
+mysql> alter table students add column class_teacher varchar(150);
+Query OK, 0 rows affected (0.01 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> select * from students;
++---------+----------+--------+--------------+------+------+---------------+
+| roll_no | name     | gender | city         | age  | cgpa | class_teacher |
++---------+----------+--------+--------------+------+------+---------------+
+|     100 | Katriina | F      | Helsinki     |   19 | 9.56 | NULL          |
+|     101 | Katy     | F      | Paris        |   29 | 8.56 | NULL          |
+|     103 | Ali      | M      | Espoo        |   27 | 6.56 | NULL          |
+|     104 | Evelina  | F      | Lappeenranta |   24 | 7.00 | NULL          |
++---------+----------+--------+--------------+------+------+---------------+
+4 rows in set (0.00 sec)
+
+mysql> update students set class_teacher = "Joseph";
+Query OK, 4 rows affected (0.00 sec)
+Rows matched: 4  Changed: 4  Warnings: 0
+
+mysql> select * from students;
++---------+----------+--------+--------------+------+------+---------------+
+| roll_no | name     | gender | city         | age  | cgpa | class_teacher |
++---------+----------+--------+--------------+------+------+---------------+
+|     100 | Katriina | F      | Helsinki     |   19 | 9.56 | Joseph        |
+|     101 | Katy     | F      | Paris        |   29 | 8.56 | Joseph        |
+|     103 | Ali      | M      | Espoo        |   27 | 6.56 | Joseph        |
+|     104 | Evelina  | F      | Lappeenranta |   24 | 7.00 | Joseph        |
++---------+----------+--------+--------------+------+------+---------------+
+4 rows in set (0.00 sec)

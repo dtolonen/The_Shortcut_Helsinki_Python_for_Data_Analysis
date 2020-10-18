@@ -1,0 +1,677 @@
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| class2             |
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+5 rows in set (0.00 sec)
+
+mysql> use class2;
+Database changed
+
++------------------+
+| Tables_in_class2 |
++------------------+
+| students         |
++------------------+
+1 row in set (0.00 sec)
+
+
+mysql> CREATE TABLE STUDENT(ROLL INT(6), NAME VARCHAR(200),CITY VARCHAR(200), GENDER CHAR(1), AGE INT (3), CGPA FLOAT(4,2));
+Query OK, 0 rows affected, 3 warnings (0.03 sec)
+
+
+mysql> HELP
+
+For information about MySQL products and services, visit:
+   http://www.mysql.com/
+For developer information, including the MySQL Reference Manual, visit:
+   http://dev.mysql.com/
+To buy MySQL Enterprise support, training, or other products, visit:
+   https://shop.mysql.com/
+
+List of all MySQL commands:
+Note that all text commands must be first on line and end with ';'
+?         (\?) Synonym for `help'.
+clear     (\c) Clear the current input statement.
+connect   (\r) Reconnect to the server. Optional arguments are db and host.
+delimiter (\d) Set statement delimiter.
+ego       (\G) Send command to mysql server, display result vertically.
+exit      (\q) Exit mysql. Same as quit.
+go        (\g) Send command to mysql server.
+help      (\h) Display this help.
+notee     (\t) Don't write into outfile.
+print     (\p) Print current command.
+prompt    (\R) Change your mysql prompt.
+quit      (\q) Quit mysql.
+rehash    (\#) Rebuild completion hash.
+source    (\.) Execute an SQL script file. Takes a file name as an argument.
+status    (\s) Get status information from the server.
+system    (\!) Execute a system shell command.
+tee       (\T) Set outfile [to_outfile]. Append everything into given outfile.
+use       (\u) Use another database. Takes database name as argument.
+charset   (\C) Switch to another charset. Might be needed for processing binlog with multi-byte charsets.
+warnings  (\W) Show warnings after every statement.
+nowarning (\w) Don't show warnings after every statement.
+resetconnection(\x) Clean session context.
+
+For server side help, type 'help contents'
+
+mysql> SHOW DATABASES;
++--------------------+
+| Database           |
++--------------------+
+| class2             |
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+5 rows in set (0.00 sec)
+
+mysql> USE CLASS2;
+Database changed
+mysql> SHOW TABLES;
++------------------+
+| Tables_in_class2 |
++------------------+
+| student          |
+| students         |
++------------------+
+2 rows in set (0.00 sec)
+
+mysql> SELECT * FROM STUDENT;
+Empty set (0.00 sec)
+
+mysql> DESCRIBE STUDENT;
++--------+--------------+------+-----+---------+-------+
+| Field  | Type         | Null | Key | Default | Extra |
++--------+--------------+------+-----+---------+-------+
+| ROLL   | int          | YES  |     | NULL    |       |
+| NAME   | varchar(200) | YES  |     | NULL    |       |
+| CITY   | varchar(200) | YES  |     | NULL    |       |
+| GENDER | char(1)      | YES  |     | NULL    |       |
+| AGE    | int          | YES  |     | NULL    |       |
+| CGPA   | float(4,2)   | YES  |     | NULL    |       |
++--------+--------------+------+-----+---------+-------+
+6 rows in set (0.00 sec)
+
+mysql> INSERT INTO STUDENT VALUES (101, "RAM","BHUMBANESWAR", "M",19,9.0);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> SELECT * FROM STUDENT;
++------+------+--------------+--------+------+------+
+| ROLL | NAME | CITY         | GENDER | AGE  | CGPA |
++------+------+--------------+--------+------+------+
+|  101 | RAM  | BHUMBANESWAR | M      |   19 | 9.00 |
++------+------+--------------+--------+------+------+
+1 row in set (0.00 sec)
+
+mysql> INSERT INTO STUDENT VALUES(103,"UDAY","NEW DELHI","M",20,8.97);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> INSERT INTO STUDENT VALUES(104,"VIKAS","KANPUR","M",19,8.5);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO STUDENT VALUES(105,"SWETA","RANCHI","F",19,9.2);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO STUDENT VALUES(106,"YOGESH","JAIPUR","F",18,7.9);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO STUDENT VALUES(210,"SMRITI","NEW DELHI","F",19,8.99);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO STUDENT VALUES(211,"SUDAM","BHUBANESWAR","M",21,8.6);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO STUDENT VALUES(212,"VIKAS","KOLKATA","M",23,5.98);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO STUDENT VALUES(165,"MANISH","MUMBAI","F",19,9.15);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> SELECT * FROM STUDENT;
++------+--------+--------------+--------+------+------+
+| ROLL | NAME   | CITY         | GENDER | AGE  | CGPA |
++------+--------+--------------+--------+------+------+
+|  101 | RAM    | BHUMBANESWAR | M      |   19 | 9.00 |
+|  103 | UDAY   | NEW DELHI    | M      |   20 | 8.97 |
+|  104 | VIKAS  | KANPUR       | M      |   19 | 8.50 |
+|  105 | SWETA  | RANCHI       | F      |   19 | 9.20 |
+|  106 | YOGESH | JAIPUR       | F      |   18 | 7.90 |
+|  210 | SMRITI | NEW DELHI    | F      |   19 | 8.99 |
+|  211 | SUDAM  | BHUBANESWAR  | M      |   21 | 8.60 |
+|  212 | VIKAS  | KOLKATA      | M      |   23 | 5.98 |
+|  165 | MANISH | MUMBAI       | F      |   19 | 9.15 |
++------+--------+--------------+--------+------+------+
+9 rows in set (0.00 sec)
+
+mysql> DESCRIBE STUDENT;
++--------+--------------+------+-----+---------+-------+
+| Field  | Type         | Null | Key | Default | Extra |
++--------+--------------+------+-----+---------+-------+
+| ROLL   | int          | YES  |     | NULL    |       |
+| NAME   | varchar(200) | YES  |     | NULL    |       |
+| CITY   | varchar(200) | YES  |     | NULL    |       |
+| GENDER | char(1)      | YES  |     | NULL    |       |
+| AGE    | int          | YES  |     | NULL    |       |
+| CGPA   | float(4,2)   | YES  |     | NULL    |       |
++--------+--------------+------+-----+---------+-------+
+6 rows in set (0.01 sec)
+
+mysql> INSERT INTO STUDENT(ROLL, NAME, CITY, GENDER, CGPA) VALUES (102, "HARI", "BHUBANESWAR","M", 6.7);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> SELECT * FROM STUDENT;
++------+--------+--------------+--------+------+------+
+| ROLL | NAME   | CITY         | GENDER | AGE  | CGPA |
++------+--------+--------------+--------+------+------+
+|  101 | RAM    | BHUMBANESWAR | M      |   19 | 9.00 |
+|  103 | UDAY   | NEW DELHI    | M      |   20 | 8.97 |
+|  104 | VIKAS  | KANPUR       | M      |   19 | 8.50 |
+|  105 | SWETA  | RANCHI       | F      |   19 | 9.20 |
+|  106 | YOGESH | JAIPUR       | F      |   18 | 7.90 |
+|  210 | SMRITI | NEW DELHI    | F      |   19 | 8.99 |
+|  211 | SUDAM  | BHUBANESWAR  | M      |   21 | 8.60 |
+|  212 | VIKAS  | KOLKATA      | M      |   23 | 5.98 |
+|  165 | MANISH | MUMBAI       | F      |   19 | 9.15 |
+|  102 | HARI   | BHUBANESWAR  | M      | NULL | 6.70 |
++------+--------+--------------+--------+------+------+
+10 rows in set (0.00 sec)
+
+mysql> SELECT NAME, AGE FROM STUDENT;
++--------+------+
+| NAME   | AGE  |
++--------+------+
+| RAM    |   19 |
+| UDAY   |   20 |
+| VIKAS  |   19 |
+| SWETA  |   19 |
+| YOGESH |   18 |
+| SMRITI |   19 |
+| SUDAM  |   21 |
+| VIKAS  |   23 |
+| MANISH |   19 |
+| HARI   | NULL |
++--------+------+
+10 rows in set (0.00 sec)
+
+mysql> SELECT COUNT(*) FROM STUDENT;
++----------+
+| COUNT(*) |
++----------+
+|       10 |
++----------+
+1 row in set (0.00 sec)
+
+mysql> SELECT DISTINCT CITY FROM STUDENT;
++--------------+
+| CITY         |
++--------------+
+| BHUMBANESWAR |
+| NEW DELHI    |
+| KANPUR       |
+| RANCHI       |
+| JAIPUR       |
+| BHUBANESWAR  |
+| KOLKATA      |
+| MUMBAI       |
++--------------+
+8 rows in set (0.00 sec)
+
+mysql> SELECT NAME, AGE, AGE+3 FROM STUDENT;
++--------+------+-------+
+| NAME   | AGE  | AGE+3 |
++--------+------+-------+
+| RAM    |   19 |    22 |
+| UDAY   |   20 |    23 |
+| VIKAS  |   19 |    22 |
+| SWETA  |   19 |    22 |
+| YOGESH |   18 |    21 |
+| SMRITI |   19 |    22 |
+| SUDAM  |   21 |    24 |
+| VIKAS  |   23 |    26 |
+| MANISH |   19 |    22 |
+| HARI   | NULL |  NULL |
++--------+------+-------+
+10 rows in set (0.00 sec)
+
+mysql> SELECT NAME, AGE, AGE+3 AS "PASSING_GRADE" FROM STUDENT;
++--------+------+---------------+
+| NAME   | AGE  | PASSING_GRADE |
++--------+------+---------------+
+| RAM    |   19 |            22 |
+| UDAY   |   20 |            23 |
+| VIKAS  |   19 |            22 |
+| SWETA  |   19 |            22 |
+| YOGESH |   18 |            21 |
+| SMRITI |   19 |            22 |
+| SUDAM  |   21 |            24 |
+| VIKAS  |   23 |            26 |
+| MANISH |   19 |            22 |
+| HARI   | NULL |          NULL |
++--------+------+---------------+
+10 rows in set (0.00 sec)
+
+mysql> SELECT NAME, AGE, AGE+3 AS PASSING_GRADE FROM STUDENT;
++--------+------+---------------+
+| NAME   | AGE  | PASSING_GRADE |
++--------+------+---------------+
+| RAM    |   19 |            22 |
+| UDAY   |   20 |            23 |
+| VIKAS  |   19 |            22 |
+| SWETA  |   19 |            22 |
+| YOGESH |   18 |            21 |
+| SMRITI |   19 |            22 |
+| SUDAM  |   21 |            24 |
+| VIKAS  |   23 |            26 |
+| MANISH |   19 |            22 |
+| HARI   | NULL |          NULL |
++--------+------+---------------+
+10 rows in set (0.00 sec)
+
+mysql> SELECT NAME, AGE, AGE+3 AS PASSING_AGE FROM STUDENT;
++--------+------+-------------+
+| NAME   | AGE  | PASSING_AGE |
++--------+------+-------------+
+| RAM    |   19 |          22 |
+| UDAY   |   20 |          23 |
+| VIKAS  |   19 |          22 |
+| SWETA  |   19 |          22 |
+| YOGESH |   18 |          21 |
+| SMRITI |   19 |          22 |
+| SUDAM  |   21 |          24 |
+| VIKAS  |   23 |          26 |
+| MANISH |   19 |          22 |
+| HARI   | NULL |        NULL |
++--------+------+-------------+
+10 rows in set (0.00 sec)
+
+mysql> SELECT CONCAT(NAME, " ", CITY), AGE FROM STUDENT;
++-------------------------+------+
+| CONCAT(NAME, " ", CITY) | AGE  |
++-------------------------+------+
+| RAM BHUMBANESWAR        |   19 |
+| UDAY NEW DELHI          |   20 |
+| VIKAS KANPUR            |   19 |
+| SWETA RANCHI            |   19 |
+| YOGESH JAIPUR           |   18 |
+| SMRITI NEW DELHI        |   19 |
+| SUDAM BHUBANESWAR       |   21 |
+| VIKAS KOLKATA           |   23 |
+| MANISH MUMBAI           |   19 |
+| HARI BHUBANESWAR        | NULL |
++-------------------------+------+
+10 rows in set (0.00 sec)
+
+mysql> SELECT CONCAT(NAME, " ", CITY) AS NAME AND CITY, AGE FROM STUDENT;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND CITY, AGE FROM STUDENT' at line 1
+mysql> SELECT CONCAT(NAME, " ", CITY) AS "NAME AND CITY", AGE FROM STUDENT;
++-------------------+------+
+| NAME AND CITY     | AGE  |
++-------------------+------+
+| RAM BHUMBANESWAR  |   19 |
+| UDAY NEW DELHI    |   20 |
+| VIKAS KANPUR      |   19 |
+| SWETA RANCHI      |   19 |
+| YOGESH JAIPUR     |   18 |
+| SMRITI NEW DELHI  |   19 |
+| SUDAM BHUBANESWAR |   21 |
+| VIKAS KOLKATA     |   23 |
+| MANISH MUMBAI     |   19 |
+| HARI BHUBANESWAR  | NULL |
++-------------------+------+
+10 rows in set (0.00 sec)
+
+mysql> SELECT * FROM STUDENT WHERE ROLL=101;
++------+------+--------------+--------+------+------+
+| ROLL | NAME | CITY         | GENDER | AGE  | CGPA |
++------+------+--------------+--------+------+------+
+|  101 | RAM  | BHUMBANESWAR | M      |   19 | 9.00 |
++------+------+--------------+--------+------+------+
+1 row in set (0.00 sec)
+
+mysql> SELECT * FROM STUDENT WHERE CITY = "NEW DELHI";
++------+--------+-----------+--------+------+------+
+| ROLL | NAME   | CITY      | GENDER | AGE  | CGPA |
++------+--------+-----------+--------+------+------+
+|  103 | UDAY   | NEW DELHI | M      |   20 | 8.97 |
+|  210 | SMRITI | NEW DELHI | F      |   19 | 8.99 |
++------+--------+-----------+--------+------+------+
+2 rows in set (0.00 sec)
+
+mysql> SELECT * FROM STUDENT WHERE ROLL>102;
++------+--------+-------------+--------+------+------+
+| ROLL | NAME   | CITY        | GENDER | AGE  | CGPA |
++------+--------+-------------+--------+------+------+
+|  103 | UDAY   | NEW DELHI   | M      |   20 | 8.97 |
+|  104 | VIKAS  | KANPUR      | M      |   19 | 8.50 |
+|  105 | SWETA  | RANCHI      | F      |   19 | 9.20 |
+|  106 | YOGESH | JAIPUR      | F      |   18 | 7.90 |
+|  210 | SMRITI | NEW DELHI   | F      |   19 | 8.99 |
+|  211 | SUDAM  | BHUBANESWAR | M      |   21 | 8.60 |
+|  212 | VIKAS  | KOLKATA     | M      |   23 | 5.98 |
+|  165 | MANISH | MUMBAI      | F      |   19 | 9.15 |
++------+--------+-------------+--------+------+------+
+8 rows in set (0.00 sec)
+
+mysql> SELECT * FROM STUDENT WHERE ROLL<102;
++------+------+--------------+--------+------+------+
+| ROLL | NAME | CITY         | GENDER | AGE  | CGPA |
++------+------+--------------+--------+------+------+
+|  101 | RAM  | BHUMBANESWAR | M      |   19 | 9.00 |
++------+------+--------------+--------+------+------+
+1 row in set (0.00 sec)
+
+mysql> SELECT * FROM STUDENT WHERE ROLL<110;
++------+--------+--------------+--------+------+------+
+| ROLL | NAME   | CITY         | GENDER | AGE  | CGPA |
++------+--------+--------------+--------+------+------+
+|  101 | RAM    | BHUMBANESWAR | M      |   19 | 9.00 |
+|  103 | UDAY   | NEW DELHI    | M      |   20 | 8.97 |
+|  104 | VIKAS  | KANPUR       | M      |   19 | 8.50 |
+|  105 | SWETA  | RANCHI       | F      |   19 | 9.20 |
+|  106 | YOGESH | JAIPUR       | F      |   18 | 7.90 |
+|  102 | HARI   | BHUBANESWAR  | M      | NULL | 6.70 |
++------+--------+--------------+--------+------+------+
+6 rows in set (0.00 sec)
+
+mysql> SELECT * FROM STUDENT WHERE ROLL<=210;
++------+--------+--------------+--------+------+------+
+| ROLL | NAME   | CITY         | GENDER | AGE  | CGPA |
++------+--------+--------------+--------+------+------+
+|  101 | RAM    | BHUMBANESWAR | M      |   19 | 9.00 |
+|  103 | UDAY   | NEW DELHI    | M      |   20 | 8.97 |
+|  104 | VIKAS  | KANPUR       | M      |   19 | 8.50 |
+|  105 | SWETA  | RANCHI       | F      |   19 | 9.20 |
+|  106 | YOGESH | JAIPUR       | F      |   18 | 7.90 |
+|  210 | SMRITI | NEW DELHI    | F      |   19 | 8.99 |
+|  165 | MANISH | MUMBAI       | F      |   19 | 9.15 |
+|  102 | HARI   | BHUBANESWAR  | M      | NULL | 6.70 |
++------+--------+--------------+--------+------+------+
+8 rows in set (0.00 sec)
+
+mysql> SELECT * FROM STUDENT WHERE ROLL!=210;
++------+--------+--------------+--------+------+------+
+| ROLL | NAME   | CITY         | GENDER | AGE  | CGPA |
++------+--------+--------------+--------+------+------+
+|  101 | RAM    | BHUMBANESWAR | M      |   19 | 9.00 |
+|  103 | UDAY   | NEW DELHI    | M      |   20 | 8.97 |
+|  104 | VIKAS  | KANPUR       | M      |   19 | 8.50 |
+|  105 | SWETA  | RANCHI       | F      |   19 | 9.20 |
+|  106 | YOGESH | JAIPUR       | F      |   18 | 7.90 |
+|  211 | SUDAM  | BHUBANESWAR  | M      |   21 | 8.60 |
+|  212 | VIKAS  | KOLKATA      | M      |   23 | 5.98 |
+|  165 | MANISH | MUMBAI       | F      |   19 | 9.15 |
+|  102 | HARI   | BHUBANESWAR  | M      | NULL | 6.70 |
++------+--------+--------------+--------+------+------+
+9 rows in set (0.00 sec)
+
+mysql> SELECT * FROM STUDENT WHERE ROLL>105 AND GENDER="F";
++------+--------+-----------+--------+------+------+
+| ROLL | NAME   | CITY      | GENDER | AGE  | CGPA |
++------+--------+-----------+--------+------+------+
+|  106 | YOGESH | JAIPUR    | F      |   18 | 7.90 |
+|  210 | SMRITI | NEW DELHI | F      |   19 | 8.99 |
+|  165 | MANISH | MUMBAI    | F      |   19 | 9.15 |
++------+--------+-----------+--------+------+------+
+3 rows in set (0.00 sec)
+
+mysql> SELECT * FROM STUDENT WHERE ROLL>105 OR GENDER="F";
++------+--------+-------------+--------+------+------+
+| ROLL | NAME   | CITY        | GENDER | AGE  | CGPA |
++------+--------+-------------+--------+------+------+
+|  105 | SWETA  | RANCHI      | F      |   19 | 9.20 |
+|  106 | YOGESH | JAIPUR      | F      |   18 | 7.90 |
+|  210 | SMRITI | NEW DELHI   | F      |   19 | 8.99 |
+|  211 | SUDAM  | BHUBANESWAR | M      |   21 | 8.60 |
+|  212 | VIKAS  | KOLKATA     | M      |   23 | 5.98 |
+|  165 | MANISH | MUMBAI      | F      |   19 | 9.15 |
++------+--------+-------------+--------+------+------+
+6 rows in set (0.00 sec)
+
+mysql> SELECT * FROM STUDENT WHERE NOT AGE=20;
++------+--------+--------------+--------+------+------+
+| ROLL | NAME   | CITY         | GENDER | AGE  | CGPA |
++------+--------+--------------+--------+------+------+
+|  101 | RAM    | BHUMBANESWAR | M      |   19 | 9.00 |
+|  104 | VIKAS  | KANPUR       | M      |   19 | 8.50 |
+|  105 | SWETA  | RANCHI       | F      |   19 | 9.20 |
+|  106 | YOGESH | JAIPUR       | F      |   18 | 7.90 |
+|  210 | SMRITI | NEW DELHI    | F      |   19 | 8.99 |
+|  211 | SUDAM  | BHUBANESWAR  | M      |   21 | 8.60 |
+|  212 | VIKAS  | KOLKATA      | M      |   23 | 5.98 |
+|  165 | MANISH | MUMBAI       | F      |   19 | 9.15 |
++------+--------+--------------+--------+------+------+
+8 rows in set (0.00 sec)
+
+mysql> SELECT * FROM STUDENT WHERE NOT (AGE=20 AND AGE 21);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '21)' at line 1
+mysql> SELECT * FROM STUDENT WHERE NOT (AGE=20 AND AGE=21);
++------+--------+--------------+--------+------+------+
+| ROLL | NAME   | CITY         | GENDER | AGE  | CGPA |
++------+--------+--------------+--------+------+------+
+|  101 | RAM    | BHUMBANESWAR | M      |   19 | 9.00 |
+|  103 | UDAY   | NEW DELHI    | M      |   20 | 8.97 |
+|  104 | VIKAS  | KANPUR       | M      |   19 | 8.50 |
+|  105 | SWETA  | RANCHI       | F      |   19 | 9.20 |
+|  106 | YOGESH | JAIPUR       | F      |   18 | 7.90 |
+|  210 | SMRITI | NEW DELHI    | F      |   19 | 8.99 |
+|  211 | SUDAM  | BHUBANESWAR  | M      |   21 | 8.60 |
+|  212 | VIKAS  | KOLKATA      | M      |   23 | 5.98 |
+|  165 | MANISH | MUMBAI       | F      |   19 | 9.15 |
++------+--------+--------------+--------+------+------+
+9 rows in set (0.00 sec)
+
+mysql> SELECT * FROM STUDENT WHERE NOT (AGE=20 OR AGE=21);
++------+--------+--------------+--------+------+------+
+| ROLL | NAME   | CITY         | GENDER | AGE  | CGPA |
++------+--------+--------------+--------+------+------+
+|  101 | RAM    | BHUMBANESWAR | M      |   19 | 9.00 |
+|  104 | VIKAS  | KANPUR       | M      |   19 | 8.50 |
+|  105 | SWETA  | RANCHI       | F      |   19 | 9.20 |
+|  106 | YOGESH | JAIPUR       | F      |   18 | 7.90 |
+|  210 | SMRITI | NEW DELHI    | F      |   19 | 8.99 |
+|  212 | VIKAS  | KOLKATA      | M      |   23 | 5.98 |
+|  165 | MANISH | MUMBAI       | F      |   19 | 9.15 |
++------+--------+--------------+--------+------+------+
+7 rows in set (0.00 sec)
+
+mysql> SELECT * FROM STUDENT WHERE NAME LIKE "S%";
++------+--------+-------------+--------+------+------+
+| ROLL | NAME   | CITY        | GENDER | AGE  | CGPA |
++------+--------+-------------+--------+------+------+
+|  105 | SWETA  | RANCHI      | F      |   19 | 9.20 |
+|  210 | SMRITI | NEW DELHI   | F      |   19 | 8.99 |
+|  211 | SUDAM  | BHUBANESWAR | M      |   21 | 8.60 |
++------+--------+-------------+--------+------+------+
+3 rows in set (0.00 sec)
+
+mysql> SELECT * FROM STUDENT WHERE NAME LIKE "S_";
+Empty set (0.00 sec)
+
+mysql> SELECT * FROM STUDENT WHERE NAME LIKE "%I";
++------+--------+-------------+--------+------+------+
+| ROLL | NAME   | CITY        | GENDER | AGE  | CGPA |
++------+--------+-------------+--------+------+------+
+|  210 | SMRITI | NEW DELHI   | F      |   19 | 8.99 |
+|  102 | HARI   | BHUBANESWAR | M      | NULL | 6.70 |
++------+--------+-------------+--------+------+------+
+2 rows in set (0.00 sec)
+
+mysql> SELECT * FROM STUDENT WHERE NAME LIKE "_I%";
++------+-------+---------+--------+------+------+
+| ROLL | NAME  | CITY    | GENDER | AGE  | CGPA |
++------+-------+---------+--------+------+------+
+|  104 | VIKAS | KANPUR  | M      |   19 | 8.50 |
+|  212 | VIKAS | KOLKATA | M      |   23 | 5.98 |
++------+-------+---------+--------+------+------+
+2 rows in set (0.00 sec)
+
+mysql> SELECT * FROM STUDENT WHERE CITYU IN("NEW dELHI", "RANCHI","JAIPUR");
+ERROR 1054 (42S22): Unknown column 'CITYU' in 'where clause'
+mysql> SELECT * FROM STUDENT WHERE CITY IN("NEW dELHI", "RANCHI","JAIPUR");
++------+--------+-----------+--------+------+------+
+| ROLL | NAME   | CITY      | GENDER | AGE  | CGPA |
++------+--------+-----------+--------+------+------+
+|  103 | UDAY   | NEW DELHI | M      |   20 | 8.97 |
+|  105 | SWETA  | RANCHI    | F      |   19 | 9.20 |
+|  106 | YOGESH | JAIPUR    | F      |   18 | 7.90 |
+|  210 | SMRITI | NEW DELHI | F      |   19 | 8.99 |
++------+--------+-----------+--------+------+------+
+4 rows in set (0.00 sec)
+
+mysql> SELECT * FROM STUDENT WHERE AGE BETWEEN 20 AND 22;
++------+-------+-------------+--------+------+------+
+| ROLL | NAME  | CITY        | GENDER | AGE  | CGPA |
++------+-------+-------------+--------+------+------+
+|  103 | UDAY  | NEW DELHI   | M      |   20 | 8.97 |
+|  211 | SUDAM | BHUBANESWAR | M      |   21 | 8.60 |
++------+-------+-------------+--------+------+------+
+2 rows in set (0.00 sec)
+
+mysql> SELECT * FROM STUDENT WHERE AGE ISNUL;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ISNUL' at line 1
+mysql> SELECT * FROM STUDENT WHERE AGE IS NULL;
++------+------+-------------+--------+------+------+
+| ROLL | NAME | CITY        | GENDER | AGE  | CGPA |
++------+------+-------------+--------+------+------+
+|  102 | HARI | BHUBANESWAR | M      | NULL | 6.70 |
++------+------+-------------+--------+------+------+
+1 row in set (0.00 sec)
+
+mysql> SELECT * FROM STUDENT WHERE AGE ISNULL;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ISNULL' at line 1
+mysql> SELECT * FROM STUDENT WHERE AGE IS NULL;
++------+------+-------------+--------+------+------+
+| ROLL | NAME | CITY        | GENDER | AGE  | CGPA |
++------+------+-------------+--------+------+------+
+|  102 | HARI | BHUBANESWAR | M      | NULL | 6.70 |
++------+------+-------------+--------+------+------+
+1 row in set (0.00 sec)
+
+mysql> SELECT *  FROM STUDENT ORDER BY AGE;
++------+--------+--------------+--------+------+------+
+| ROLL | NAME   | CITY         | GENDER | AGE  | CGPA |
++------+--------+--------------+--------+------+------+
+|  102 | HARI   | BHUBANESWAR  | M      | NULL | 6.70 |
+|  106 | YOGESH | JAIPUR       | F      |   18 | 7.90 |
+|  101 | RAM    | BHUMBANESWAR | M      |   19 | 9.00 |
+|  104 | VIKAS  | KANPUR       | M      |   19 | 8.50 |
+|  105 | SWETA  | RANCHI       | F      |   19 | 9.20 |
+|  210 | SMRITI | NEW DELHI    | F      |   19 | 8.99 |
+|  165 | MANISH | MUMBAI       | F      |   19 | 9.15 |
+|  103 | UDAY   | NEW DELHI    | M      |   20 | 8.97 |
+|  211 | SUDAM  | BHUBANESWAR  | M      |   21 | 8.60 |
+|  212 | VIKAS  | KOLKATA      | M      |   23 | 5.98 |
++------+--------+--------------+--------+------+------+
+10 rows in set (0.00 sec)
+
+mysql> SELECT *  FROM STUDENT ORDER BY AGE DESC;
++------+--------+--------------+--------+------+------+
+| ROLL | NAME   | CITY         | GENDER | AGE  | CGPA |
++------+--------+--------------+--------+------+------+
+|  212 | VIKAS  | KOLKATA      | M      |   23 | 5.98 |
+|  211 | SUDAM  | BHUBANESWAR  | M      |   21 | 8.60 |
+|  103 | UDAY   | NEW DELHI    | M      |   20 | 8.97 |
+|  101 | RAM    | BHUMBANESWAR | M      |   19 | 9.00 |
+|  104 | VIKAS  | KANPUR       | M      |   19 | 8.50 |
+|  105 | SWETA  | RANCHI       | F      |   19 | 9.20 |
+|  210 | SMRITI | NEW DELHI    | F      |   19 | 8.99 |
+|  165 | MANISH | MUMBAI       | F      |   19 | 9.15 |
+|  106 | YOGESH | JAIPUR       | F      |   18 | 7.90 |
+|  102 | HARI   | BHUBANESWAR  | M      | NULL | 6.70 |
++------+--------+--------------+--------+------+------+
+10 rows in set (0.00 sec)
+
+mysql> SELECT *  FROM STUDENT ORDER BY NAME;
++------+--------+--------------+--------+------+------+
+| ROLL | NAME   | CITY         | GENDER | AGE  | CGPA |
++------+--------+--------------+--------+------+------+
+|  102 | HARI   | BHUBANESWAR  | M      | NULL | 6.70 |
+|  165 | MANISH | MUMBAI       | F      |   19 | 9.15 |
+|  101 | RAM    | BHUMBANESWAR | M      |   19 | 9.00 |
+|  210 | SMRITI | NEW DELHI    | F      |   19 | 8.99 |
+|  211 | SUDAM  | BHUBANESWAR  | M      |   21 | 8.60 |
+|  105 | SWETA  | RANCHI       | F      |   19 | 9.20 |
+|  103 | UDAY   | NEW DELHI    | M      |   20 | 8.97 |
+|  104 | VIKAS  | KANPUR       | M      |   19 | 8.50 |
+|  212 | VIKAS  | KOLKATA      | M      |   23 | 5.98 |
+|  106 | YOGESH | JAIPUR       | F      |   18 | 7.90 |
++------+--------+--------------+--------+------+------+
+10 rows in set (0.00 sec)
+
+mysql> SELECT *  FROM STUDENT ORDER BY NAME DESC;
++------+--------+--------------+--------+------+------+
+| ROLL | NAME   | CITY         | GENDER | AGE  | CGPA |
++------+--------+--------------+--------+------+------+
+|  106 | YOGESH | JAIPUR       | F      |   18 | 7.90 |
+|  104 | VIKAS  | KANPUR       | M      |   19 | 8.50 |
+|  212 | VIKAS  | KOLKATA      | M      |   23 | 5.98 |
+|  103 | UDAY   | NEW DELHI    | M      |   20 | 8.97 |
+|  105 | SWETA  | RANCHI       | F      |   19 | 9.20 |
+|  211 | SUDAM  | BHUBANESWAR  | M      |   21 | 8.60 |
+|  210 | SMRITI | NEW DELHI    | F      |   19 | 8.99 |
+|  101 | RAM    | BHUMBANESWAR | M      |   19 | 9.00 |
+|  165 | MANISH | MUMBAI       | F      |   19 | 9.15 |
+|  102 | HARI   | BHUBANESWAR  | M      | NULL | 6.70 |
++------+--------+--------------+--------+------+------+
+10 rows in set (0.00 sec)
+
+mysql> SELECT * FROM STUDENT ORDER BY ROLL, AGE DESC;
++------+--------+--------------+--------+------+------+
+| ROLL | NAME   | CITY         | GENDER | AGE  | CGPA |
++------+--------+--------------+--------+------+------+
+|  101 | RAM    | BHUMBANESWAR | M      |   19 | 9.00 |
+|  102 | HARI   | BHUBANESWAR  | M      | NULL | 6.70 |
+|  103 | UDAY   | NEW DELHI    | M      |   20 | 8.97 |
+|  104 | VIKAS  | KANPUR       | M      |   19 | 8.50 |
+|  105 | SWETA  | RANCHI       | F      |   19 | 9.20 |
+|  106 | YOGESH | JAIPUR       | F      |   18 | 7.90 |
+|  165 | MANISH | MUMBAI       | F      |   19 | 9.15 |
+|  210 | SMRITI | NEW DELHI    | F      |   19 | 8.99 |
+|  211 | SUDAM  | BHUBANESWAR  | M      |   21 | 8.60 |
+|  212 | VIKAS  | KOLKATA      | M      |   23 | 5.98 |
++------+--------+--------------+--------+------+------+
+10 rows in set (0.00 sec)
+
+mysql> SELECT * FROM STUDENT ORDER BY GENDER, AGE DESC;
++------+--------+--------------+--------+------+------+
+| ROLL | NAME   | CITY         | GENDER | AGE  | CGPA |
++------+--------+--------------+--------+------+------+
+|  105 | SWETA  | RANCHI       | F      |   19 | 9.20 |
+|  210 | SMRITI | NEW DELHI    | F      |   19 | 8.99 |
+|  165 | MANISH | MUMBAI       | F      |   19 | 9.15 |
+|  106 | YOGESH | JAIPUR       | F      |   18 | 7.90 |
+|  212 | VIKAS  | KOLKATA      | M      |   23 | 5.98 |
+|  211 | SUDAM  | BHUBANESWAR  | M      |   21 | 8.60 |
+|  103 | UDAY   | NEW DELHI    | M      |   20 | 8.97 |
+|  101 | RAM    | BHUMBANESWAR | M      |   19 | 9.00 |
+|  104 | VIKAS  | KANPUR       | M      |   19 | 8.50 |
+|  102 | HARI   | BHUBANESWAR  | M      | NULL | 6.70 |
++------+--------+--------------+--------+------+------+
+10 rows in set (0.00 sec)
+
+mysql> SELECT * FROM STUDENT ORDER BY AGE, ROLL DESC;
++------+--------+--------------+--------+------+------+
+| ROLL | NAME   | CITY         | GENDER | AGE  | CGPA |
++------+--------+--------------+--------+------+------+
+|  102 | HARI   | BHUBANESWAR  | M      | NULL | 6.70 |
+|  106 | YOGESH | JAIPUR       | F      |   18 | 7.90 |
+|  210 | SMRITI | NEW DELHI    | F      |   19 | 8.99 |
+|  165 | MANISH | MUMBAI       | F      |   19 | 9.15 |
+|  105 | SWETA  | RANCHI       | F      |   19 | 9.20 |
+|  104 | VIKAS  | KANPUR       | M      |   19 | 8.50 |
+|  101 | RAM    | BHUMBANESWAR | M      |   19 | 9.00 |
+|  103 | UDAY   | NEW DELHI    | M      |   20 | 8.97 |
+|  211 | SUDAM  | BHUBANESWAR  | M      |   21 | 8.60 |
+|  212 | VIKAS  | KOLKATA      | M      |   23 | 5.98 |
++------+--------+--------------+--------+------+------+
+10 rows in set (0.00 sec)

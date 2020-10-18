@@ -1,0 +1,215 @@
+-- MySQL dump 10.13  Distrib 8.0.19, for macos10.15 (x86_64)
+--
+-- Host: localhost    Database: class2
+-- ------------------------------------------------------
+-- Server version	8.0.19
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!50503 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `class_10a`
+--
+
+DROP TABLE IF EXISTS `class_10a`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `class_10a` (
+  `roll_no` int NOT NULL,
+  `name` varchar(200) NOT NULL,
+  `city` varchar(200) NOT NULL,
+  `GENDER` char(1) DEFAULT NULL,
+  `age` int NOT NULL,
+  `cgpa` float(4,2) NOT NULL,
+  `class_teacher` varchar(150) NOT NULL DEFAULT 'joseph',
+  `student_id` varchar(50) NOT NULL,
+  PRIMARY KEY (`student_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `class_10a`
+--
+
+LOCK TABLES `class_10a` WRITE;
+/*!40000 ALTER TABLE `class_10a` DISABLE KEYS */;
+INSERT INTO `class_10a` VALUES (101,'RAM','BHUMBANESWAR','M',19,9.00,'JOSEPH','101_RAM'),(103,'UDAY','NEW DELHI','M',20,8.97,'JOSEPH','103_UDAY'),(104,'VIKAS','KANPUR','M',19,8.50,'JOSEPH','104_VIKAS'),(105,'SWETA','RANCHI','F',19,9.20,'JOSEPH','105_SWETA'),(106,'YOGESH','JAIPUR','F',18,7.90,'JOSEPH','106_YOGESH'),(165,'MANISH','MUMBAI','F',19,9.15,'JOSEPH','165_MANISH'),(210,'SMRITI','NEW DELHI','F',19,8.99,'JOSEPH','210_SMRITI'),(211,'SUDAM','BHUBANESWAR','M',21,8.60,'JOSEPH','211_SUDAM'),(212,'VIKAS','KOLKATA','M',23,5.98,'JOSEPH','212_VIKAS');
+/*!40000 ALTER TABLE `class_10a` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `class_10b`
+--
+
+DROP TABLE IF EXISTS `class_10b`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `class_10b` (
+  `ROLL_NO` int NOT NULL,
+  `NAME` varchar(200) NOT NULL,
+  `CITY` varchar(100) NOT NULL,
+  `AGE` int NOT NULL,
+  `CGPA` float(4,2) NOT NULL,
+  `CLASS_TEACHER` varchar(100) NOT NULL DEFAULT 'MARIA',
+  `student_id` varchar(50) NOT NULL,
+  PRIMARY KEY (`student_id`),
+  CONSTRAINT `class_10b_chk_1` CHECK (((`AGE` >= 18) and (`AGE` <= 23)))
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `class_10b`
+--
+
+LOCK TABLES `class_10b` WRITE;
+/*!40000 ALTER TABLE `class_10b` DISABLE KEYS */;
+INSERT INTO `class_10b` VALUES (102,'GAURAV','RANCHI',20,8.15,'MARIA','102_GAURAV'),(123,'RANA','NEW DELHI',21,7.77,'MARIA','123_RANA'),(154,'ABHISHEK','BENGALURU',19,7.25,'MARIA','154_ABHISHEK'),(202,'SHIVAM','BENGALURU',18,8.75,'MARIA','202_SHIVAM'),(276,'SHUBHAM','CHENNAI',20,9.12,'MARIA','276_SHUBHAM'),(292,'AKSHITA','NEW DELHI',23,8.95,'MARIA','292_AKSHITA'),(302,'VIKAS','JAIPUR',22,6.54,'MARIA','302_VIKAS'),(303,'ROMI','JAIPUR',21,7.65,'MARIA','303_ROMI'),(305,'ALISHA','MUMBAI',22,8.35,'MARIA','305_ALISHA'),(365,'ADIL','RANCHI',19,9.62,'MARIA','365_ADIL'),(50,'ADITI','NEW DELHI',20,8.50,'MARIA','50_ADITI'),(55,'ANAMIKA','NEW DELHI',20,7.20,'MARIA','55_ANAMIKA');
+/*!40000 ALTER TABLE `class_10b` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `class_10c`
+--
+
+DROP TABLE IF EXISTS `class_10c`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `class_10c` (
+  `ROLL_NO` int NOT NULL,
+  `NAME` varchar(200) NOT NULL,
+  `CITY` varchar(100) NOT NULL,
+  `AGE` int NOT NULL,
+  `CGPA` float(4,2) NOT NULL,
+  `CLASS_TEACHER` varchar(100) NOT NULL DEFAULT 'MARIA',
+  `student_id` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `class_10c`
+--
+
+LOCK TABLES `class_10c` WRITE;
+/*!40000 ALTER TABLE `class_10c` DISABLE KEYS */;
+INSERT INTO `class_10c` VALUES (102,'GAURAV','RANCHI',20,8.15,'MARIA','102_GAURAV'),(123,'RANA','NEW DELHI',21,7.77,'MARIA','123_RANA'),(154,'ABHISHEK','BENGALURU',19,7.25,'MARIA','154_ABHISHEK'),(202,'SHIVAM','BENGALURU',18,8.75,'MARIA','202_SHIVAM'),(276,'SHUBHAM','CHENNAI',20,9.12,'MARIA','276_SHUBHAM'),(292,'AKSHITA','NEW DELHI',23,8.95,'MARIA','292_AKSHITA'),(302,'VIKAS','JAIPUR',22,6.54,'MARIA','302_VIKAS'),(303,'ROMI','JAIPUR',21,7.65,'MARIA','303_ROMI'),(305,'ALISHA','MUMBAI',22,8.35,'MARIA','305_ALISHA'),(365,'ADIL','RANCHI',19,9.62,'MARIA','365_ADIL'),(50,'ADITI','NEW DELHI',20,8.50,'MARIA','50_ADITI'),(55,'ANAMIKA','NEW DELHI',20,7.20,'MARIA','55_ANAMIKA');
+/*!40000 ALTER TABLE `class_10c` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `class_10d`
+--
+
+DROP TABLE IF EXISTS `class_10d`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `class_10d` (
+  `name` varchar(50) DEFAULT NULL,
+  `roll_no` int NOT NULL,
+  PRIMARY KEY (`roll_no`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `class_10d`
+--
+
+LOCK TABLES `class_10d` WRITE;
+/*!40000 ALTER TABLE `class_10d` DISABLE KEYS */;
+INSERT INTO `class_10d` VALUES ('RAM',1),('UDAY',2),('VIKAS',3),('SWETA',4),('YOGESH',5),('MANISH',6),('SMRITI',7),('SUDAM',8),('VIKAS',9);
+/*!40000 ALTER TABLE `class_10d` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `COURSES`
+--
+
+DROP TABLE IF EXISTS `COURSES`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `COURSES` (
+  `COURSE_NAME` varchar(100) DEFAULT NULL,
+  `FACULTY_CODE` varchar(6) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `COURSES`
+--
+
+LOCK TABLES `COURSES` WRITE;
+/*!40000 ALTER TABLE `COURSES` DISABLE KEYS */;
+INSERT INTO `COURSES` VALUES ('Introduction to Computer Networks','SCI001'),('Modern Art','ART121'),('Finance','BUS101'),('Database Management System','SCI001');
+/*!40000 ALTER TABLE `COURSES` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `FACULTY`
+--
+
+DROP TABLE IF EXISTS `FACULTY`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `FACULTY` (
+  `FACULTY_NAME` varchar(100) DEFAULT NULL,
+  `FACULTY_CODE` varchar(6) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `FACULTY`
+--
+
+LOCK TABLES `FACULTY` WRITE;
+/*!40000 ALTER TABLE `FACULTY` DISABLE KEYS */;
+INSERT INTO `FACULTY` VALUES ('KASPER','SCI001'),('SAMUEL','SCI012'),('MARIA','ART121'),('JOHN','BUS101');
+/*!40000 ALTER TABLE `FACULTY` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `TEST`
+--
+
+DROP TABLE IF EXISTS `TEST`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `TEST` (
+  `ID` int DEFAULT NULL,
+  `NAME` varchar(50) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `TEST`
+--
+
+LOCK TABLES `TEST` WRITE;
+/*!40000 ALTER TABLE `TEST` DISABLE KEYS */;
+/*!40000 ALTER TABLE `TEST` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Dumping events for database 'class2'
+--
+
+--
+-- Dumping routines for database 'class2'
+--
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2020-03-28 13:21:53
