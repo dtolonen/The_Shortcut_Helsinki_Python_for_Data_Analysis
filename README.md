@@ -3,7 +3,7 @@
 
 Code from The Python for Data Analysis program at [The Shortcut](https://theshortcut.org), a talent accelerator in the heart of Maria 01, the largest startup hub in the Nordic countries.
 
-
+<img src=./theshortcut_catalyst_logos.png>
 
 <img src="https://github.com/dtolonen/The_Shortcut_Helsinki_Python_for_Data_Analysis/blob/master/theshortcut_catalyst_logos.png?raw=true” width="30%">
 
