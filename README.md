@@ -3,7 +3,7 @@
 
 <img src="https://github.com/dtolonen/The_Shortcut_Helsinki_Python_for_Data_Analysis/blob/master/theshortcut_catalyst_logos.png” width="30%">
 
-<img src=“https://github.com/dtolonen/The_Shortcut_Helsinki_Python_for_Data_Analysis/blob/master/theshortcut_python_image.png” width=“30%”>
+
 
 #### Please follow the below links for the code from each lesson and their exercises.
 
