@@ -5,9 +5,10 @@ Code from The Python for Data Analysis program at [The Shortcut](https://theshor
 
 
 <img src="https://github.com/dtolonen/The_Shortcut_Helsinki_Python_for_Data_Analysis/blob/master/theshortcut_catalyst_logos.png” width="30%">
+
 <img src=“https://github.com/dtolonen/The_Shortcut_Helsinki_Python_for_Data_Analysis/blob/master/theshortcut_python_image.png” width=“30%”>
 
-### Please follow the below links for the code from each lesson and their exercises.
+#### Please follow the below links for the code from each lesson and their exercises.
 
 
 
@@ -28,7 +29,7 @@ Code from The Python for Data Analysis program at [The Shortcut](https://theshor
 
 <hr/>
 
-	For more information, please see:
+#### For more information, please see:
 - [The Shortcut website](https://theshortcut.org) 
 - [The Shortcut on Linkedin](https://www.linkedin.com/company/theshortcut/)
 - [The Shortcut on Facebook](https://www.facebook.com/theshortcut/)
