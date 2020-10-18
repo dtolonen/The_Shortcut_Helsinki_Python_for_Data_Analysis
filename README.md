@@ -9,7 +9,7 @@ Code from The Python for Data Analysis program at [The Shortcut](https://theshor
 
 ### Please follow the below links for the code from each lesson and their exercises.
 
-https://github.com/dtolonen/Getting_started_with_Processing.py_book/tree/master/Chapter_2_Starting_to_Code
+
 
 - [Lesson 1 Python basics](https://github.com/dtolonen/The_Shortcut_Helsinki_Python_for_Data_Analysis/tree/master/Lesson_1_Python_basics)
 - [Lesson 2 Conditional statements, loops](https://github.com/dtolonen/The_Shortcut_Helsinki_Python_for_Data_Analysis/tree/Lesson_2_Conditional_statements_loops)
