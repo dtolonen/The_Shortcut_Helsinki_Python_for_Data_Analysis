@@ -29,7 +29,7 @@ Code from The Python for Data Analysis program at [The Shortcut](https://theshor
 
 <hr/>
 
-#### For more information, please see:
+For more information, please see:
 - [The Shortcut website](https://theshortcut.org) 
 - [The Shortcut on Linkedin](https://www.linkedin.com/company/theshortcut/)
 - [The Shortcut on Facebook](https://www.facebook.com/theshortcut/)
